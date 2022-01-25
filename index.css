@@ -1,0 +1,173 @@
+/* img
+{
+    position: fixed; 
+    border-radius: 50%;
+    width: 100px;
+    top:35%;
+    left:620px;
+} */
+.welcome
+{
+    position: fixed;
+    left:40%;
+    top:40%;
+}
+.y
+{
+    position: fixed;
+    top:15%;
+    left:3%;
+}
+.title
+{
+    position: fixed;
+    top:30%;
+}
+.introduction
+{
+    position: fixed;
+    top:30%;
+    left:5%;
+    width:200px;
+}
+.bar
+{
+    background-image:url("bg.jpg");
+    height:200px;
+    color: white;
+}
+a:hover
+{
+    text-decoration:none;
+    text-decoration:underline;
+    color:gray;
+}
+a:active 
+{
+    text-decoration:none;
+    background-color:gray;
+    color:#fafafa;
+}
+.link 
+{
+    position:fixed;
+    left:70%;
+    top:40%;
+    z-index:0;
+}
+.pic
+{
+    position:fixed;
+    left: 520px;
+    top: 250px;
+}
+.intro
+{
+    position:fixed;
+    left: 50%;
+    top:34%;
+}
+.content
+{
+    position:fixed;
+    left: 520px;
+    top:50%;
+    width:440px;
+}
+.home
+{
+    position:fixed;
+    left:40%;
+}
+.dropdown
+{
+    padding:0px;
+    background-color: black;
+    position: fixed;
+    left: 94%;
+    top: 16%;
+}
+.bread
+{
+    position:fixed;
+    left:22%;
+    top:27%;
+}
+.card-body
+{
+    border-color:black;
+    border-width: 1px;
+}
+.card1
+{
+    position:fixed;
+    left:22%;
+    top:35%;
+}
+.list-group
+{
+    position:fixed;
+    left:42%;
+    top:35%;
+}
+.card2
+{
+    position:fixed;
+    left:44%;
+    top:35%;
+}
+.btn2
+{
+    font-size:20px;
+    color:#7e5d49;
+    text-align: center;
+    position:fixed;
+    background-color:#EED8C0;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    line-height:150px;
+    left: 73%;
+    top:33%;
+}
+.btn3
+{
+    font-size:20px;
+    color:#7e5d49;
+    text-align: center;
+    position:fixed;
+    background-color:#EED8C0;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    line-height:150px;
+    left: 73%;
+    top:55%;
+}
+.btn2:hover
+{   
+    width: 150px;
+    height: 150px;
+    position:fixed;
+    left:73%;
+    top:33%;
+    background-image:url("35.png");
+    color:#000000;
+}
+.btn3:hover
+{   
+    width: 150px;
+    height: 150px;
+    position:fixed;
+    left:73%;
+    top:55%;
+    background-image: url("35.png");
+    color:#000000;
+}
+.icon
+{
+    padding: 20px;
+    position: fixed;
+    top: 75%;
+    left: 36%;
+}
