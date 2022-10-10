@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://bernice.tw/</loc>
+    <lastmod>2022-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bernice.tw/2022/04/create-a-vue-project/</loc>
+    <lastmod>2022-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bernice.tw/posts/</loc>
+    <lastmod>2022-04-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bernice.tw/2020/05/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</loc>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bernice.tw/2020/05/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</loc>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bernice.tw/archives/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bernice.tw/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://bernice.tw/tags/</loc>
+  </url>
+  
+</urlset>

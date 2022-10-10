@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bernice&#39;s Website on Bernice&#39;s articles</title>
+    <link>https://bernice.tw/</link>
+    <description>Recent content in Bernice&#39;s Website on Bernice&#39;s articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bernice.tw/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a Vue project!</title>
+      <link>https://bernice.tw/2022/04/create-a-vue-project/</link>
+      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://bernice.tw/2022/04/create-a-vue-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>使用 Hugo 建立一個 Blog</title>
+      <link>https://bernice.tw/2020/05/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bernice.tw/2020/05/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</guid>
+      <description>&lt;p&gt;說了好久的部落格，我終於把它建起來了&amp;hellip;(淚&lt;br&gt;
+網域都買了幾個月了，現在才用真的慚愧。&lt;br&gt;
+就以建這個 Blog 的筆記作為第一篇文吧～&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Hugo 建立一個 Blog</title>
+      <link>https://bernice.tw/2020/05/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bernice.tw/2020/05/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</guid>
+      <description>&lt;p&gt;說了好久的部落格，我終於把它建起來了&amp;hellip;(淚&lt;br&gt;
+網域都買了幾個月了，現在才用真的慚愧。&lt;br&gt;
+就以建這個 Blog 的筆記作為第一篇文吧～&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
