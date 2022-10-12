@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unit Test on Bernice&#39;s articles</title>
-    <link>https://bernice1357.github.io/categories/unit-test/</link>
+    <link>https://bernice.tw/categories/unit-test/</link>
     <description>Recent content in Unit Test on Bernice&#39;s articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bernice1357.github.io/categories/unit-test/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bernice.tw/categories/unit-test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cypress</title>
-      <link>https://bernice1357.github.io/2022/04/cypress/</link>
+      <link>https://bernice.tw/2022/04/cypress/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bernice1357.github.io/2022/04/cypress/</guid>
+      <guid>https://bernice.tw/2022/04/cypress/</guid>
       <description>&lt;p&gt;這篇會介紹 Cypress 的安裝和使用方法！&lt;/p&gt;</description>
     </item>
     
