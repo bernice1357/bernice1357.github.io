@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Bernice&#39;s articles</title>
-    <link>https://bernice.tw/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Bernice&#39;s articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bernice.tw/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2022 鐵人賽系列</title>
-      <link>https://bernice.tw/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/</link>
+      <link>/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/</link>
       <pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bernice.tw/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/</guid>
+      <guid>/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://bernice.tw/categories/github/</link>
+      <link>/categories/github/</link>
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bernice.tw/categories/github/</guid>
+      <guid>/categories/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vue</title>
-      <link>https://bernice.tw/categories/vue/</link>
+      <link>/categories/vue/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bernice.tw/categories/vue/</guid>
+      <guid>/categories/vue/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unit Test</title>
-      <link>https://bernice.tw/categories/unit-test/</link>
+      <link>/categories/unit-test/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bernice.tw/categories/unit-test/</guid>
+      <guid>/categories/unit-test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>架站</title>
-      <link>https://bernice.tw/categories/%E6%9E%B6%E7%AB%99/</link>
+      <link>/categories/%E6%9E%B6%E7%AB%99/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bernice.tw/categories/%E6%9E%B6%E7%AB%99/</guid>
+      <guid>/categories/%E6%9E%B6%E7%AB%99/</guid>
       <description></description>
     </item>
     

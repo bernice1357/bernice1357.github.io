@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vue on Bernice&#39;s articles</title>
-    <link>https://bernice.tw/categories/vue/</link>
+    <link>/categories/vue/</link>
     <description>Recent content in Vue on Bernice&#39;s articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 23 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bernice.tw/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vuex 介紹</title>
-      <link>https://bernice.tw/2022/07/vuex-%E4%BB%8B%E7%B4%B9/</link>
+      <link>/2022/07/vuex-%E4%BB%8B%E7%B4%B9/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bernice.tw/2022/07/vuex-%E4%BB%8B%E7%B4%B9/</guid>
+      <guid>/2022/07/vuex-%E4%BB%8B%E7%B4%B9/</guid>
       <description>&lt;p&gt;這篇會介紹 Vuex 的基本名詞以及他們的差異！&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Create a Vue project!</title>
-      <link>https://bernice.tw/2022/04/create-a-vue-project/</link>
+      <link>/2022/04/create-a-vue-project/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bernice.tw/2022/04/create-a-vue-project/</guid>
+      <guid>/2022/04/create-a-vue-project/</guid>
       <description>&lt;p&gt;本篇會介紹 Vue 環境的安裝及建立！&lt;/p&gt;</description>
     </item>
     

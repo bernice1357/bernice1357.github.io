@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on Bernice&#39;s articles</title>
-    <link>https://bernice.tw/categories/github/</link>
+    <link>/categories/github/</link>
     <description>Recent content in Github on Bernice&#39;s articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bernice.tw/categories/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 Github 上使用 SSH key push 靜態網頁＋展示</title>
-      <link>https://bernice.tw/2022/09/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/</link>
+      <link>/2022/09/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/</link>
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bernice.tw/2022/09/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/</guid>
+      <guid>/2022/09/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/</guid>
       <description>&lt;p&gt;由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一個&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Github 解決有衝突的分支合併</title>
-      <link>https://bernice.tw/2022/04/github-%E8%A7%A3%E6%B1%BA%E6%9C%89%E8%A1%9D%E7%AA%81%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E4%BD%B5/</link>
+      <link>/2022/04/github-%E8%A7%A3%E6%B1%BA%E6%9C%89%E8%A1%9D%E7%AA%81%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E4%BD%B5/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://bernice.tw/2022/04/github-%E8%A7%A3%E6%B1%BA%E6%9C%89%E8%A1%9D%E7%AA%81%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E4%BD%B5/</guid>
+      <guid>/2022/04/github-%E8%A7%A3%E6%B1%BA%E6%9C%89%E8%A1%9D%E7%AA%81%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E4%BD%B5/</guid>
       <description></description>
     </item>
     
