@@ -6,14 +6,194 @@
     <description>Recent content in 2022 鐵人賽系列 on Bernice&#39;s articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day23 - SEO 搜索引擎優化</title>
+      <link>/2022/10/day23-seo-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%84%AA%E5%8C%96/</link>
+      <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/10/day23-seo-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%84%AA%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day22 - MPA、SPA</title>
+      <link>/2022/10/day22-mpaspa/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/10/day22-mpaspa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day21 - NPM、NVM</title>
+      <link>/2022/09/day21-npmnvm/</link>
+      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day21-npmnvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day20 - 瀏覽器 DOM 元素的事件代理</title>
+      <link>/2022/09/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day19 - AXIOS 實作</title>
+      <link>/2022/09/day19-axios-%E5%AF%A6%E4%BD%9C/</link>
+      <pubDate>Wed, 28 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day19-axios-%E5%AF%A6%E4%BD%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day18 - AJAX &amp; AXIOS 介紹</title>
+      <link>/2022/09/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</link>
+      <pubDate>Tue, 27 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day17 - Postman</title>
+      <link>/2022/09/day17-postman/</link>
+      <pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day17-postman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day16 - RESTful API</title>
+      <link>/2022/09/day16-restful-api/</link>
+      <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day16-restful-api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day15 - Web Storage</title>
+      <link>/2022/09/day15-web-storage/</link>
+      <pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day15-web-storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day14 - Cookie</title>
+      <link>/2022/09/day14-cookie/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day14-cookie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day13 - CORS 同源政策</title>
+      <link>/2022/09/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</link>
+      <pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day12 - Chrome Developer Tool</title>
+      <link>/2022/09/day12-chrome-developer-tool/</link>
+      <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day12-chrome-developer-tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day11 - HTTP Request Method</title>
+      <link>/2022/09/day11-http-request-method/</link>
+      <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day11-http-request-method/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day10 - HTTP 狀態碼</title>
+      <link>/2022/09/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day8 - URL 的組成</title>
+      <link>/2022/09/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</link>
+      <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day9 - HTTP/HTTPS</title>
+      <link>/2022/09/day9-http/https/</link>
+      <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day9-http/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day7 - DNS 和 IP 的關係</title>
+      <link>/2022/09/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day6 - MAC 地址</title>
+      <link>/2022/09/day6-mac-%E5%9C%B0%E5%9D%80/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day6-mac-%E5%9C%B0%E5%9D%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day5 - IPV4 &amp; IPV6</title>
+      <link>/2022/09/day5-ipv4-ipv6/</link>
+      <pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day5-ipv4-ipv6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Day4 - TCP/UDP</title>
+      <link>/2022/09/day4-tcp/udp/</link>
+      <pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/day4-tcp/udp/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Day3 - SSH/Telnet</title>
       <link>/2022/09/day3-ssh/telnet/</link>
       <pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/day3-ssh/telnet/</guid>
-      <description></description>
+      <description>&lt;p&gt;今天介紹兩種常用在連接遠端電腦的通訊協定&lt;/p&gt;</description>
     </item>
     
     <item>

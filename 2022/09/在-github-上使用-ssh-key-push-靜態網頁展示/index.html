@@ -9,7 +9,7 @@
   "@type": "BlogPosting",
   "headline": "在 Github 上使用 SSH key push 靜態網頁＋展示",
   
-  "image": "https://i.imgur.com/CTwp9AA.png",
+  "image": "https://i.imgur.com/MgVa3gl.jpg",
   
   "datePublished": "2022-09-06T00:00:00Z",
   "dateModified": "2022-09-06T00:00:00Z",
@@ -34,8 +34,8 @@
     }
     
   },
-  "description": "由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一個\n",
-  "keywords": [, "development, next-gen"]
+  "description": "由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一份筆記吧！\n",
+  "keywords": []
 }
 
 </script>
@@ -44,19 +44,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.79.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Bernice Chaung">
-<meta name="keywords" content=", development, next-gen">
-<meta name="description" content="由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一個">
+<meta name="keywords" content="">
+<meta name="description" content="由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一份筆記吧！">
 
 
-<meta property="og:description" content="由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一個">
+<meta property="og:description" content="由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一份筆記吧！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 Github 上使用 SSH key push 靜態網頁＋展示">
 <meta name="twitter:title" content="在 Github 上使用 SSH key push 靜態網頁＋展示">
 <meta property="og:url" content="/2022/09/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/">
 <meta property="twitter:url" content="/2022/09/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/">
 <meta property="og:site_name" content="Bernice&#39;s articles">
-<meta property="og:description" content="由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一個">
-<meta name="twitter:description" content="由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一個">
+<meta property="og:description" content="由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一份筆記吧！">
+<meta name="twitter:description" content="由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一份筆記吧！">
 <meta property="og:locale" content="zh-tw">
 
   
@@ -88,9 +88,12 @@
 
 
 
+  <meta property="og:image" content="https://i.imgur.com/MgVa3gl.jpg">
+  <meta property="twitter:image" content="https://i.imgur.com/MgVa3gl.jpg">
 
-  <meta property="og:image" content="https://i.imgur.com/CTwp9AA.png">
-  <meta property="twitter:image" content="https://i.imgur.com/CTwp9AA.png">
+
+  <meta property="og:image" content="https://i.imgur.com/Oqqb83h.png">
+  <meta property="twitter:image" content="https://i.imgur.com/Oqqb83h.png">
 
 
     <title>在 Github 上使用 SSH key push 靜態網頁＋展示</title>
@@ -249,15 +252,13 @@
 </nav>
 
       
-
-      <div id="main" data-behavior="4"
-        class="
-               hasCoverMetaIn
-               ">
-        <article class="post" id="top">
-          
-          
-            <div class="post-header main-content-wrap text-left">
+  <div class="post-header-cover
+              text-center
+              post-header-cover--partial"
+       style="background-image:url('https://i.imgur.com/MgVa3gl.jpg')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
       在 Github 上使用 SSH key push 靜態網頁＋展示
@@ -289,86 +290,94 @@
   </div>
 
 </div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一個</p>
-<ul>
-<li>
-<h2 id="建立-ssh-key">建立 SSH key</h2>
-</li>
-</ul>
-<h3 id="1-cd-到想要上傳到-github的資料夾">1. cd 到想要上傳到 Github的資料夾</h3>
+              <p>由於 Github 從 2021/08/13 開始停止提供輸入帳密的服務，所以現在只能用 SSH 金鑰了 QQ 再加上看到網路上的教學似乎都有點舊了，就來重寫一份筆記吧！</p>
+<h3 id="建立-ssh-key">建立 SSH key</h3>
+<h4 id="1-cd-到想要上傳到-github-的資料夾">1. cd 到想要上傳到 Github 的資料夾</h4>
 <pre><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
 </code></pre><p>打了這行後，就會出現這些：</p>
 <pre><code>Generating public/private rsa key pair.
 Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
 Enter passphrase (empty for no passphrase): [Type a passphrase]
 Enter same passphrase again: [Type passphrase again]
-</code></pre><p>簡單一點的話，3 個問題可以全部都按Enter跳過～
+</code></pre><p>簡單一點的話，3 個問題可以全部都按 Enter 跳過～
 接著，再繼續往下打 3 個指令</p>
-<h3 id="2-開啟-ssh-agent">2. 開啟 ssh-agent</h3>
+<h4 id="2-開啟-ssh-agent">2. 開啟 ssh-agent</h4>
 <pre><code>eval &quot;$(ssh-agent -s)&quot;
-</code></pre><h3 id="3-將私鑰加入到-ssh-agent">3. 將私鑰加入到 ssh-agent</h3>
+</code></pre><h4 id="3-將私鑰加入到-ssh-agent">3. 將私鑰加入到 ssh-agent</h4>
 <pre><code>ssh-add -K ~/.ssh/id_rsa
-</code></pre><h3 id="4-上傳公鑰">4. 上傳公鑰</h3>
+</code></pre><h4 id="4-上傳公鑰">4. 上傳公鑰</h4>
 <p>在 .ssh/ 資料夾下會分別有 id_rsa、id_rsa.pub 這兩個檔案，也就分別代表私鑰及公鑰，這一個步驟就是將 id_rsa.pub 也就是公鑰上傳到 Github 上。</p>
 <pre><code>cat ~/.ssh/id_rsa.pub
-</code></pre><p>會出現一大串英文跟數字夾雜的公鑰，由 ssh-rsa開頭，自己的 email 結尾。接著就把整串都複製下來。</p>
+</code></pre><p>會出現一大串英文跟數字夾雜的公鑰，由 ssh-rsa 開頭，自己的 email 結尾。接著就把整串都複製下來。</p>
 <p>到 Github 網站，點選==Settings -&gt; SSH and GPG keys -&gt; New SSH Key==，把剛剛複製的一大串內容都貼上去，上面的標題可以自訂一個名稱，這樣就完成了！</p>
 <p>這樣之後就不用再輸入帳密也能 push 檔案了～</p>
-<h2 id="建立新的-repository">建立新的 repository</h2>
-<p>:::info
-這裡其實有兩種方法可以建立 repository，那我比較懶只介紹使用過的方法，想看另一種方法可以參考<a href="https://eudora.cc/posts/45315/">這裡</a>
-:::</p>
-<h3 id="1-建立名為-usernamegithubio-的-repository">1. 建立名為 username.github.io 的 repository</h3>
+<h3 id="建立新的-repository">建立新的 repository</h3>
+<div class="alert info no-icon ">
+  <p>這裡其實有兩種方法可以建立 repository，那我比較懶只介紹使用過的方法，想看另一種方法可以參考<a href="https://eudora.cc/posts/45315/">這裡</a></p>
+</div>
+<h4 id="1-建立名為-usernamegithubio-的-repository">1. 建立名為 username.github.io 的 repository</h4>
 <p>步驟：
 打開 Github -&gt; 點選右上角的頭像 -&gt; Your repositories -&gt; 右上角綠綠的 New 點下去之後，就會進入以下畫面</p>
 <p><img src="https://i.imgur.com/3WwfizZ.png" alt=""></p>
-<p>這時候username的地方記得設定成你在 Github 的 username！
+<p>這時候 username 的地方記得設定成你在 Github 的 username！
 接下來只要把靜態網頁丟到 Github 就大功告成！</p>
-<h2 id="上傳檔案">上傳檔案</h2>
-<p>:::info
-後面的指令也是在欲上傳資料夾中完成，所以前面的指令完成後可以接著打下面的部分！
-:::</p>
-<h3 id="1-初始化">1. 初始化</h3>
+<h3 id="上傳檔案">上傳檔案</h3>
+<div class="alert info no-icon ">
+  <p>後面的指令也是在欲上傳資料夾中完成，所以前面的指令完成後可以接著打下面的部分！</p>
+</div>
+<h4 id="1-初始化">1. 初始化</h4>
 <pre><code>git init
-</code></pre><p>打完指令後，就會資料夾中一個多出一個檔案叫.git，會儲存git有關的所有資訊！但因為他是隱藏檔，所以打開資料夾是看不到的喔！</p>
+</code></pre><p>打完指令後，就會資料夾中一個多出一個檔案叫.git，會儲存 git 有關的所有資訊！但因為他是隱藏檔，所以打開資料夾是看不到的喔！</p>
 <blockquote>
 <p>如果想要將.git 刪除</p>
 <pre><code>rm -r .git
 </code></pre></blockquote>
-<h3 id="2-把檔案新增至-staging-area">2. 把檔案新增至 staging area</h3>
+<h4 id="2-把檔案新增至-staging-area">2. 把檔案新增至 staging area</h4>
 <ul>
-<li>只新增一個檔案</li>
-</ul>
+<li>
+<p>只新增一個檔案</p>
 <pre><code>git add &quot;file name&quot;
-</code></pre><ul>
-<li>一次新增資料夾中所有檔案</li>
-</ul>
+</code></pre></li>
+<li>
+<p>一次新增資料夾中所有檔案</p>
 <pre><code>git add .
-</code></pre><p>打完指令就代表將檔案從紅色區域傳送到了藍色區域！
+</code></pre></li>
+</ul>
+<p>打完指令就代表將檔案從紅色區域傳送到了藍色區域！
 <img src="https://i.imgur.com/v35Mejt.png" alt=""></p>
 <p>這時可以查看 git status，看看檔名是不是綠色的，如果有就代表成功上傳！</p>
-<h3 id="2-把檔案新增至-local-git-repository">2. 把檔案新增至 local git repository</h3>
+<h4 id="3-把檔案新增至-local-git-repository">3. 把檔案新增至 local git repository</h4>
 <pre><code>git commit -m &quot;messeges&quot;
-</code></pre><ul>
-<li>假設我在&quot;messeges&quot;那邊打&quot;first version&quot;，在上傳後會出現在檔名旁邊，算是備註的功能
-<img src="https://i.imgur.com/oGVMFXZ.png" alt=""></li>
-</ul>
-<h3 id="3-push-檔案至遠端-repository">3. push 檔案至遠端 repository</h3>
-<p>:::info
-前面步驟都是在 local 端完成的，接下來要 push 至遠端 repo 才算完成上傳的動作！
-:::</p>
+</code></pre><p>假設我在&quot;messeges&quot;那邊打&quot;first version&quot;，在上傳後會出現在檔名旁邊，算是備註的功能
+<img src="https://i.imgur.com/oGVMFXZ.png" alt=""></p>
+<h3 id="4-push-檔案至遠端-repository">4. push 檔案至遠端 repository</h3>
+<div class="alert info no-icon ">
+  <p>前面步驟都是在 local 端完成的，接下來要 push 至遠端 repo 才算完成上傳的動作！</p>
+</div>
 <ul>
-<li>設定遠端 repo</li>
-</ul>
+<li>
+<p>設定遠端 repo</p>
 <pre><code>git remote add &lt;local repo name&gt; &lt;your github repo&gt;
 </code></pre><ol>
 <li><!-- raw HTML omitted --> 是你的之後用來 push 和 clone 用的網址，通常是打 origin，當然要打別的名稱也是可以！</li>
 <li>注意這裡的 <!-- raw HTML omitted --> ，因為我們前面是選擇 SSH 的方式，所以要填的是 repo 的 SSH 網址喔！</li>
 </ol>
-<p>步驟：your repo -&gt; 綠綠的Code -&gt; 選擇 SSH 網址再貼到指令上就行了！</p>
+</li>
+</ul>
+<p>步驟：your repo -&gt; 綠綠的 Code -&gt; 選擇 SSH 網址再貼到指令上就行了！</p>
 <p><img src="https://i.imgur.com/hb1SCx2.png" alt=""></p>
 <blockquote>
 <p>如果遠端網址想要再重新修改</p>
@@ -377,16 +386,13 @@ Enter same passphrase again: [Type passphrase again]
 <pre><code>git remote -v
 </code></pre></blockquote>
 <h3 id="4-最後一步">4. 最後一步！</h3>
-<ul>
-<li>一般來說，寫<!-- raw HTML omitted -->就行了，不用再另外寫<!-- raw HTML omitted --></li>
-</ul>
 <pre><code>git push &lt;remote address&gt; &lt;local repo name&gt;:&lt;git repo name&gt;
 </code></pre><blockquote>
 <p>由於 git 的本地分支預設是 master，如果沒有改變的話，<!-- raw HTML omitted --> 那邊要打 master 喔！</p>
 </blockquote>
 <p>若最後出現結果顯示下圖的訊息，就代表你已經成功 push 檔案到遠端了！
 <img src="https://i.imgur.com/dsEXwMd.png" alt=""></p>
-<p>可以到 Github 上確認檔案有沒有上去！</p>
+<p>再來就可以到 Github 確認檔案有沒有成功上傳！</p>
               
 
 
@@ -619,14 +625,14 @@ Enter same passphrase again: [Type passphrase again]
       <div id="about-card-job">
         <i class="fa fa-briefcase"></i>
         <br/>
-        Your job title
+        逢甲資工大四
       </div>
     
     
       <div id="about-card-location">
         <i class="fa fa-map-marker-alt"></i>
         <br/>
-        Taiwan
+        Taichung, Taiwan
       </div>
     
   </div>
@@ -636,9 +642,7 @@ Enter same passphrase again: [Type passphrase again]
 
     
   
-    
-      <div id="cover" style="background-image:url('/images/cover.jpg');"></div>
-    
+    <div id="cover" style="background-image:url('https://i.imgur.com/vMtGcdh.jpg');"></div>
   
 
 

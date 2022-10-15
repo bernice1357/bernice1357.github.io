@@ -34,8 +34,8 @@
     }
     
   },
-  "description": "",
-  "keywords": [, "development, next-gen"]
+  "description": "今天介紹兩種常用在連接遠端電腦的通訊協定\n",
+  "keywords": []
 }
 
 </script>
@@ -44,19 +44,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.79.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Bernice Chaung">
-<meta name="keywords" content=", development, next-gen">
-<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="description" content="今天介紹兩種常用在連接遠端電腦的通訊協定">
 
 
-<meta property="og:description" content="">
+<meta property="og:description" content="今天介紹兩種常用在連接遠端電腦的通訊協定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Day3 - SSH/Telnet">
 <meta name="twitter:title" content="Day3 - SSH/Telnet">
 <meta property="og:url" content="/2022/09/day3-ssh/telnet/">
 <meta property="twitter:url" content="/2022/09/day3-ssh/telnet/">
 <meta property="og:site_name" content="Bernice&#39;s articles">
-<meta property="og:description" content="">
-<meta name="twitter:description" content="">
+<meta property="og:description" content="今天介紹兩種常用在連接遠端電腦的通訊協定">
+<meta name="twitter:description" content="今天介紹兩種常用在連接遠端電腦的通訊協定">
 <meta property="og:locale" content="zh-tw">
 
   
@@ -92,8 +92,8 @@
   <meta property="twitter:image" content="https://i.imgur.com/fsVpeB4.jpg">
 
 
-  <meta property="og:image" content="https://i.imgur.com/t0TQW2O.jpg">
-  <meta property="twitter:image" content="https://i.imgur.com/t0TQW2O.jpg">
+  <meta property="og:image" content="https://i.imgur.com/NpryC68.png">
+  <meta property="twitter:image" content="https://i.imgur.com/NpryC68.png">
 
 
     <title>Day3 - SSH/Telnet</title>
@@ -303,28 +303,16 @@
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <blockquote>
-<p>今天介紹兩種常用在連接遠端電腦的通訊協定</p>
-</blockquote>
-<ul>
-<li>
-<p>Telnet</p>
+              <p>今天介紹兩種常用在連接遠端電腦的通訊協定</p>
+<h3 id="telnet">Telnet</h3>
 <p>是一種應用層協定，因為是明文傳輸，沒有加密的流程，可能會有竊聽的問題，由於安全問題，很多伺服器都會封鎖 Telnet 服務，防火牆在預設情况下是不信任 Telnet 的。</p>
 <p>應用：登入香港公共圖書館的資料查詢系統、大部份的電信裝置提供 Telnet 及 SSH 介面讓管理者連入進行設定及維護。</p>
-</li>
-</ul>
-<blockquote>
 <p>但因為 Telnet 的不安全性，因此之後出現了相對安全的 SSH</p>
-</blockquote>
-<ul>
-<li>
-<p>SSH(Secure Shell，安全外殼協定)</p>
-<p>是一種加密的連線機制，由IETF的網路工作小組（Network Working Group）所制定，由傳輸層協定、用戶認證協定、連接協定三種協定所組成，和 Telnet 只差在多了一道加密的手續，所以也可以把它想像成是加密過的 Telnet，在傳送資料時較不會有被竊聽的問題。
+<h3 id="sshsecure-shell安全外殼協定">SSH(Secure Shell，安全外殼協定)</h3>
+<p>是一種加密的連線機制，由 IETF 的網路工作小組（Network Working Group）所制定，由傳輸層協定、用戶認證協定、連接協定三種協定所組成，和 Telnet 只差在多了一道加密的手續，所以也可以把它想像成是加密過的 Telnet，在傳送資料時較不會有被竊聽的問題。
 因為 SSH 採用的是非對稱金鑰加密，所以只有「被認可的人」才能夠解密訊息。SSH 可以透過帳密和金鑰兩種方式進行安全驗證，就算是在一個不安全的網絡裡面，SSH 都能夠確保連線不被竊聽。</p>
-<p>應用：PuTTY、WinSCP、Konqueror、SSH客戶端、隧道協定</p>
-</li>
-<li>
-<p>比較</p>
+<p>應用：PuTTY、WinSCP、Konqueror、SSH 客戶端、隧道協定</p>
+<h3 id="比較">比較</h3>
 <table>
 <thead>
 <tr>
@@ -346,8 +334,6 @@
 </tr>
 </tbody>
 </table>
-</li>
-</ul>
 <hr>
 <p>參考來源：</p>
 <p><a href="https://zh.wikipedia.org/zh-mo/Secure_Shell">https://zh.wikipedia.org/zh-mo/Secure_Shell</a></p>
@@ -365,7 +351,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2022/09/day4-tcp/udp/" data-tooltip="Day4 - TCP/UDP" aria-label="下一篇: Day4 - TCP/UDP">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -472,7 +458,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2022/09/day4-tcp/udp/" data-tooltip="Day4 - TCP/UDP" aria-label="下一篇: Day4 - TCP/UDP">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -581,14 +567,14 @@
       <div id="about-card-job">
         <i class="fa fa-briefcase"></i>
         <br/>
-        Your job title
+        逢甲資工大四
       </div>
     
     
       <div id="about-card-location">
         <i class="fa fa-map-marker-alt"></i>
         <br/>
-        Taiwan
+        Taichung, Taiwan
       </div>
     
   </div>
@@ -598,9 +584,7 @@
 
     
   
-    
-      <div id="cover" style="background-image:url('/images/cover.jpg');"></div>
-    
+    <div id="cover" style="background-image:url('https://i.imgur.com/vMtGcdh.jpg');"></div>
   
 
 

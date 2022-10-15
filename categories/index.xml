@@ -6,13 +6,22 @@
     <description>Recent content in Categories on Bernice&#39;s articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2022 鐵人賽系列</title>
       <link>/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/</link>
-      <pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>架站</title>
+      <link>/categories/%E6%9E%B6%E7%AB%99/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/%E6%9E%B6%E7%AB%99/</guid>
       <description></description>
     </item>
     
@@ -35,20 +44,20 @@
     </item>
     
     <item>
+      <title>VScode</title>
+      <link>/categories/vscode/</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Unit Test</title>
       <link>/categories/unit-test/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>/categories/unit-test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>架站</title>
-      <link>/categories/%E6%9E%B6%E7%AB%99/</link>
-      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/%E6%9E%B6%E7%AB%99/</guid>
       <description></description>
     </item>
     
