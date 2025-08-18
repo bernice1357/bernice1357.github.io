@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="tw" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>Day20 - 瀏覽器 DOM 元素的事件代理 :: Bernice&#39;s website - Example site for hugo-theme-tailwind</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="在網頁開發中，我們經常需要為 DOM 元素添加事件監聽器。但是當頁面中有大量元素需要相同的事件處理時，為每個"
+/>
+<meta
+  name="keywords"
+  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+/>
+<meta name="robots" content="noodp" />
+<meta property="og:title" content="Day20 - 瀏覽器 DOM 元素的事件代理" />
+<meta property="og:description" content="在網頁開發中，我們經常需要為 DOM 元素添加事件監聽器。但是當頁面中有大量元素需要相同的事件處理時，為每個" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-29T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Day20 - 瀏覽器 DOM 元素的事件代理"/>
+<meta name="twitter:description" content="在網頁開發中，我們經常需要為 DOM 元素添加事件監聽器。但是當頁面中有大量元素需要相同的事件處理時，為每個"/>
+
+
+<link rel="canonical" href="http://localhost:1313/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.8bc6b7b01cd4690646915651e50f8e706f707da222b16f331d4315feddf1d29d.css">
+
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/start.css">
+
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+    MathJax = {
+        tex: {
+            displayMath: [['\\[', '\\]']],  
+            inlineMath: [['$', '$']]                  
+        }
+    };
+</script>
+
+
+
+
+
+  
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800">
+  <header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/logo.jpg" alt="logo">
+    </a>
+  </div>
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/about/" title="About">About</a>
+        </li>
+      
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/posts/" title="Post">Post</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none mx-1"></div>
+  
+  <div class="flex-none md:hidden">
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
+        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+        </i>
+        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+        </i>
+      </div>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
+    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+      <a href="/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/">Day20 - 瀏覽器 DOM 元素的事件代理</a>
+    </h1>
+
+    
+    
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+      
+      <li>
+        <a href="/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/"
+          class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
+          2022 鐵人賽系列
+        </a>
+      </li>
+      
+    
+    
+  </ul>
+
+
+
+    <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-smile"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12zm12 -4v4m-8 -4v4m-4 4h16m-9.995 3h.01m3.99 0h.01" /><path d="M10.005 17a3.5 3.5 0 0 0 4 0" /></svg>
+    </i>
+    <time datetime="2022-09-29T00:00:00&#43;00:00">
+      2022-09-29
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      4 minutes to read
+    </span>
+  </div>
+</div>
+
+
+    
+      
+      <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+        <h2>Table of Contents</h2>
+        <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什麼是事件代理">什麼是事件代理</a></li>
+    <li><a href="#事件冒泡機制">事件冒泡機制</a></li>
+    <li><a href="#傳統方法的問題">傳統方法的問題</a></li>
+    <li><a href="#使用事件代理">使用事件代理</a></li>
+    <li><a href="#事件代理的優點">事件代理的優點</a></li>
+    <li><a href="#實際應用範例">實際應用範例</a>
+      <ul>
+        <li><a href="#範例-1動態列表">範例 1：動態列表</a></li>
+        <li><a href="#範例-2表格操作">範例 2：表格操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#事件代理的注意事項">事件代理的注意事項</a></li>
+    <li><a href="#進階技巧">進階技巧</a>
+      <ul>
+        <li><a href="#使用-matches-方法">使用 matches() 方法</a></li>
+        <li><a href="#使用-closest-方法">使用 closest() 方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      </section>
+      
+    
+
+    <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+      <p>在網頁開發中，我們經常需要為 DOM 元素添加事件監聽器。但是當頁面中有大量元素需要相同的事件處理時，為每個元素單獨添加監聽器會造成性能問題。這時候就需要用到事件代理（Event Delegation）。</p>
+<h2 id="什麼是事件代理">什麼是事件代理</h2>
+<p>事件代理是一種事件處理技術，它利用了事件冒泡的原理，將事件監聽器添加到父元素上，而不是直接添加到目標元素上。當子元素觸發事件時，事件會冒泡到父元素，父元素的監聽器就可以處理這個事件。</p>
+<h2 id="事件冒泡機制">事件冒泡機制</h2>
+<p>在了解事件代理前，我們先來了解事件冒泡：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;child&#34;</span>&gt;點擊我&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;parent&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;父元素被點擊&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;child&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;子元素被點擊&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>當我們點擊按鈕時，會看到：</p>
+<pre tabindex="0"><code>子元素被點擊
+父元素被點擊
+</code></pre><p>這就是事件冒泡，事件從目標元素開始，向上冒泡到父元素。</p>
+<h2 id="傳統方法的問題">傳統方法的問題</h2>
+<p>假設我們有一個列表，每個項目都需要點擊事件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;list&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">li</span>&gt;項目 1&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">li</span>&gt;項目 2&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">li</span>&gt;項目 3&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 更多項目... --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span></code></pre></div><p>傳統做法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;#list li&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">item</span> =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#a6e22e">handleClick</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleClick</span>(<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;點擊了:&#39;</span>, <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">textContent</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>這種做法的問題：</p>
+<ol>
+<li><strong>性能問題</strong>：為每個元素都添加監聽器</li>
+<li><strong>記憶體消耗</strong>：大量的監聽器佔用記憶體</li>
+<li><strong>動態元素問題</strong>：新添加的元素沒有監聽器</li>
+</ol>
+<h2 id="使用事件代理">使用事件代理</h2>
+<p>事件代理的做法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;list&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 檢查點擊的是否為 li 元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">tagName</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;LI&#39;</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;點擊了:&#39;</span>, <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">textContent</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="事件代理的優點">事件代理的優點</h2>
+<ol>
+<li><strong>提升性能</strong>：只需要一個監聽器</li>
+<li><strong>節省記憶體</strong>：減少監聽器的數量</li>
+<li><strong>支援動態元素</strong>：新添加的元素自動擁有事件處理</li>
+<li><strong>簡化代碼</strong>：統一的事件處理邏輯</li>
+</ol>
+<h2 id="實際應用範例">實際應用範例</h2>
+<h3 id="範例-1動態列表">範例 1：動態列表</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;todo-app&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;new-item&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;輸入新項目&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;add-btn&#34;</span>&gt;添加&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;todo-list&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">span</span>&gt;學習 JavaScript&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;delete-btn&#34;</span>&gt;刪除&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">span</span>&gt;學習 CSS&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;delete-btn&#34;</span>&gt;刪除&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">todoList</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;todo-list&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItemInput</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;new-item&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">addBtn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;add-btn&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 使用事件代理處理刪除按鈕
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">todoList</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;delete-btn&#39;</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 刪除項目
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">parentElement</span>.<span style="color:#a6e22e">remove</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 添加新項目
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">addBtn</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newItemInput</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">text</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">li</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;li&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">li</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;span&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">text</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;button class=&#34;delete-btn&#34;&gt;刪除&lt;/button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        `</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">todoList</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">li</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">newItemInput</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="範例-2表格操作">範例 2：表格操作</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data-table&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span>&gt;姓名&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span>&gt;年齡&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span>&gt;操作&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;張三&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;25&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;edit-btn&#34;</span> <span style="color:#a6e22e">data-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;編輯&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;delete-btn&#34;</span> <span style="color:#a6e22e">data-id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;刪除&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 更多行... --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">table</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;data-table&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">table</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">dataset</span>.<span style="color:#a6e22e">id</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;edit-btn&#39;</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;編輯 ID:&#39;</span>, <span style="color:#a6e22e">id</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 執行編輯邏輯
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;delete-btn&#39;</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;刪除 ID:&#39;</span>, <span style="color:#a6e22e">id</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 執行刪除邏輯
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">confirm</span>(<span style="color:#e6db74">&#39;確定要刪除嗎？&#39;</span>)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">closest</span>(<span style="color:#e6db74">&#39;tr&#39;</span>).<span style="color:#a6e22e">remove</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="事件代理的注意事項">事件代理的注意事項</h2>
+<ol>
+<li><strong>事件類型限制</strong>：只能用於支援冒泡的事件（如 click、keydown 等）</li>
+<li><strong>目標元素檢查</strong>：需要檢查 event.target 是否為預期的元素</li>
+<li><strong>阻止冒泡</strong>：如果在子元素中使用 <code>event.stopPropagation()</code>，事件不會冒泡到父元素</li>
+</ol>
+<h2 id="進階技巧">進階技巧</h2>
+<h3 id="使用-matches-方法">使用 matches() 方法</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#39;li.item&#39;</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 處理符合選擇器的元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;點擊了項目&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="使用-closest-方法">使用 closest() 方法</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">closest</span>(<span style="color:#e6db74">&#39;li&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">item</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 處理最近的 li 祖先元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;點擊了項目:&#39;</span>, <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">textContent</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>事件代理是一個強大的技術，能夠有效提升網頁性能，特別是在處理大量動態元素時。合理使用事件代理可以讓我們的代碼更加高效和易於維護。</p>
+
+    </article>
+
+    
+
+
+
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+    <a href="https://github.com/bernice1357" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://www.linkedin.com/in/bernice-chaung/" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
+      <span class="hidden">LinkedIn</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://twitter.com/vfk38" target="_blank" title="X" class="flex flex-row mr-2">
+      <span class="hidden">X</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://medium.com/@juice6323" target="_blank" title="Medium" class="flex flex-row mr-2">
+      <span class="hidden">Medium</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-medium"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 9h1l3 3l3 -3h1" /><path d="M8 15l2 0" /><path d="M14 15l2 0" /><path d="M9 9l0 6" /><path d="M15 9l0 6" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://www.instagram.com/bernice1357689/" target="_blank" title="Instagram" class="flex flex-row mr-2">
+      <span class="hidden">Instagram</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://ithelp.ithome.com.tw/users/20151135" target="_blank" title="iThome" class="flex flex-row mr-2">
+      <span class="hidden">iThome</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-letter-t-small"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8h4" /><path d="M12 8v8" /></svg> </i>
+    </a>
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2022 - 2025 BerniceChaung
+    
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.js"></script>
+
+<div class="hidden top-1 right-1" id="code-copy">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+  <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+</svg>
+
+  </i>
+</div>
+<div class="hidden top-1 right-1" id="code-copy-done">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+
+  </i>
+</div><script src="/code-copy.js"></script>
+
+
+
+
+
+</body>
+</html>

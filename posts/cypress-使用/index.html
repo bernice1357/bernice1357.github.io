@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="tw" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>Cypress 使用 :: Bernice&#39;s website - Example site for hugo-theme-tailwind</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="這篇會介紹 Cypress 的安裝和使用方法！ version 10.3.1 安裝 官方文件 % npm install cypress --save-dev 安裝後就能看到 cypress 目錄了 開啟環境 % npx cypress open 之後會"
+/>
+<meta
+  name="keywords"
+  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+/>
+<meta name="robots" content="noodp" />
+<meta property="og:title" content="Cypress 使用" />
+<meta property="og:description" content="這篇會介紹 Cypress 的安裝和使用方法！ version 10.3.1 安裝 官方文件 % npm install cypress --save-dev 安裝後就能看到 cypress 目錄了 開啟環境 % npx cypress open 之後會" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/cypress-%E4%BD%BF%E7%94%A8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-10T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Cypress 使用"/>
+<meta name="twitter:description" content="這篇會介紹 Cypress 的安裝和使用方法！ version 10.3.1 安裝 官方文件 % npm install cypress --save-dev 安裝後就能看到 cypress 目錄了 開啟環境 % npx cypress open 之後會"/>
+
+
+<link rel="canonical" href="http://localhost:1313/posts/cypress-%E4%BD%BF%E7%94%A8/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.8bc6b7b01cd4690646915651e50f8e706f707da222b16f331d4315feddf1d29d.css">
+
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/start.css">
+
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+    MathJax = {
+        tex: {
+            displayMath: [['\\[', '\\]']],  
+            inlineMath: [['$', '$']]                  
+        }
+    };
+</script>
+
+
+
+
+
+  
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800">
+  <header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/logo.jpg" alt="logo">
+    </a>
+  </div>
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/about/" title="About">About</a>
+        </li>
+      
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/posts/" title="Post">Post</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none mx-1"></div>
+  
+  <div class="flex-none md:hidden">
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
+        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+        </i>
+        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+        </i>
+      </div>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
+    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+      <a href="/posts/cypress-%E4%BD%BF%E7%94%A8/">Cypress 使用</a>
+    </h1>
+
+    
+    
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+      
+      <li>
+        <a href="/categories/2022/"
+          class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
+          2022
+        </a>
+      </li>
+      
+    
+    
+      
+      <li>
+        <a href="/tags/note/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flower"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 2a3 3 0 0 1 3 3c0 .562 -.259 1.442 -.776 2.64l-.724 1.36l1.76 -1.893c.499 -.6 .922 -1 1.27 -1.205a2.968 2.968 0 0 1 4.07 1.099a3.011 3.011 0 0 1 -1.09 4.098c-.374 .217 -.99 .396 -1.846 .535l-2.664 .366l2.4 .326c1 .145 1.698 .337 2.11 .576a3.011 3.011 0 0 1 1.09 4.098a2.968 2.968 0 0 1 -4.07 1.098c-.348 -.202 -.771 -.604 -1.27 -1.205l-1.76 -1.893l.724 1.36c.516 1.199 .776 2.079 .776 2.64a3 3 0 0 1 -6 0c0 -.562 .259 -1.442 .776 -2.64l.724 -1.36l-1.76 1.893c-.499 .601 -.922 1 -1.27 1.205a2.968 2.968 0 0 1 -4.07 -1.098a3.011 3.011 0 0 1 1.09 -4.098c.374 -.218 .99 -.396 1.846 -.536l2.664 -.366l-2.4 -.325c-1 -.145 -1.698 -.337 -2.11 -.576a3.011 3.011 0 0 1 -1.09 -4.099a2.968 2.968 0 0 1 4.07 -1.099c.348 .203 .771 .604 1.27 1.205l1.76 1.894c-1 -2.292 -1.5 -3.625 -1.5 -4a3 3 0 0 1 3 -3z" /></svg>
+          </i>
+          <span class="ml-0">Note</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/cypress/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flower"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 2a3 3 0 0 1 3 3c0 .562 -.259 1.442 -.776 2.64l-.724 1.36l1.76 -1.893c.499 -.6 .922 -1 1.27 -1.205a2.968 2.968 0 0 1 4.07 1.099a3.011 3.011 0 0 1 -1.09 4.098c-.374 .217 -.99 .396 -1.846 .535l-2.664 .366l2.4 .326c1 .145 1.698 .337 2.11 .576a3.011 3.011 0 0 1 1.09 4.098a2.968 2.968 0 0 1 -4.07 1.098c-.348 -.202 -.771 -.604 -1.27 -1.205l-1.76 -1.893l.724 1.36c.516 1.199 .776 2.079 .776 2.64a3 3 0 0 1 -6 0c0 -.562 .259 -1.442 .776 -2.64l.724 -1.36l-1.76 1.893c-.499 .601 -.922 1 -1.27 1.205a2.968 2.968 0 0 1 -4.07 -1.098a3.011 3.011 0 0 1 1.09 -4.098c.374 -.218 .99 -.396 1.846 -.536l2.664 -.366l-2.4 -.325c-1 -.145 -1.698 -.337 -2.11 -.576a3.011 3.011 0 0 1 -1.09 -4.099a2.968 2.968 0 0 1 4.07 -1.099c.348 .203 .771 .604 1.27 1.205l1.76 1.894c-1 -2.292 -1.5 -3.625 -1.5 -4a3 3 0 0 1 3 -3z" /></svg>
+          </i>
+          <span class="ml-0">Cypress</span>
+        </a>
+      </li>
+      
+    
+  </ul>
+
+
+
+    <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-smile"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12zm12 -4v4m-8 -4v4m-4 4h16m-9.995 3h.01m3.99 0h.01" /><path d="M10.005 17a3.5 3.5 0 0 0 4 0" /></svg>
+    </i>
+    <time datetime="2022-04-10T00:00:00&#43;00:00">
+      2022-04-10
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      4 minutes to read
+    </span>
+  </div>
+</div>
+
+
+    
+      
+      <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+        <h2>Table of Contents</h2>
+        <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#安裝">安裝</a></li>
+    <li><a href="#開啟環境">開啟環境</a></li>
+    <li><a href="#目錄架構">目錄架構</a>
+      <ul>
+        <li><a href="#support寫自定義方法類似函式">support：寫自定義方法，類似函式</a></li>
+        <li><a href="#fixtures存放測試資料json-格式">fixtures：存放測試資料，json 格式</a></li>
+        <li><a href="#e2e存放測試腳本">e2e：存放測試腳本</a></li>
+      </ul>
+    </li>
+    <li><a href="#腳本主架構">腳本主架構</a></li>
+    <li><a href="#指令">指令</a>
+      <ul>
+        <li><a href="#cyvisit-造訪網頁">cy.visit(): 造訪網頁</a></li>
+        <li><a href="#cyget-抓取dom元素">cy.get(): 抓取DOM元素</a></li>
+        <li><a href="#cycontains-透過元素呈現在網站上的文字尋找該元素">cy.contains(): 透過元素呈現在網站上的文字尋找該元素</a></li>
+        <li><a href="#cytype要輸入的文字-在輸入框中輸入文字">cy.type(&lsquo;要輸入的文字&rsquo;): 在輸入框中輸入文字</a></li>
+        <li><a href="#cyfixture-引用-fixtures-中的資料">cy.fixture(&rsquo;&rsquo;): 引用 /fixtures 中的資料</a></li>
+        <li><a href="#cywait暫停腳本測試參數可放需暫停毫秒數">cy.wait()：暫停腳本測試，參數可放需暫停毫秒數</a></li>
+        <li><a href="#as做個-alias-給抓到的資料or元素有點像變數">.as()：做個 alias 給抓到的資料or元素，有點像變數</a></li>
+      </ul>
+    </li>
+    <li><a href="#cypress-系列">Cypress 系列</a></li>
+    <li><a href="#遇到的問題">遇到的問題</a></li>
+  </ul>
+</nav></aside>
+      </section>
+      
+    
+
+    <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+      <p>這篇會介紹 Cypress 的安裝和使用方法！</p>
+<blockquote>
+<p>version 10.3.1</p>
+</blockquote>
+<h2 id="安裝">安裝</h2>
+<blockquote>
+<p><a href="https://docs.cypress.io/guides/getting-started/installing-cypress#What-you-ll-learn" target="_blank" rel="noopener">官方文件</a>
+</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">%</span> <span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">cypress</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">save</span><span style="color:#f92672">-</span><span style="color:#a6e22e">dev</span>
+</span></span></code></pre></div><p>安裝後就能看到 cypress 目錄了</p>
+<div class="not-prose">
+<figure>
+    <img src="https://i.imgur.com/InhDvfM.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+<h2 id="開啟環境">開啟環境</h2>
+<pre tabindex="0"><code>% npx cypress open
+</code></pre><ul>
+<li>之後會出現下面的視窗，有 E2E Testing 和 Component Testing 兩種測試方法
+<ul>
+<li>E2E Testing：模擬使用者使用網站</li>
+<li>Component Testing：檢查程式碼中元件的問題</li>
+</ul>
+</li>
+</ul>
+<div class="not-prose">
+<figure>
+    <img src="https://i.imgur.com/iOR29xu.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+<ul>
+<li>
+<p>再點選其中一個瀏覽器就能打開 Cypress 的測試環境了</p>
+<div class="not-prose">
+<figure>
+    <img src="https://i.imgur.com/Qqa6H6w.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+</li>
+<li>
+<p>進入瀏覽器後可以看到 cypress 中所有的測試檔案</p>
+<div class="not-prose">
+<figure>
+    <img src="https://i.imgur.com/22VdQA0.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+</li>
+<li>
+<p>點選測試檔進去後就會開始執行測試，右邊的畫面可以看到實際測試網頁的過程</p>
+<div class="not-prose">
+<figure>
+    <img src="https://i.imgur.com/BWVG5Qv.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+</li>
+</ul>
+<hr>
+<h2 id="目錄架構">目錄架構</h2>
+<blockquote class="note"><p>整個架構都可以在外面的編輯器撰寫，像是 VScode。然後檔案在編輯器撰寫的話，會發現 Cypress 和 cy 會因為沒有定義而報錯，但這不影響</p>
+</blockquote>
+<h3 id="support寫自定義方法類似函式">support：寫自定義方法，類似函式</h3>
+<ul>
+<li>
+<p>e2e.js：support 目錄的 root</p>
+</li>
+<li>
+<p>目前寫好的函式結構：</p>
+<ul>
+<li>commands.js：Login/Logout</li>
+<li>formActions.js：對表單會使用到的基本操作</li>
+<li>baseAction.js：對基本動作(ex:click,type…)加上 {force:true}</li>
+</ul>
+</li>
+<li>
+<p>操作方法</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">//In /support
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cypress</span>.<span style="color:#a6e22e">Commands</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;Login&#39;</span>, (<span style="color:#a6e22e">data</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">visit</span>(<span style="color:#e6db74">&#39;http://localhost:8080&#39;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;input[placeholder=&#34;請填入帳號&#34;]&#39;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">type</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">account</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;input[placeholder=&#34;請填入密碼&#34;]&#39;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">type</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">password</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;button&#39;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;Login&#39;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">click</span>()
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//In /e2e
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">Login</span>({<span style="color:#a6e22e">account</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;admin&#39;</span>, <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;admin123!&#39;</span>})
+</span></span></code></pre></div><h3 id="fixtures存放測試資料json-格式">fixtures：存放測試資料，json 格式</h3>
+<blockquote>
+<p>和其對應的函式: <a href="#cyfixture-%e5%bc%95%e7%94%a8-fixtures-%e4%b8%ad%e7%9a%84%e8%b3%87%e6%96%99">cy.fixture()</a>
+</p>
+</blockquote>
+<h3 id="e2e存放測試腳本">e2e：存放測試腳本</h3>
+<blockquote>
+<p>檔案格式都是 <code>.cy.js</code> 結尾</p>
+</blockquote>
+<hr>
+<h2 id="腳本主架構">腳本主架構</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;My First Test&#39;</span>, ()=&gt;{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">before</span>(()=&gt;{...});
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">beforeEach</span>(()=&gt;{...});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">describe</span>(<span style="color:#e6db74">&#39;My First Test&#39;</span>, ()=&gt;{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;Login&#39;</span>, ()=&gt;{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">context</span>(<span style="color:#e6db74">&#39;&#39;</span>, ()=&gt;{
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;&#39;</span>, ()=&gt;{...});
+</span></span><span style="display:flex;"><span>    .
+</span></span><span style="display:flex;"><span>    .
+</span></span><span style="display:flex;"><span>    .
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;&#39;</span>, ()=&gt;{...});
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;&#39;</span>, ()=&gt;{...});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">after</span>(()=&gt;{...});
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">afterEach</span>(()=&gt;{...});
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><ul>
+<li>
+<p><code>it()</code>: 撰寫測試內容的地方，會把瀏覽器資料清空</p>
+</li>
+<li>
+<p>測試以外的內容</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">比較</th>
+<th style="text-align:center">before</th>
+<th style="text-align:center">beforeEach</th>
+<th style="text-align:center">afterEach</th>
+<th style="text-align:center">after</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">執行順序</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">執行時間</td>
+<td style="text-align:center"><code>it()</code>前</td>
+<td style="text-align:center"><code>it()</code>前</td>
+<td style="text-align:center"><code>it()</code>後</td>
+<td style="text-align:center"><code>it()</code>後</td>
+</tr>
+<tr>
+<td style="text-align:center">執行次數</td>
+<td style="text-align:center">一次</td>
+<td style="text-align:center"><code>it()</code>次數決定跑幾次</td>
+<td style="text-align:center"><code>it()</code>次數決定跑幾次</td>
+<td style="text-align:center">一次</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>describe()</code>和<code>context()</code> 功能是一樣的，裡面可以包很多小測試檔，可視為一個測試的群組，這兩個要放哪都可以</li>
+</ul>
+<hr>
+<h2 id="指令">指令</h2>
+<blockquote>
+<p><a href="https://docs.cypress.io/api/commands/and#Syntax" target="_blank" rel="noopener">官方文件</a>
+
+每句指令前面都會加上&quot;cy.&quot;</p>
+</blockquote>
+<ul>
+<li>每行指令(cy.開頭)抓取的元素都是獨立的，寫到下一行就會重新抓取元素</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#75715e">// 如果想在 input 中輸入 admin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Correct
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">cy.get(&#39;input</span>[<span style="color:#960050;background-color:#1e0010">placeholder=</span><span style="color:#e6db74">&#34;請填入帳號&#34;</span>]<span style="color:#960050;background-color:#1e0010">&#39;).type(</span><span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Wrong
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">cy.get(&#39;input</span>[<span style="color:#960050;background-color:#1e0010">placeholder=</span><span style="color:#e6db74">&#34;請填入帳號&#34;</span>]<span style="color:#960050;background-color:#1e0010">&#39;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">cy.type(</span><span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>
+</span></span></code></pre></div><h3 id="cyvisit-造訪網頁">cy.visit(): 造訪網頁</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">visit</span>(<span style="color:#e6db74">&#39;http://10.40.192.174:8080&#39;</span>)
+</span></span></code></pre></div><h3 id="cyget-抓取dom元素">cy.get(): 抓取DOM元素</h3>
+<p>通常是取元素的 ID 或 Class 去取得元素，但如果兩者都沒有，也可以使用只有該元素具有的特徵來抓取</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;#main&#39;</span>)<span style="color:#75715e">//抓取 ID 為 main 的元素 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;.btn1&#39;</span>)<span style="color:#75715e">//抓取 Class 為 btn1 的元素 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;input[placeholder=&#34;請填入帳號&#34;]&#39;</span>)<span style="color:#75715e">//抓取 placeholder 為 &#39;請填入帳號&#39; 的 input
+</span></span></span></code></pre></div><h3 id="cycontains-透過元素呈現在網站上的文字尋找該元素">cy.contains(): 透過元素呈現在網站上的文字尋找該元素</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;Account&#39;</span>)<span style="color:#75715e">//尋找含有&#39;Account&#39;這個字的元素 
+</span></span></span></code></pre></div><h3 id="cytype要輸入的文字-在輸入框中輸入文字">cy.type(&lsquo;要輸入的文字&rsquo;): 在輸入框中輸入文字</h3>
+<h3 id="cyfixture-引用-fixtures-中的資料">cy.fixture(&rsquo;&rsquo;): 引用 /fixtures 中的資料</h3>
+<p>fixture() 代表會抓 /fixtures 目錄下的資料，參數是檔名(副檔名可加可不加)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">fixture</span>(<span style="color:#e6db74">&#39;data&#39;</span>).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">users</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cy</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;.el-textarea__inner&#39;</span>).<span style="color:#a6e22e">type</span>(<span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">name</span>)
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p>如果參數放的是 &lsquo;admin&rsquo;，但 /fixtures 中有很多筆開頭為 admin 的檔案，會對應找到的第一個檔案</p>
+<h3 id="cywait暫停腳本測試參數可放需暫停毫秒數">cy.wait()：暫停腳本測試，參數可放需暫停毫秒數</h3>
+<h3 id="as做個-alias-給抓到的資料or元素有點像變數">.as()：做個 alias 給抓到的資料or元素，有點像變數</h3>
+<hr>
+<h2 id="cypress-系列">Cypress 系列</h2>
+<blockquote>
+<p><a href="https://docs.cypress.io/api/cypress-api/custom-commands#Syntax" target="_blank" rel="noopener">官方文件</a>
+</p>
+</blockquote>
+<ul>
+<li>這種形式的函式會寫在 /support 底下，而且所有測試腳本都會被連結到</li>
+</ul>
+<p>ex:</p>
+<ul>
+<li>Cypress.Commands.add</li>
+<li>Cypress.on：Uncaught exception</li>
+</ul>
+<hr>
+<h2 id="遇到的問題">遇到的問題</h2>
+<blockquote class="note"><p>主控台只要一出現錯誤訊息，Cypress 就會視為測試失敗</p>
+</blockquote>
+<ul>
+<li>解決方法：
+想要跳過錯誤訊息，可以在 describe() 中加入以下程式碼，這樣就能無視錯誤訊息了 耶</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">Cypress</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;uncaught:exception&#39;</span>, (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">runnable</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><div class="not-prose">
+<figure>
+    <img src="https://i.imgur.com/PcMjZvL.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+
+    </article>
+
+    
+
+
+
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+    <a href="https://github.com/bernice1357" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://www.linkedin.com/in/bernice-chaung/" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
+      <span class="hidden">LinkedIn</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://twitter.com/vfk38" target="_blank" title="X" class="flex flex-row mr-2">
+      <span class="hidden">X</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://medium.com/@juice6323" target="_blank" title="Medium" class="flex flex-row mr-2">
+      <span class="hidden">Medium</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-medium"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 9h1l3 3l3 -3h1" /><path d="M8 15l2 0" /><path d="M14 15l2 0" /><path d="M9 9l0 6" /><path d="M15 9l0 6" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://www.instagram.com/bernice1357689/" target="_blank" title="Instagram" class="flex flex-row mr-2">
+      <span class="hidden">Instagram</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://ithelp.ithome.com.tw/users/20151135" target="_blank" title="iThome" class="flex flex-row mr-2">
+      <span class="hidden">iThome</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-letter-t-small"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8h4" /><path d="M12 8v8" /></svg> </i>
+    </a>
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2022 - 2025 BerniceChaung
+    
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.js"></script>
+
+<div class="hidden top-1 right-1" id="code-copy">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+  <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+</svg>
+
+  </i>
+</div>
+<div class="hidden top-1 right-1" id="code-copy-done">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+
+  </i>
+</div><script src="/code-copy.js"></script>
+
+
+
+
+
+</body>
+</html>

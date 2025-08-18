@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paper on Bernice&#39;s website</title>
+    <link>http://localhost:1313/tags/paper/</link>
+    <description>Recent content in Paper on Bernice&#39;s website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>tw</language>
+    <copyright>BerniceChaung</copyright>
+    <lastBuildDate>Sat, 23 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/paper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BiFormer: Vision Transformer with Bi-Level Routing Attention</title>
+      <link>http://localhost:1313/posts/biformer/</link>
+      <pubDate>Sat, 23 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/biformer/</guid>
+      <description>前言 今天介紹的這篇是 vision transformer 領域的一篇論文，作者的主要貢獻是提出 Bi-Level Routing Attention， 這種 attention 使得 query 可以</description>
+    </item>
+    <item>
+      <title>Multi-Scale Fusion and Decomposition Network for Single Image Deraining</title>
+      <link>http://localhost:1313/posts/deraining/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/deraining/</guid>
+      <description>前言 這篇論文是在 2024 年在 IEEE 發表的，這篇是影像復原領域的，主要任務是去除圖片中的雨水紋 (消除雜訊)，提出</description>
+    </item>
+  </channel>
+</rss>

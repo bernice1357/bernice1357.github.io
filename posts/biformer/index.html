@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="tw" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>BiFormer: Vision Transformer with Bi-Level Routing Attention :: Bernice&#39;s website - Example site for hugo-theme-tailwind</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="前言 今天介紹的這篇是 vision transformer 領域的一篇論文，作者的主要貢獻是提出 Bi-Level Routing Attention， 這種 attention 使得 query 可以"
+/>
+<meta
+  name="keywords"
+  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+/>
+<meta name="robots" content="noodp" />
+<meta property="og:title" content="BiFormer: Vision Transformer with Bi-Level Routing Attention" />
+<meta property="og:description" content="前言 今天介紹的這篇是 vision transformer 領域的一篇論文，作者的主要貢獻是提出 Bi-Level Routing Attention， 這種 attention 使得 query 可以" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/biformer/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-03-23T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="BiFormer: Vision Transformer with Bi-Level Routing Attention"/>
+<meta name="twitter:description" content="前言 今天介紹的這篇是 vision transformer 領域的一篇論文，作者的主要貢獻是提出 Bi-Level Routing Attention， 這種 attention 使得 query 可以"/>
+
+
+<link rel="canonical" href="http://localhost:1313/posts/biformer/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.8bc6b7b01cd4690646915651e50f8e706f707da222b16f331d4315feddf1d29d.css">
+
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/start.css">
+
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+    MathJax = {
+        tex: {
+            displayMath: [['\\[', '\\]']],  
+            inlineMath: [['$', '$']]                  
+        }
+    };
+</script>
+
+
+
+
+
+  
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800">
+  <header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/logo.jpg" alt="logo">
+    </a>
+  </div>
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/about/" title="About">About</a>
+        </li>
+      
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/posts/" title="Post">Post</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none mx-1"></div>
+  
+  <div class="flex-none md:hidden">
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
+        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+        </i>
+        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+        </i>
+      </div>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
+    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+      <a href="/posts/biformer/">BiFormer: Vision Transformer with Bi-Level Routing Attention</a>
+    </h1>
+
+    
+    
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+      
+      <li>
+        <a href="/categories/2024/"
+          class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
+          2024
+        </a>
+      </li>
+      
+    
+    
+      
+      <li>
+        <a href="/tags/vision-trasformer/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flower"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 2a3 3 0 0 1 3 3c0 .562 -.259 1.442 -.776 2.64l-.724 1.36l1.76 -1.893c.499 -.6 .922 -1 1.27 -1.205a2.968 2.968 0 0 1 4.07 1.099a3.011 3.011 0 0 1 -1.09 4.098c-.374 .217 -.99 .396 -1.846 .535l-2.664 .366l2.4 .326c1 .145 1.698 .337 2.11 .576a3.011 3.011 0 0 1 1.09 4.098a2.968 2.968 0 0 1 -4.07 1.098c-.348 -.202 -.771 -.604 -1.27 -1.205l-1.76 -1.893l.724 1.36c.516 1.199 .776 2.079 .776 2.64a3 3 0 0 1 -6 0c0 -.562 .259 -1.442 .776 -2.64l.724 -1.36l-1.76 1.893c-.499 .601 -.922 1 -1.27 1.205a2.968 2.968 0 0 1 -4.07 -1.098a3.011 3.011 0 0 1 1.09 -4.098c.374 -.218 .99 -.396 1.846 -.536l2.664 -.366l-2.4 -.325c-1 -.145 -1.698 -.337 -2.11 -.576a3.011 3.011 0 0 1 -1.09 -4.099a2.968 2.968 0 0 1 4.07 -1.099c.348 .203 .771 .604 1.27 1.205l1.76 1.894c-1 -2.292 -1.5 -3.625 -1.5 -4a3 3 0 0 1 3 -3z" /></svg>
+          </i>
+          <span class="ml-0">vision trasformer</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/paper/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flower"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 2a3 3 0 0 1 3 3c0 .562 -.259 1.442 -.776 2.64l-.724 1.36l1.76 -1.893c.499 -.6 .922 -1 1.27 -1.205a2.968 2.968 0 0 1 4.07 1.099a3.011 3.011 0 0 1 -1.09 4.098c-.374 .217 -.99 .396 -1.846 .535l-2.664 .366l2.4 .326c1 .145 1.698 .337 2.11 .576a3.011 3.011 0 0 1 1.09 4.098a2.968 2.968 0 0 1 -4.07 1.098c-.348 -.202 -.771 -.604 -1.27 -1.205l-1.76 -1.893l.724 1.36c.516 1.199 .776 2.079 .776 2.64a3 3 0 0 1 -6 0c0 -.562 .259 -1.442 .776 -2.64l.724 -1.36l-1.76 1.893c-.499 .601 -.922 1 -1.27 1.205a2.968 2.968 0 0 1 -4.07 -1.098a3.011 3.011 0 0 1 1.09 -4.098c.374 -.218 .99 -.396 1.846 -.536l2.664 -.366l-2.4 -.325c-1 -.145 -1.698 -.337 -2.11 -.576a3.011 3.011 0 0 1 -1.09 -4.099a2.968 2.968 0 0 1 4.07 -1.099c.348 .203 .771 .604 1.27 1.205l1.76 1.894c-1 -2.292 -1.5 -3.625 -1.5 -4a3 3 0 0 1 3 -3z" /></svg>
+          </i>
+          <span class="ml-0">paper</span>
+        </a>
+      </li>
+      
+    
+  </ul>
+
+
+
+    <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-smile"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12zm12 -4v4m-8 -4v4m-4 4h16m-9.995 3h.01m3.99 0h.01" /><path d="M10.005 17a3.5 3.5 0 0 0 4 0" /></svg>
+    </i>
+    <time datetime="2024-03-23T00:00:00&#43;00:00">
+      2024-03-23
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      3 minutes to read
+    </span>
+  </div>
+</div>
+
+
+    
+      
+      <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+        <h2>Table of Contents</h2>
+        <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#其他模型的設計方法">其他模型的設計方法</a></li>
+    <li><a href="#bi-level-routing-attention">Bi-Level Routing Attention</a>
+      <ul>
+        <li><a href="#第一部分region-partition-and-input-projection">第一部分：Region partition and input projection</a></li>
+        <li><a href="#第二部分region-to-region-routing-with-directed-graph">第二部分：Region-to-region routing with directed graph</a></li>
+        <li><a href="#第三部分token-to-token-attention">第三部分：Token-to-token attention</a></li>
+      </ul>
+    </li>
+    <li><a href="#alt-textimg_5png"><img src="img_5.png" alt="alt text"></a></li>
+    <li><a href="#biformer">Biformer</a></li>
+    <li><a href="#實驗">實驗</a>
+      <ul>
+        <li><a href="#影像分類">影像分類</a></li>
+        <li><a href="#物件偵測--實例分割">物件偵測 &amp; 實例分割</a></li>
+        <li><a href="#語義分割">語義分割</a></li>
+      </ul>
+    </li>
+    <li><a href="#消融實驗">消融實驗</a></li>
+  </ul>
+</nav></aside>
+      </section>
+      
+    
+
+    <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+      <h2 id="前言">前言</h2>
+<p>今天介紹的這篇是 vision transformer 領域的一篇論文，作者的主要貢獻是提出 Bi-Level Routing Attention，
+這種 attention 使得 query 可以動態地抓取關聯 key-value pairs，而且計算複雜度比起其他的 attention 要低得多。
+這個模型可用於多種影像任務上。</p>
+<div class="not-prose">
+<figure>
+    <img src="img_6.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<blockquote>
+<p>如果對 attention 比較不熟悉的話，可以先到這篇文章瞭解喔&#x1f609;</p>
+</blockquote>
+<hr>
+<h2 id="其他模型的設計方法">其他模型的設計方法</h2>
+<div class="not-prose">
+<figure>
+    <img src="img_1.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<p>首先介紹各種不同的 attention 機制，上面四種 attention 分別是 Local Attention、Axial Attention、Dilated Attention 和 Deformable Attention。而示意圖中的星星符號表示目標 token 的位置，綠色和黃色的小格子則代表該 token 要找出對應的 key-value pairs 的範圍，所以這四種 attention 其實比起最原始的 Vanilla Attention 還要節省了很多比對 key-value pairs 的時間成本。</p>
+<hr>
+<div class="not-prose">
+<figure>
+    <img src="img_2.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<p>而今天要介紹的 attention 比起上面的方法還要節省更多計算成本，而且計算起來更靈活。</p>
+<h2 id="bi-level-routing-attention">Bi-Level Routing Attention</h2>
+<p>這張是 Bi-Level Routing Attention 方法的偽代碼，總共分為如下的三個部分：</p>
+<div class="not-prose">
+<figure>
+    <img src="img_3.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<blockquote class="note"><p>這篇有個不同的點要先說明：</p>
+<p>在以往的 attention 中，通常輸入只會被分割成很多 patchs，但是這篇的做法會拆成 patchs(or tokens) 和 regions(or local windows)兩種 level，在attention 外面其實已經做好 patch 的拆分了(Patch Embedding &amp; Patch Merging)。</p>
+</blockquote>
+<h3 id="第一部分region-partition-and-input-projection">第一部分：Region partition and input projection</h3>
+<blockquote>
+<p>這個部分主要是對輸入進行前處理。</p>
+</blockquote>
+<p>第一行可以看到 patchify() 將輸入切割成多個 regions，總共有 S^2 個 regions，每個 region 共有 (H/S)*(W/S) 個小 tokens，也就是 HW/S^2 個 tokens。所以在第一行程式碼上的註解，x 的形狀從 (H, W, C) 被改變為 (S^2, HW/S^2, C)，也就代表了 (region 的數量, token 的數量, channel)。</p>
+<p>再來第二行就是對於每個小 token 各取他們的 query、key、value 出來。</p>
+<h3 id="第二部分region-to-region-routing-with-directed-graph">第二部分：Region-to-region routing with directed graph</h3>
+<p>第一行分別取每個 region 的 query 和 key，計算出來的結果就是 query_r 和 key_r，接著第二行再根據 query_r 和 key_r 計算所有 regions 的關聯性 (和 attention 計算注意力權重的方法是一樣的)，最後第三行每個 region 都會分別取<strong>前 k 個</strong>和該 region 最相關的 region，也就是 I_r。</p>
+<h3 id="第三部分token-to-token-attention">第三部分：Token-to-token attention</h3>
+<p>現在每個 region 都有他們各自最相關的前 k 個 regions 了，接下來我們就要回到 token level 的計算，讓每個 token 在計算 attention 時可以只和前 k 個的區域進行計算，不需要和所有 token 一起計算。</p>
+<p>以下是第三部分的示意圖，藍色的部分是目標 query，黃色的部分是由第二部分所計算出來的前 k 個區域，再來對 query 和 key_g 做注意力權重的計算，
+基本上和原始的 attention 算法是一模一樣，比較特別的是，作者在 attention 最後面加上了 <a href="https://arxiv.org/abs/2111.15193" target="_blank" rel="noopener">LCE(Local Context Enhancement)</a>
+。</p>
+<h2 id="alt-textimg_5png"><div class="not-prose">
+<figure>
+    <img src="img_5.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+</h2>
+<h2 id="biformer">Biformer</h2>
+<div class="not-prose">
+<figure>
+    <img src="img_4.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<p>接下來是模型架構的部分，整體模型是一個常見的四層金字塔結構，像是在 Swin transformer 裡也是用這樣的架構。圖中四個 block 的上方表示是進入 Biformer block 的輸入大小，
+會有不同的大小是因為 patch embedding 和 patch merging 會做 patch 的拆分。其中這四個部分的 k 分別是 1, 4, 16, S^2，
+後面 k 越取越大是因為 token 會隨著輸入下採樣越來越小，會越來越相似，所以需要取多一點才能比較容易判斷。</p>
+<blockquote class="note"><p>Patch Embedding：
+<div class="not-prose">
+<figure>
+    <img src="img_7.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+</p>
+<p>Patch merging：
+<div class="not-prose">
+<figure>
+    <img src="img_8.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+</p>
+</blockquote>
+<div class="not-prose">
+<figure>
+    <img src="img_9.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<p>作者設計了三種大小的模型架構，分別是 <strong>T</strong>iny、<strong>S</strong>mall、<strong>B</strong>ase 三種，Channel 就可以把他想像成是模型的寬度，Blocks 則是模型的長度。</p>
+<p>在 Biformer Block 裡的架構：</p>
+<div class="not-prose">
+<figure>
+    <img src="img_14.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<hr>
+<h2 id="實驗">實驗</h2>
+<p>這篇論文分別在影像分類、物件偵測、語義分割、實例分割四種任務上進行實驗，</p>
+<h3 id="影像分類">影像分類</h3>
+<p>使用 ImageNet-1K dataset 進行實驗，其中有額外加上 tokem labeling 的準確率是最高的。</p>
+<blockquote>
+</blockquote>
+<div class="not-prose">
+<figure>
+    <img src="img_10.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<h3 id="物件偵測--實例分割">物件偵測 &amp; 實例分割</h3>
+<p>使用 COCO2017 dataset 進行實驗。</p>
+<div class="not-prose">
+<figure>
+    <img src="img_11.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<h3 id="語義分割">語義分割</h3>
+<p>使用 ADE20K dataset 進行實驗。</p>
+<div class="not-prose">
+<figure>
+    <img src="img_12.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<hr>
+<h2 id="消融實驗">消融實驗</h2>
+<div class="not-prose">
+<figure>
+    <img src="img_15.png"
+      alt="alt text" 
+      loading="lazy"
+    >
+  </figure></div>
+<p>針對架構中四個層不同的 topk 和分割 region 的參數 S，這邊做了消融實驗。
+作者提到由於 padding 會造成計算成本提高和模型效能下降的問題，因此在影像分類的任務中將 S 設定為 7(在此任務中的輸入大小是 224x224x3)，
+在物件偵測任務中設定為 16，語義分割中則是設定為 8。</p>
+
+    </article>
+
+    
+
+
+
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+    <a href="https://github.com/bernice1357" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://www.linkedin.com/in/bernice-chaung/" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
+      <span class="hidden">LinkedIn</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://twitter.com/vfk38" target="_blank" title="X" class="flex flex-row mr-2">
+      <span class="hidden">X</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://medium.com/@juice6323" target="_blank" title="Medium" class="flex flex-row mr-2">
+      <span class="hidden">Medium</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-medium"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 9h1l3 3l3 -3h1" /><path d="M8 15l2 0" /><path d="M14 15l2 0" /><path d="M9 9l0 6" /><path d="M15 9l0 6" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://www.instagram.com/bernice1357689/" target="_blank" title="Instagram" class="flex flex-row mr-2">
+      <span class="hidden">Instagram</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://ithelp.ithome.com.tw/users/20151135" target="_blank" title="iThome" class="flex flex-row mr-2">
+      <span class="hidden">iThome</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-letter-t-small"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8h4" /><path d="M12 8v8" /></svg> </i>
+    </a>
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2022 - 2025 BerniceChaung
+    
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.js"></script>
+
+
+
+
+</body>
+</html>

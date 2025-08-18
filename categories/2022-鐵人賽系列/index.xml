@@ -1,218 +1,160 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2022 鐵人賽系列 on Bernice&#39;s articles</title>
-    <link>/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/</link>
-    <description>Recent content in 2022 鐵人賽系列 on Bernice&#39;s articles</description>
+    <title>2022 鐵人賽系列 on Bernice&#39;s website</title>
+    <link>http://localhost:1313/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/</link>
+    <description>Recent content in 2022 鐵人賽系列 on Bernice&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/index.xml" rel="self" type="application/rss+xml" />
+    <language>tw</language>
+    <copyright>BerniceChaung</copyright>
+    <lastBuildDate>Fri, 30 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Day23 - SEO 搜索引擎優化</title>
-      <link>/2022/10/day23-seo-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%84%AA%E5%8C%96/</link>
-      <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/10/day23-seo-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%84%AA%E5%8C%96/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Day22 - MPA、SPA</title>
-      <link>/2022/10/day22-mpaspa/</link>
-      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/10/day22-mpaspa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Day21 - NPM、NVM</title>
-      <link>/2022/09/day21-npmnvm/</link>
+      <title>Day21 - npm&amp;nvm</title>
+      <link>http://localhost:1313/posts/day21-npmnvm/</link>
       <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day21-npmnvm/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day21-npmnvm/</guid>
+      <description>在 Node.js 的生態系中，npm 和 nvm 是兩個非常重要的工具。npm 是套件管理器，而 nvm 是 Node.js 版本管理器。 什麼是 npm npm 全</description>
     </item>
-    
     <item>
       <title>Day20 - 瀏覽器 DOM 元素的事件代理</title>
-      <link>/2022/09/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</link>
+      <link>http://localhost:1313/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</link>
       <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</guid>
+      <description>在網頁開發中，我們經常需要為 DOM 元素添加事件監聽器。但是當頁面中有大量元素需要相同的事件處理時，為每個</description>
     </item>
-    
     <item>
-      <title>Day19 - AXIOS 實作</title>
-      <link>/2022/09/day19-axios-%E5%AF%A6%E4%BD%9C/</link>
+      <title>Day19 - Axios 實作</title>
+      <link>http://localhost:1313/posts/day19-axios-%E5%AF%A6%E4%BD%9C/</link>
       <pubDate>Wed, 28 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day19-axios-%E5%AF%A6%E4%BD%9C/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day19-axios-%E5%AF%A6%E4%BD%9C/</guid>
+      <description>上一篇介紹了 Axios 的基本概念，這篇我們來實際練習如何使用 Axios 來進行 HTTP 請求。 建立 Axios 實例 我們可以建立一個 Axios 實例</description>
     </item>
-    
     <item>
-      <title>Day18 - AJAX &amp; AXIOS 介紹</title>
-      <link>/2022/09/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</link>
+      <title>Day18 - AJAX &amp; Axios 介紹</title>
+      <link>http://localhost:1313/posts/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</link>
       <pubDate>Tue, 27 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</guid>
+      <description>在現代網頁開發中，我們經常需要在不重新載入整個頁面的情況下，與伺服器進行資料交換。這就需要用到 AJAX 技術</description>
     </item>
-    
     <item>
       <title>Day17 - Postman</title>
-      <link>/2022/09/day17-postman/</link>
+      <link>http://localhost:1313/posts/day17-postman/</link>
       <pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day17-postman/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day17-postman/</guid>
+      <description>在開發 API 時，我們需要一個工具來測試 API 是否正常運作，Postman 就是一個非常好用的 API 測試工具。 什麼是</description>
     </item>
-    
     <item>
       <title>Day16 - RESTful API</title>
-      <link>/2022/09/day16-restful-api/</link>
+      <link>http://localhost:1313/posts/day16-restful-api/</link>
       <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day16-restful-api/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day16-restful-api/</guid>
+      <description>API 的全名是 Application Programming Interface，中文翻譯為「應用程式介面」，簡單來說就是一個介面，讓不同的程式可以</description>
     </item>
-    
     <item>
       <title>Day15 - Web Storage</title>
-      <link>/2022/09/day15-web-storage/</link>
+      <link>http://localhost:1313/posts/day15-web-storage/</link>
       <pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day15-web-storage/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day15-web-storage/</guid>
+      <description>上一篇介紹了 Cookie，Cookie 雖然方便，但只能存放 4KB 的資料，除了 Cookie，還有其他的方法</description>
     </item>
-    
     <item>
       <title>Day14 - Cookie</title>
-      <link>/2022/09/day14-cookie/</link>
+      <link>http://localhost:1313/posts/day14-cookie/</link>
       <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day14-cookie/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day14-cookie/</guid>
+      <description>當我們在 Stackoverflow 上尋找為什麼會出現某個 bug 時，常常會在網站的左下角看到一個視窗，要你點選「同意所有 cooki</description>
     </item>
-    
     <item>
       <title>Day13 - CORS 同源政策</title>
-      <link>/2022/09/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</link>
+      <link>http://localhost:1313/posts/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</link>
       <pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</guid>
+      <description>相信有進行過網站開發，特別是後端開發的人，對下面的錯誤訊息應該不陌生： request has been blocked by CORS policy: No &amp;#39;Access-Control-Allow-Origin&amp;#39; header is present on the requested</description>
     </item>
-    
     <item>
       <title>Day12 - Chrome Developer Tool</title>
-      <link>/2022/09/day12-chrome-developer-tool/</link>
+      <link>http://localhost:1313/posts/day12-chrome-developer-tool/</link>
       <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day12-chrome-developer-tool/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day12-chrome-developer-tool/</guid>
+      <description>在瀏覽器打開任何一個網頁，在 Windows 系統按下鍵盤中的 F12，如果是 macOS 系統則按下 fn + F12，或是按下滑鼠右鍵</description>
     </item>
-    
     <item>
       <title>Day11 - HTTP Request Method</title>
-      <link>/2022/09/day11-http-request-method/</link>
+      <link>http://localhost:1313/posts/day11-http-request-method/</link>
       <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day11-http-request-method/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day11-http-request-method/</guid>
+      <description>HTTP Request 根據網頁開發的需求，會有不同的種類，以下介紹幾個常見的 Request Method GET：取得資料 傳遞的參數會顯示在 URL 上</description>
     </item>
-    
     <item>
       <title>Day10 - HTTP 狀態碼</title>
-      <link>/2022/09/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</link>
+      <link>http://localhost:1313/posts/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</link>
       <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</guid>
+      <description>當我們送出 HTTP Request，就會收到由伺服器傳回的 HTTP Response，但每個 Response 可能會被很多因素阻礙，</description>
     </item>
-    
     <item>
       <title>Day8 - URL 的組成</title>
-      <link>/2022/09/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</link>
+      <link>http://localhost:1313/posts/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</link>
       <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</guid>
+      <description>URL 的全名是 Uniform Resource Locator，翻成中文的話就是「統一資源定位符」，也就是我們俗稱的網址，它就像是網路</description>
     </item>
-    
     <item>
       <title>Day9 - HTTP/HTTPS</title>
-      <link>/2022/09/day9-http/https/</link>
+      <link>http://localhost:1313/posts/day9-http/https/</link>
       <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day9-http/https/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day9-http/https/</guid>
+      <description>平常我們在使用瀏覽器時，都可以看到上方輸入網址的地方有個鎖頭，這代表我們現在在瀏覽時向伺服器傳送的資</description>
     </item>
-    
     <item>
       <title>Day7 - DNS 和 IP 的關係</title>
-      <link>/2022/09/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</link>
+      <link>http://localhost:1313/posts/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</guid>
+      <description>網際網路就像是車水馬龍的道路，而世界各地的電腦就像是一棟棟房子，網際網路上所建構的道路可以連接每台電</description>
     </item>
-    
     <item>
       <title>Day6 - MAC 地址</title>
-      <link>/2022/09/day6-mac-%E5%9C%B0%E5%9D%80/</link>
+      <link>http://localhost:1313/posts/day6-mac-%E5%9C%B0%E5%9D%80/</link>
       <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day6-mac-%E5%9C%B0%E5%9D%80/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day6-mac-%E5%9C%B0%E5%9D%80/</guid>
+      <description>MAC 位址(Media Access Control Address)，中文翻譯為「媒體存取控制位址」，其實就是乙太網路位址(Eth</description>
     </item>
-    
     <item>
       <title>Day5 - IPV4 &amp; IPV6</title>
-      <link>/2022/09/day5-ipv4-ipv6/</link>
+      <link>http://localhost:1313/posts/day5-ipv4-ipv6/</link>
       <pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day5-ipv4-ipv6/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day5-ipv4-ipv6/</guid>
+      <description>這篇主要會介紹 IPV4 &amp;amp; IPV6 的歷史，以及介紹這兩種位址的表示方式的主要差異。 網路上很常看到流傳著 IPV4 即將用盡的</description>
     </item>
-    
     <item>
       <title>Day4 - TCP/UDP</title>
-      <link>/2022/09/day4-tcp/udp/</link>
+      <link>http://localhost:1313/posts/day4-tcp/udp/</link>
       <pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day4-tcp/udp/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day4-tcp/udp/</guid>
+      <description>TCP、UDP 是什麼？ 這兩種都是常見的網路協定，雖然同樣都是傳送資料，但在性質上卻有很大的不同。 TC</description>
     </item>
-    
     <item>
       <title>Day3 - SSH/Telnet</title>
-      <link>/2022/09/day3-ssh/telnet/</link>
+      <link>http://localhost:1313/posts/day3-ssh/telnet/</link>
       <pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day3-ssh/telnet/</guid>
-      <description>&lt;p&gt;今天介紹兩種常用在連接遠端電腦的通訊協定&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/day3-ssh/telnet/</guid>
+      <description>今天介紹兩種常用在連接遠端電腦的通訊協定 Telnet 是一種應用層協定，因為是明文傳輸，沒有加密的流程，可能會有</description>
     </item>
-    
     <item>
       <title>Day2 - 網路是如何傳遞資料的？</title>
-      <link>/2022/09/day2-%E7%B6%B2%E8%B7%AF%E6%98%AF%E5%A6%82%E4%BD%95%E5%82%B3%E9%81%9E%E8%B3%87%E6%96%99%E7%9A%84/</link>
+      <link>http://localhost:1313/posts/day2-%E7%B6%B2%E8%B7%AF%E6%98%AF%E5%A6%82%E4%BD%95%E5%82%B3%E9%81%9E%E8%B3%87%E6%96%99%E7%9A%84/</link>
       <pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day2-%E7%B6%B2%E8%B7%AF%E6%98%AF%E5%A6%82%E4%BD%95%E5%82%B3%E9%81%9E%E8%B3%87%E6%96%99%E7%9A%84/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day2-%E7%B6%B2%E8%B7%AF%E6%98%AF%E5%A6%82%E4%BD%95%E5%82%B3%E9%81%9E%E8%B3%87%E6%96%99%E7%9A%84/</guid>
+      <description>到了中午，當我們不知道要吃什麼，就會想要到 google 搜尋附近有哪些餐廳，然後在網頁中的搜尋欄輸入關鍵字，按下</description>
     </item>
-    
     <item>
       <title>Day1 - 前言</title>
-      <link>/2022/09/day1-%E5%89%8D%E8%A8%80/</link>
+      <link>http://localhost:1313/posts/day1-%E5%89%8D%E8%A8%80/</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/day1-%E5%89%8D%E8%A8%80/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/day1-%E5%89%8D%E8%A8%80/</guid>
+      <description>(先來個開場白幹話) 網路大家每天都在使用，可以隨時方便地到達各個網站搜尋或是購買各種需要的東西，但這</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="tw" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>在 Github 上使用 SSH Key push 靜態網頁展示 :: Bernice&#39;s website - Example site for hugo-theme-tailwind</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="在開發過程中，我們經常需要將程式碼推送到 GitHub。使用 SSH Key 可以讓我們安全且方便地進行 Git 操作，而不"
+/>
+<meta
+  name="keywords"
+  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+/>
+<meta name="robots" content="noodp" />
+<meta property="og:title" content="在 Github 上使用 SSH Key push 靜態網頁展示" />
+<meta property="og:description" content="在開發過程中，我們經常需要將程式碼推送到 GitHub。使用 SSH Key 可以讓我們安全且方便地進行 Git 操作，而不" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-01T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="在 Github 上使用 SSH Key push 靜態網頁展示"/>
+<meta name="twitter:description" content="在開發過程中，我們經常需要將程式碼推送到 GitHub。使用 SSH Key 可以讓我們安全且方便地進行 Git 操作，而不"/>
+
+
+<link rel="canonical" href="http://localhost:1313/posts/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.8bc6b7b01cd4690646915651e50f8e706f707da222b16f331d4315feddf1d29d.css">
+
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/start.css">
+
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+    MathJax = {
+        tex: {
+            displayMath: [['\\[', '\\]']],  
+            inlineMath: [['$', '$']]                  
+        }
+    };
+</script>
+
+
+
+
+
+  
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800">
+  <header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/logo.jpg" alt="logo">
+    </a>
+  </div>
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/about/" title="About">About</a>
+        </li>
+      
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/posts/" title="Post">Post</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none mx-1"></div>
+  
+  <div class="flex-none md:hidden">
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
+        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+        </i>
+        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+        </i>
+      </div>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
+    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+      <a href="/posts/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/">在 Github 上使用 SSH Key push 靜態網頁展示</a>
+    </h1>
+
+    
+    
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+      
+      <li>
+        <a href="/categories/github/"
+          class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
+          Github
+        </a>
+      </li>
+      
+    
+    
+  </ul>
+
+
+
+    <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-smile"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12zm12 -4v4m-8 -4v4m-4 4h16m-9.995 3h.01m3.99 0h.01" /><path d="M10.005 17a3.5 3.5 0 0 0 4 0" /></svg>
+    </i>
+    <time datetime="2022-10-01T00:00:00&#43;00:00">
+      2022-10-01
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      3 minutes to read
+    </span>
+  </div>
+</div>
+
+
+    
+      
+      <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+        <h2>Table of Contents</h2>
+        <aside><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什麼是-ssh-key">什麼是 SSH Key</a></li>
+        <li><a href="#產生-ssh-key">產生 SSH Key</a></li>
+        <li><a href="#將-ssh-key-加入到-ssh-agent">將 SSH Key 加入到 SSH Agent</a></li>
+        <li><a href="#將公鑰加入到-github">將公鑰加入到 GitHub</a></li>
+        <li><a href="#測試-ssh-連線">測試 SSH 連線</a></li>
+        <li><a href="#建立靜態網頁專案">建立靜態網頁專案</a></li>
+        <li><a href="#推送到-github">推送到 GitHub</a></li>
+        <li><a href="#啟用-github-pages">啟用 GitHub Pages</a></li>
+        <li><a href="#更新網頁內容">更新網頁內容</a></li>
+        <li><a href="#常見問題解決">常見問題解決</a></li>
+        <li><a href="#自動化部署腳本">自動化部署腳本</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      </section>
+      
+    
+
+    <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+      <p>在開發過程中，我們經常需要將程式碼推送到 GitHub。使用 SSH Key 可以讓我們安全且方便地進行 Git 操作，而不需要每次都輸入帳號密碼。</p>
+<h3 id="什麼是-ssh-key">什麼是 SSH Key</h3>
+<p>SSH Key 是一種安全的認證方式，它使用一對金鑰：</p>
+<ul>
+<li><strong>私鑰 (Private Key)</strong>：保存在本地電腦，絕對不能分享給他人</li>
+<li><strong>公鑰 (Public Key)</strong>：可以分享，上傳到 GitHub</li>
+</ul>
+<h3 id="產生-ssh-key">產生 SSH Key</h3>
+<h4 id="1-檢查現有的-ssh-key">1. 檢查現有的 SSH Key</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看是否已存在 SSH Key</span>
+</span></span><span style="display:flex;"><span>ls -al ~/.ssh
+</span></span></code></pre></div><p>如果看到 <code>id_rsa</code> 和 <code>id_rsa.pub</code> 或 <code>id_ed25519</code> 和 <code>id_ed25519.pub</code>，表示已有 SSH Key。</p>
+<h4 id="2-產生新的-ssh-key">2. 產生新的 SSH Key</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 使用 Ed25519 演算法 (推薦)</span>
+</span></span><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果系統不支援 Ed25519，使用 RSA</span>
+</span></span><span style="display:flex;"><span>ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span>
+</span></span></code></pre></div><p>執行後會詢問：</p>
+<ul>
+<li><strong>儲存位置</strong>：直接按 Enter 使用預設位置</li>
+<li><strong>Passphrase</strong>：可設定密碼增加安全性，或直接按 Enter 跳過</li>
+</ul>
+<h3 id="將-ssh-key-加入到-ssh-agent">將 SSH Key 加入到 SSH Agent</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 啟動 SSH Agent</span>
+</span></span><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ssh-agent -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 將私鑰加入到 SSH Agent</span>
+</span></span><span style="display:flex;"><span>ssh-add ~/.ssh/id_ed25519
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或者如果使用 RSA</span>
+</span></span><span style="display:flex;"><span>ssh-add ~/.ssh/id_rsa
+</span></span></code></pre></div><h3 id="將公鑰加入到-github">將公鑰加入到 GitHub</h3>
+<h4 id="1-複製公鑰內容">1. 複製公鑰內容</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 複製 Ed25519 公鑰</span>
+</span></span><span style="display:flex;"><span>cat ~/.ssh/id_ed25519.pub
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或複製 RSA 公鑰</span>
+</span></span><span style="display:flex;"><span>cat ~/.ssh/id_rsa.pub
+</span></span></code></pre></div><h4 id="2-在-github-上新增-ssh-key">2. 在 GitHub 上新增 SSH Key</h4>
+<ol>
+<li>登入 GitHub</li>
+<li>點擊右上角頭像 &gt; Settings</li>
+<li>左側選單點擊 &ldquo;SSH and GPG keys&rdquo;</li>
+<li>點擊 &ldquo;New SSH key&rdquo;</li>
+<li>Title：輸入描述性名稱（如：My MacBook）</li>
+<li>Key：貼上剛才複製的公鑰內容</li>
+<li>點擊 &ldquo;Add SSH key&rdquo;</li>
+</ol>
+<h3 id="測試-ssh-連線">測試 SSH 連線</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -T git@github.com
+</span></span></code></pre></div><p>成功的話會看到類似訊息：</p>
+<pre tabindex="0"><code>Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><h3 id="建立靜態網頁專案">建立靜態網頁專案</h3>
+<h4 id="1-建立-html-檔案">1. 建立 HTML 檔案</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh-TW&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;我的靜態網頁&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">body</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">font-family</span>: Arial, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">800</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#f5f5f5</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">container</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">white</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">40</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.1</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">h1</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#333</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">p</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.6</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#666</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;歡迎來到我的網頁&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;這是使用 GitHub Pages 建立的靜態網頁。&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;透過 SSH Key 我可以安全地將程式碼推送到 GitHub。&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h4 id="2-初始化-git-專案">2. 初始化 Git 專案</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 初始化 Git 儲存庫</span>
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 建立 index.html</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (貼上上面的 HTML 程式碼)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 加入檔案到暫存區</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 提交變更</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;初始化靜態網頁&#34;</span>
+</span></span></code></pre></div><h3 id="推送到-github">推送到 GitHub</h3>
+<h4 id="1-在-github-建立儲存庫">1. 在 GitHub 建立儲存庫</h4>
+<ol>
+<li>登入 GitHub</li>
+<li>點擊右上角的 &ldquo;+&rdquo; &gt; &ldquo;New repository&rdquo;</li>
+<li>Repository name：輸入專案名稱</li>
+<li>設定為 Public（GitHub Pages 免費版需要公開儲存庫）</li>
+<li>不要勾選 &ldquo;Initialize this repository with a README&rdquo;</li>
+<li>點擊 &ldquo;Create repository&rdquo;</li>
+</ol>
+<h4 id="2-連接本地儲存庫到-github">2. 連接本地儲存庫到 GitHub</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 加入遠端儲存庫（使用 SSH）</span>
+</span></span><span style="display:flex;"><span>git remote add origin git@github.com:username/repository-name.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 推送程式碼到 GitHub</span>
+</span></span><span style="display:flex;"><span>git branch -M main
+</span></span><span style="display:flex;"><span>git push -u origin main
+</span></span></code></pre></div><h3 id="啟用-github-pages">啟用 GitHub Pages</h3>
+<ol>
+<li>進入 GitHub 儲存庫頁面</li>
+<li>點擊 &ldquo;Settings&rdquo; 標籤</li>
+<li>左側選單向下滾動找到 &ldquo;Pages&rdquo;</li>
+<li>Source 選擇 &ldquo;Deploy from a branch&rdquo;</li>
+<li>Branch 選擇 &ldquo;main&rdquo;</li>
+<li>資料夾選擇 &ldquo;/ (root)&rdquo;</li>
+<li>點擊 &ldquo;Save&rdquo;</li>
+</ol>
+<p>幾分鐘後，網頁就會在 <code>https://username.github.io/repository-name</code> 上線。</p>
+<h3 id="更新網頁內容">更新網頁內容</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 修改檔案後</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;更新網頁內容&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><p>推送後，GitHub Pages 會自動更新網站內容。</p>
+<h3 id="常見問題解決">常見問題解決</h3>
+<h4 id="permission-denied-publickey">Permission denied (publickey)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 確認 SSH Key 已加入 SSH Agent</span>
+</span></span><span style="display:flex;"><span>ssh-add -l
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果沒有，重新加入</span>
+</span></span><span style="display:flex;"><span>ssh-add ~/.ssh/id_ed25519
+</span></span></code></pre></div><h4 id="測試不同的-ssh-key">測試不同的 SSH Key</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 測試特定的 SSH Key</span>
+</span></span><span style="display:flex;"><span>ssh -i ~/.ssh/id_ed25519 -T git@github.com
+</span></span></code></pre></div><h4 id="設定-ssh-config">設定 SSH Config</h4>
+<p>建立 <code>~/.ssh/config</code> 檔案：</p>
+<pre tabindex="0"><code>Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+</code></pre><h3 id="自動化部署腳本">自動化部署腳本</h3>
+<p>建立部署腳本 <code>deploy.sh</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>echo <span style="color:#e6db74">&#34;開始部署...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 加入所有變更</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 提交變更</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;請輸入提交訊息：&#34;</span>
+</span></span><span style="display:flex;"><span>read commit_message
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;</span>$commit_message<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 推送到 GitHub</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;部署完成！&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;網站將在幾分鐘後更新：https://username.github.io/repository-name&#34;</span>
+</span></span></code></pre></div><p>使用方式：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x deploy.sh
+</span></span><span style="display:flex;"><span>./deploy.sh
+</span></span></code></pre></div><p>透過 SSH Key 的設定，我們可以安全且便利地管理 GitHub 儲存庫，並輕鬆地部署靜態網頁到 GitHub Pages。</p>
+
+    </article>
+
+    
+
+
+
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+    <a href="https://github.com/bernice1357" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://www.linkedin.com/in/bernice-chaung/" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
+      <span class="hidden">LinkedIn</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://twitter.com/vfk38" target="_blank" title="X" class="flex flex-row mr-2">
+      <span class="hidden">X</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://medium.com/@juice6323" target="_blank" title="Medium" class="flex flex-row mr-2">
+      <span class="hidden">Medium</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-medium"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 9h1l3 3l3 -3h1" /><path d="M8 15l2 0" /><path d="M14 15l2 0" /><path d="M9 9l0 6" /><path d="M15 9l0 6" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://www.instagram.com/bernice1357689/" target="_blank" title="Instagram" class="flex flex-row mr-2">
+      <span class="hidden">Instagram</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://ithelp.ithome.com.tw/users/20151135" target="_blank" title="iThome" class="flex flex-row mr-2">
+      <span class="hidden">iThome</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-letter-t-small"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8h4" /><path d="M12 8v8" /></svg> </i>
+    </a>
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2022 - 2025 BerniceChaung
+    
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.js"></script>
+
+<div class="hidden top-1 right-1" id="code-copy">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+  <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+</svg>
+
+  </i>
+</div>
+<div class="hidden top-1 right-1" id="code-copy-done">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+
+  </i>
+</div><script src="/code-copy.js"></script>
+
+
+
+
+
+</body>
+</html>

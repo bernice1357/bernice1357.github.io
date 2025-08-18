@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dns on Bernice&#39;s website</title>
+    <link>http://localhost:1313/tags/dns/</link>
+    <description>Recent content in Dns on Bernice&#39;s website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>tw</language>
+    <copyright>BerniceChaung</copyright>
+    <lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何購買自己的 DNS</title>
+      <link>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</guid>
+      <description>前言 這篇把之前購買網域並連到個人網站上的一些心得整理出來，但每個人買網域的地方都不太一樣 (我是在 pchome 買</description>
+    </item>
+  </channel>
+</rss>
