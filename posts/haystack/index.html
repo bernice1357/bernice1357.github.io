@@ -236,7 +236,7 @@
 
     </i>
     <span>
-      2 minutes to read
+      3 minutes to read
     </span>
   </div>
 </div>
@@ -259,8 +259,10 @@
     <li><a href="#實作">實作</a>
       <ul>
         <li><a href="#1-建立一個-pipeline-架構">1. 建立一個 pipeline 架構</a></li>
+        <li><a href="#2-conditional-router">2. Conditional router</a></li>
       </ul>
     </li>
+    <li><a href="#感想">感想</a></li>
   </ul>
 </nav></aside>
         </section>
@@ -299,7 +301,7 @@
 <p>在這個例子中會展示如何將文件儲存進向量資料庫，這裡用到了四種 Component，分別是：</p>
 <ul>
 <li>Converter：將文件檔案轉換成 haystack 內部的格式。</li>
-<li>Splitter：負責拆分文本。</li>
+<li>Splitter：將文本拆分成模型所需格式。</li>
 <li>Embedder：將文本轉換為 embedding。</li>
 <li>Writer：將 embedding 寫進向量資料庫。</li>
 </ul>
@@ -326,16 +328,64 @@
 </span></span><span style="display:flex;"><span>indexing_pipeline<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;converter&#34;</span>, <span style="color:#e6db74">&#34;splitter&#34;</span>)
 </span></span><span style="display:flex;"><span>indexing_pipeline<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;splitter&#34;</span>, <span style="color:#e6db74">&#34;embedder&#34;</span>)
 </span></span><span style="display:flex;"><span>indexing_pipeline<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;embedder&#34;</span>, <span style="color:#e6db74">&#34;writer&#34;</span>)
-</span></span></code></pre></div><p>執行上面的程式後就會看到 pipeline 的資訊，他會跟你說這個 pipeline 中有多少元素、怎麼連接這樣子。</p>
-<p align="center">
-  <img src="images/img_6.png" alt="title" style="width: 600px;"/>
-</p>
-<p>但如果真的要使用這個 pipeline 是需要透過 <code>indexing_pipeline.run()</code> 才能實現把文件放進去向量資料庫的實際功能喔！</p>
+</span></span></code></pre></div><p>執行上面的程式後就會看到 pipeline 的資訊，他會跟你說這個 pipeline 中有多少元素、怎麼連接這樣子。
+但如果真的要使用這個 pipeline 是需要透過 <code>indexing_pipeline.run()</code> 才能實現把文件放進去向量資料庫的實際功能喔！</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>indexing_pipeline<span style="color:#f92672">.</span>run({<span style="color:#e6db74">&#34;converter&#34;</span>: {<span style="color:#e6db74">&#34;sources&#34;</span>: [<span style="color:#e6db74">&#34;data/davinci.txt&#34;</span>]}})
 </span></span></code></pre></div><p>然後如果等到流程變得更複雜，也可以透過 <code>indexing_pipeline.show()</code> 看到圖像化的 pipeline 長什麼樣</p>
 <p align="center">
   <img src="images/img_7.png" alt="title" style="width: 500px;"/>
 </p>
+<h3 id="2-conditional-router">2. Conditional router</h3>
+<p>上面有提到 Haystack 除了直線流程，它也可以做出分支流程，這個章節就來展示他是怎麼做的~這個例子的目標是它一樣有 RAG 資料庫，如果輸入問題是無法從資料庫中取得的，就會希望模型會去網路上尋找答案。</p>
+<p>和範例 1 重複的流程我就跳過了，下面直接寫最關鍵的部分。這段定義了什麼樣的情況才需要從網路尋找答案，這個流程在 prompt 裡設定了如果模型回傳 <code>no_answer</code> 那就代表這個流程會導到網路搜尋的分支。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>routes <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;condition&#34;</span>: <span style="color:#e6db74">&#34;{{&#39;no_answer&#39; in replies[0]|lower}}&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;output&#34;</span>: <span style="color:#e6db74">&#34;{{query}}&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;output_name&#34;</span>: <span style="color:#e6db74">&#34;go_to_websearch&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;output_type&#34;</span>: str,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;condition&#34;</span>: <span style="color:#e6db74">&#34;{{&#39;no_answer&#39; not in replies[0]|lower}}&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;output&#34;</span>: <span style="color:#e6db74">&#34;{{replies[0]}}&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;output_name&#34;</span>: <span style="color:#e6db74">&#34;answer&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;output_type&#34;</span>: str,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>這裡則定義了整個流程使用的工具和流程，<code>ConditionalRouter</code> 就是上一段提到的決定是否使用網路搜尋的邏輯。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rag_or_websearch <span style="color:#f92672">=</span> Pipeline()
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>add_component(<span style="color:#e6db74">&#34;retriever&#34;</span>, InMemoryBM25Retriever(document_store<span style="color:#f92672">=</span>document_store))
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>add_component(<span style="color:#e6db74">&#34;prompt_builder&#34;</span>, PromptBuilder(template<span style="color:#f92672">=</span>rag_prompt_template))
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>add_component(<span style="color:#e6db74">&#34;llm&#34;</span>, OpenAIGenerator())
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>add_component(<span style="color:#e6db74">&#34;router&#34;</span>, ConditionalRouter(routes))
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>add_component(<span style="color:#e6db74">&#34;websearch&#34;</span>, SerperDevWebSearch())
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>add_component(<span style="color:#e6db74">&#34;prompt_builder_for_websearch&#34;</span>, PromptBuilder(template<span style="color:#f92672">=</span>prompt_for_websearch))
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>add_component(<span style="color:#e6db74">&#34;llm_for_websearch&#34;</span>, OpenAIGenerator())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;retriever&#34;</span>, <span style="color:#e6db74">&#34;prompt_builder.documents&#34;</span>)
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;prompt_builder&#34;</span>, <span style="color:#e6db74">&#34;llm&#34;</span>)
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;llm.replies&#34;</span>, <span style="color:#e6db74">&#34;router.replies&#34;</span>)
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;router.go_to_websearch&#34;</span>, <span style="color:#e6db74">&#34;websearch.query&#34;</span>)
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;router.go_to_websearch&#34;</span>, <span style="color:#e6db74">&#34;prompt_builder_for_websearch.query&#34;</span>)
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;websearch.documents&#34;</span>, <span style="color:#e6db74">&#34;prompt_builder_for_websearch.documents&#34;</span>)
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#34;prompt_builder_for_websearch&#34;</span>, <span style="color:#e6db74">&#34;llm_for_websearch&#34;</span>)
+</span></span></code></pre></div><p>接下來就是實際使用流程了，因為在這個範例中的資料庫放的是有關 Retriever、Embedder、Generator、File Converter 的介紹，所以最後結果會得到 <code>answer</code> 直接顯示答案。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>query<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;What is a retriever for?&#34;</span>
+</span></span><span style="display:flex;"><span>rag_or_websearch<span style="color:#f92672">.</span>run({<span style="color:#e6db74">&#34;prompt_builder&#34;</span>:{<span style="color:#e6db74">&#34;query&#34;</span>: query},
+</span></span><span style="display:flex;"><span>                      <span style="color:#e6db74">&#34;retriever&#34;</span>: {<span style="color:#e6db74">&#34;query&#34;</span>: query},
+</span></span><span style="display:flex;"><span>                      <span style="color:#e6db74">&#34;router&#34;</span>: {<span style="color:#e6db74">&#34;query&#34;</span>: query}})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#39;llm&#39;</span>: {<span style="color:#e6db74">&#39;meta&#39;</span>: [{<span style="color:#e6db74">&#39;model&#39;</span>: <span style="color:#e6db74">&#39;gpt-3.5-turbo-0125&#39;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;index&#39;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;finish_reason&#39;</span>: <span style="color:#e6db74">&#39;stop&#39;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;usage&#39;</span>: {<span style="color:#e6db74">&#39;completion_tokens&#39;</span>: <span style="color:#ae81ff">20</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;prompt_tokens&#39;</span>: <span style="color:#ae81ff">117</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;total_tokens&#39;</span>: <span style="color:#ae81ff">137</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;completion_tokens_details&#39;</span>: {<span style="color:#e6db74">&#39;reasoning_tokens&#39;</span>: <span style="color:#ae81ff">0</span>}}}]},
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;router&#39;</span>: {<span style="color:#e6db74">&#39;answer&#39;</span>: <span style="color:#e6db74">&#39;Retrievers are used to retrieve relevant documents to a user query using keyword search or semantic search.&#39;</span>}}
+</span></span></code></pre></div><h2 id="感想">感想</h2>
+<p>其實我覺得 Haystack 如果是對於想要快速地實作小玩具或是對程式設計不熟悉的使用者來說，真的是個非常適合快速建立流程的好工具，但通常越方便的工具就會有個缺點: 就是彈性不高，因為其實可以使用哪些套件都是已經被寫死的，所以我認為如果要開發一個大規模的系統的話，這樣的工具可能不是最佳解。</p>
+
       </article>
 
       
