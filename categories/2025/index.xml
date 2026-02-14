@@ -16,5 +16,12 @@
       <guid>https://example.com/posts/haystack/</guid>
       <description></description>
     </item>
+    <item>
+      <title>TrafficVLM 訓練方法</title>
+      <link>https://example.com/posts/trafficvlm/</link>
+      <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.com/posts/trafficvlm/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="tw" dir="ltr">
+<head>
+  <title>TrafficVLM 訓練方法 :: Bernice&#39;s website - Example site for hugo-theme-tailwind</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content=""
+/>
+<meta
+  name="keywords"
+  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+/>
+<meta name="robots" content="noodp" /><meta property="og:title" content="TrafficVLM 訓練方法" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/trafficvlm/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-03-02T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="TrafficVLM 訓練方法"/>
+<meta name="twitter:description" content=""/>
+
+
+<link rel="canonical" href="https://example.com/posts/trafficvlm/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.min.be14db9232647733b0febb286269b110d4ecc7f5583129508c666c15c7697656.css">
+
+
+
+
+
+
+
+
+
+  
+  
+
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800"><header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/logo.jpg" alt="logo">
+    </a>
+  </div>
+  
+  <h1 class="hidden md:flex flex-col justify-center mx-2">
+    <a href="/" class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+      Bernice&#39;s website
+    </a>
+  </h1>
+  
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-xs md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/about/" title="About">About</a>
+        </li>
+      
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/posts/" title="Post">Post</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none mx-1"></div>
+  
+  <div class="flex-none md:hidden">
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="relative flex items-center gap-1 px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="absolute z-10 w-15 h-8 rounded-full bg-white dark:bg-gray-700"></div>
+      <i class="h-6 w-6 z-20 ml-1 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+      </i>
+      <i class="h-6 w-6 z-20 mr-1 flex-none rounded-full place-self-center invisible peer-checked:visible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+      </i>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div id="progress" class="fixed top-0 left-0 w-full h-1 bg-blue-500"></div>
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
+    <div>
+      <a href="/posts/trafficvlm/">
+        <picture>
+    <source type="image/webp" srcset="/posts/trafficvlm/images/cover_huce0cc1510ca21499522e2bfc2c7e90f3_2598196_960x0_resize_q75_h2_box.webp 960w, /posts/trafficvlm/images/cover_huce0cc1510ca21499522e2bfc2c7e90f3_2598196_1600x0_resize_q75_h2_box.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/trafficvlm/images/cover_huce0cc1510ca21499522e2bfc2c7e90f3_2598196_960x0_resize_q75_box.jpg 960w, /posts/trafficvlm/images/cover_huce0cc1510ca21499522e2bfc2c7e90f3_2598196_1600x0_resize_q75_box.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="/posts/trafficvlm/images/cover_huce0cc1510ca21499522e2bfc2c7e90f3_2598196_640x0_resize_q75_box.jpg" width="3840" height="1570" alt="TrafficVLM 訓練方法" title="TrafficVLM 訓練方法" loading="lazy" />
+  </picture>
+      </a>
+    </div>
+    <div class="flex flex-col gap-y-3 p-6">
+      <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+        <a href="/posts/trafficvlm/">TrafficVLM 訓練方法</a>
+      </h1>
+
+      
+      
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+      
+      <li>
+        <a href="/categories/2025/"
+          class="text-sm mr-2 px-2 py-1 rounded-sm border border-emerald-800 bg-emerald-800 text-slate-50">
+          2025
+        </a>
+      </li>
+      
+    
+    
+      
+      <li>
+        <a href="/tags/vlm/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flower"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 2a3 3 0 0 1 3 3c0 .562 -.259 1.442 -.776 2.64l-.724 1.36l1.76 -1.893c.499 -.6 .922 -1 1.27 -1.205a2.968 2.968 0 0 1 4.07 1.099a3.011 3.011 0 0 1 -1.09 4.098c-.374 .217 -.99 .396 -1.846 .535l-2.664 .366l2.4 .326c1 .145 1.698 .337 2.11 .576a3.011 3.011 0 0 1 1.09 4.098a2.968 2.968 0 0 1 -4.07 1.098c-.348 -.202 -.771 -.604 -1.27 -1.205l-1.76 -1.893l.724 1.36c.516 1.199 .776 2.079 .776 2.64a3 3 0 0 1 -6 0c0 -.562 .259 -1.442 .776 -2.64l.724 -1.36l-1.76 1.893c-.499 .601 -.922 1 -1.27 1.205a2.968 2.968 0 0 1 -4.07 -1.098a3.011 3.011 0 0 1 1.09 -4.098c.374 -.218 .99 -.396 1.846 -.536l2.664 -.366l-2.4 -.325c-1 -.145 -1.698 -.337 -2.11 -.576a3.011 3.011 0 0 1 -1.09 -4.099a2.968 2.968 0 0 1 4.07 -1.099c.348 .203 .771 .604 1.27 1.205l1.76 1.894c-1 -2.292 -1.5 -3.625 -1.5 -4a3 3 0 0 1 3 -3z" /></svg>
+          </i>
+          <span class="ml-0">VLM</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/note/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flower"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 2a3 3 0 0 1 3 3c0 .562 -.259 1.442 -.776 2.64l-.724 1.36l1.76 -1.893c.499 -.6 .922 -1 1.27 -1.205a2.968 2.968 0 0 1 4.07 1.099a3.011 3.011 0 0 1 -1.09 4.098c-.374 .217 -.99 .396 -1.846 .535l-2.664 .366l2.4 .326c1 .145 1.698 .337 2.11 .576a3.011 3.011 0 0 1 1.09 4.098a2.968 2.968 0 0 1 -4.07 1.098c-.348 -.202 -.771 -.604 -1.27 -1.205l-1.76 -1.893l.724 1.36c.516 1.199 .776 2.079 .776 2.64a3 3 0 0 1 -6 0c0 -.562 .259 -1.442 .776 -2.64l.724 -1.36l-1.76 1.893c-.499 .601 -.922 1 -1.27 1.205a2.968 2.968 0 0 1 -4.07 -1.098a3.011 3.011 0 0 1 1.09 -4.098c.374 -.218 .99 -.396 1.846 -.536l2.664 -.366l-2.4 -.325c-1 -.145 -1.698 -.337 -2.11 -.576a3.011 3.011 0 0 1 -1.09 -4.099a2.968 2.968 0 0 1 4.07 -1.099c.348 .203 .771 .604 1.27 1.205l1.76 1.894c-1 -2.292 -1.5 -3.625 -1.5 -4a3 3 0 0 1 3 -3z" /></svg>
+          </i>
+          <span class="ml-0">Note</span>
+        </a>
+      </li>
+      
+    
+  </ul>
+
+
+
+      <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+   <path d="M16 3v4"></path>
+   <path d="M8 3v4"></path>
+   <path d="M4 11h16"></path>
+   <path d="M11 15h1"></path>
+   <path d="M12 15v3"></path>
+</svg>
+
+    </i>
+    <time datetime="2025-03-02T00:00:00&#43;00:00">
+      2025-03-02
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      2 minutes to read
+    </span>
+  </div>
+</div>
+
+      
+
+      
+        
+        <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+          <h2>Table of Contents</h2>
+          <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#環境準備">環境準備</a></li>
+    <li><a href="#下載需要的程式碼和模型權重">下載需要的程式碼和模型權重</a></li>
+    <li><a href="#訓練模型">訓練模型</a></li>
+    <li><a href="#模型測試">模型測試</a></li>
+    <li><a href="#資料來源">資料來源</a></li>
+  </ul>
+</nav></aside>
+        </section>
+        
+      
+
+      <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+        <h1 id="前言">前言</h1>
+<p>這篇是在研究所的時候教專題生怎麼訓練和測試 <a href="https://github.com/quangminhdinh/TrafficVLM" target="_blank" rel="noopener">TrafficVLM</a>
+ 的教學，以下正文開始。</p>
+<p>TrafficVLM 的主要任務是輸入一個交通影片，然後他會把影片中出現的交通事件用文字描述出來，就很像是記者在對車禍影片寫旁白的那種感覺。</p>
+<h2 id="環境準備">環境準備</h2>
+<p>以下是需要準備先做好的前置作業，這個模型其實在哪一種作業系統上照理來說都能執行，流程都是相同的。</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 建立一個 python 3.10 虛擬環境 (建議用 anaconda 或 virtualenv 建立環境，否則電腦環境一下就爛了喔:))</li>
+<li><input checked="" disabled="" type="checkbox"> 安裝 pytorch 套件</li>
+<li><input checked="" disabled="" type="checkbox"> 電腦最少要留有 17G 的儲存空間 (因為訓練資料集較大)</li>
+</ul>
+<h2 id="下載需要的程式碼和模型權重">下載需要的程式碼和模型權重</h2>
+<ol>
+<li>
+<p>首先把這個專案 clone 下來</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/quangminhdinh/TrafficVLM.git
+</span></span></code></pre></div></li>
+<li>
+<p>再來進入 config.py 更改下面內容 (路徑的分隔符號是 / 不是 \，寫反會報錯喔):</p>
+<ul>
+<li>
+<p>第 8 行: <code>_C.GLOB.EXP_PARENT_DIR</code> 是儲存 log 的路徑，等模型訓練完會把所有資料放在這個目錄，設定什麼路徑都可以。</p>
+</li>
+<li>
+<p>第 75 行: <code>_C.MODEL.VID2SEQ_PATH</code> 是儲存預訓練模型權重的路徑，也就是模型裡的 backbone 權重，可以到<a href="https://github.com/antoyang/VidChapters?tab=readme-ov-file#model-checkpoints" target="_blank" rel="noopener">這個連結</a>
+看作者提供了哪些，根據需求決定要載哪一個權重。</p>
+<p>下面以 <code>vid2seq_htmchaptersvitt.pth</code> 為例: 點選黃色框內的按鈕下載檔案，他是一個 <code>.pth</code> 檔，找個地方存這個檔案然後把路徑改到 <code>_C.MODEL.VID2SEQ_PATH</code>。</p>
+  <p align="center">
+      <img src="images/img_1.png" alt="title" style="width: 600px;"/>
+  </p>
+</li>
+</ul>
+</li>
+<li>
+<p>最後<a href="https://drive.google.com/file/d/1WInBUBNtclhC8YP5zaIiFoBlt6fnX3mT/view" target="_blank" rel="noopener">到這裡</a>
+下載訓練資料集，再來看 <code>TrafficVLM/dataset/config.py</code>，他要設定的是跟資料集有關的。到第四行 ROOT_PATH 更改資料集的路徑，就是上一步的資料集路徑貼到這裡 (路徑的分隔符號是 / 不是 )。</p>
+<blockquote>
+<p>如果專題生在實際訓練時，用的會是自己的資料集，要把資料集架構改的跟原資料集相同，要把上面連結的檔案載下來看長怎樣。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="訓練模型">訓練模型</h2>
+<p>進入上面開好的 python 虛擬環境，跑這個指令，然後 <code>EXP_NAME</code> 是從 <code>/experiments</code> 挑一個檔名複製貼上，不同的檔案放的是不同的模型參數 (但我不知道差在哪，可能看論文會比較清楚)。</p>
+<p align="center">
+    <img src="images/img_2.png" alt="title" style="width: 600px;"/>
+</p>
+<p>然後在中間會有一個選項問你要不要使用 wandb，他會把訓練過程的各種參數用視覺化方式呈現出來，我沒有帳號就不示範了。這個就看你需求，如果只是想訓練看看可以選 (3)。</p>
+<p align="center">
+    <img src="images/img_3.png" alt="title" style="width: 600px;"/>
+</p>
+<p>然後會呈現像這樣的輸出，1/30 代表在跑 30 個 epoch 裡的第 1 個 epoch。</p>
+<p align="center">
+    <img src="images/img_4.png" alt="title" style="width: 600px;"/>
+</p>
+<p>訓練完之後，在你的 <code>_C.GLOB.EXP_PARENT_DIR</code> 路徑就會看到輸出結果。</p>
+<p align="center">
+    <img src="images/img_5.png" alt="title" style="width: 600px;"/>
+</p>
+<h2 id="模型測試">模型測試</h2>
+<p>再來改 <code>TrafficVLM/config.py</code>，把第 80 行 <code>SOLVER.LOAD_FROM_EPOCH</code> 改成你剛剛訓練的模型的 epoch 數。然後指令上有三個參數，<code>EXP_NAME</code> 就照著你訓練時候選的寫一樣的就好，<code>DEVICE</code> 寫 cuda，<code>BATCH</code> 設 1。</p>
+<p align="center">
+    <img src="images/img_6.png" alt="title" style="width: 600px;"/>
+</p>
+<p>這樣以上就是全部的訓練流程了!</p>
+<h2 id="資料來源">資料來源</h2>
+<ul>
+<li>cover: <a href="https://wallpaperscraft.com/download/traffic_cars_street_night_115209/3840x2160" target="_blank" rel="noopener">https://wallpaperscraft.com/download/traffic_cars_street_night_115209/3840x2160</a>
+</li>
+</ul>
+
+      </article>
+
+      
+
+
+
+
+    </div>
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+    <a href="https://github.com/bernice1357" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://www.linkedin.com/in/bernice-chaung/" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
+      <span class="hidden">LinkedIn</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+   <path d="M8 11l0 5"></path>
+   <path d="M8 8l0 .01"></path>
+   <path d="M12 16l0 -5"></path>
+   <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://medium.com/@juice6323" target="_blank" title="Medium" class="flex flex-row mr-2">
+      <span class="hidden">Medium</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-medium"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 9h1l3 3l3 -3h1" /><path d="M8 15l2 0" /><path d="M14 15l2 0" /><path d="M9 9l0 6" /><path d="M15 9l0 6" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://www.instagram.com/bernice1357689/" target="_blank" title="Instagram" class="flex flex-row mr-2">
+      <span class="hidden">Instagram</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M16.5 7.5l0 .01"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://ithelp.ithome.com.tw/users/20151135" target="_blank" title="iThome" class="flex flex-row mr-2">
+      <span class="hidden">iThome</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-letter-t-small"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8h4" /><path d="M12 8v8" /></svg> </i>
+    </a>
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2022 - 2026 BerniceChaung
+    
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.min.65ca5b0808abf278fcec5d424701ebf0b4bc46a737129cd5e57fdb739f463e79.js"></script>
+
+<div class="hidden top-1 right-1" id="code-copy">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+  <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+</svg>
+
+  </i>
+</div>
+<div class="hidden top-1 right-1" id="code-copy-done">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+
+  </i>
+</div><script src="/code-copy.min.e7b2a74adef1ed474c335c8bd5e7832b2316b8842b0f9184d65286c5bd64f51a.js"></script>
+
+
+
+
+
+</body>
+</html>

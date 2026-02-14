@@ -152,7 +152,11 @@
   <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
     <div>
       <a href="/posts/deraining/">
-        
+        <picture>
+    <source type="image/webp" srcset="" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="/posts/deraining/images/cover_hu18ef068d34596f5974b5f8864100afd9_39371_640x0_resize_q75_box.jpg" width="625" height="350" alt="Multi-Scale Fusion and Decomposition Network for Single Image Deraining" title="Multi-Scale Fusion and Decomposition Network for Single Image Deraining" loading="lazy" />
+  </picture>
       </a>
     </div>
     <div class="flex flex-col gap-y-3 p-6">
@@ -284,39 +288,39 @@
 <p>這篇論文是在 2024 年在 IEEE 發表的，這篇是影像復原領域的，主要任務是去除圖片中的雨水紋 (消除雜訊)，提出了一個的模型叫做 MFDNet，
 這個模型結合了傳統 CNN 和 Transformer 的優點，還有 Asymmetrical dual-path representation 這個特殊的架構，可以幫助更好地分解原本的圖片和雨水紋。</p>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_2_hu20cbaf03c3129055dbbcf90938868a60_625996_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_2_hu20cbaf03c3129055dbbcf90938868a60_625996_640x0_resize_q75_h2_box_3.webp 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_2_hu20cbaf03c3129055dbbcf90938868a60_625996_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_2_hu20cbaf03c3129055dbbcf90938868a60_625996_640x0_resize_q75_bgffffff_box_3.jpg 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_2_hu20cbaf03c3129055dbbcf90938868a60_625996_640x0_resize_q75_bgffffff_box_3.jpg" width="718" height="412" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_2.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <hr>
 <h2 id="hrm-hybrid-representation-module">HRM (Hybrid Representation Module)</h2>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_4_hud85ce1c1bcda3d1c441ba5b5da176f46_113017_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_4_hud85ce1c1bcda3d1c441ba5b5da176f46_113017_640x0_resize_q75_h2_box_3.webp 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_4_hud85ce1c1bcda3d1c441ba5b5da176f46_113017_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_4_hud85ce1c1bcda3d1c441ba5b5da176f46_113017_640x0_resize_q75_bgffffff_box_3.jpg 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_4_hud85ce1c1bcda3d1c441ba5b5da176f46_113017_640x0_resize_q75_bgffffff_box_3.jpg" width="799" height="507" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_4.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <p>這邊要先提到 HRM 的架構，他算是這篇論文裡面最重要的一個部分，在整個模型裡用了非常多次，主要是在執行分解雨水紋和原始圖片兩種特徵。整體架構是上面右圖，可以看到他分為上下兩個通道同步進行，而這就是在前言所提到的 &ldquo;<em>Asymmetrical dual-path representation</em>&quot;，上面處理的是雨水紋的特徵，下面處理的是原始圖片的特徵。</p>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_960x0_resize_q75_h2_box_3.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_960x0_resize_q75_bgffffff_box_3.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_640x0_resize_q75_bgffffff_box_3.jpg" width="1058" height="758" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_5.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <p>再來以左右方向來看這個 module，他分成 HEFB(Hybrid Feature Extraction Block) 和 CRB(Coupled Representation Block) 兩個部分，接下來下面會以左右方向來介紹這個 module。</p>
 <hr>
 <h3 id="hefb-hybrid-representation-module">HEFB (Hybrid Representation Module)</h3>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_960x0_resize_q75_h2_box_3.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_960x0_resize_q75_bgffffff_box_3.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_640x0_resize_q75_bgffffff_box_3.jpg" width="1167" height="483" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_6.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <p>首先先看到上通道的部分，又可以細分為 CAB(Channel Attention Block) 和 Trasformer Block 兩個部分：</p>
 <blockquote>
 <p>在這個模型裡特徵會分成雨水紋和原始圖片兩個部分，最一開始拆分兩種特徵是在 Patch Embedding Module 處理的，下面會介紹。</p>
@@ -326,12 +330,12 @@
 </ul>
 <blockquote class="note"><p>Channel Attention 其實是一種調整不同 channel 權重的方式，如下圖，中間會經過 Global pooling、Down sampling、fully connection 得到所有 channel 的權重後，在和最一開始的 features 相乘，就完成調整權重的處理。
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_960x0_resize_q75_h2_box_3.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_960x0_resize_q75_bgffffff_box_3.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_640x0_resize_q75_bgffffff_box_3.jpg" width="1268" height="288" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_7.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 </p>
 </blockquote>
 <ul>
@@ -342,12 +346,12 @@
 <p>接著是下通道的部分，這邊就是做 identity mapping 和 CAB 的處理而已，identity mapping 在論文中沒有細講。</p>
 <h3 id="crb-coupled-representation-block">CRB (Coupled Representation Block)</h3>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_1280x0_resize_q75_h2_box_3.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_1280x0_resize_q75_bgffffff_box_3.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_640x0_resize_q75_bgffffff_box_3.jpg" width="1352" height="635" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_8.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <blockquote class="note"><p>作者看到以往的論文將兩種特徵分開處理，但模型表現不好，因此把兩種特徵混合在一起做特徵萃取，中間有很多條交叉的通道就是混合的步驟。</p>
 </blockquote>
 <blockquote class="warn"><p>中間的 weights 通道的架構是粉色箭頭指向的圖，這一塊主要是想調整另一個特徵的權重，因為如果直接把另一個特徵直接加進去相乘可能反而會被影響太多，因此把它調整的小一點讓他的影響力不會這麼大。</p>
@@ -355,22 +359,22 @@
 <p><strong>$z_R$、$z_B$</strong>: $g_R$、$g_B$ 是前面 HEFB 最後的輸出，接下來看到中間 $z_B$ 的地方，有兩個箭頭指向 $z_B$，代表有兩個輸入，這邊作者把改變過權重的輸入 (weights)和 $g_R$ 做相乘，同理的 $g_B$ 也是一樣的處理方式。</p>
 <h3 id="輸出結果視覺化">輸出結果視覺化</h3>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_1280x0_resize_q75_h2_box_3.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_1280x0_resize_q75_bgffffff_box_3.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_640x0_resize_q75_bgffffff_box_3.jpg" width="1540" height="828" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_3.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <p>上圖可以看到包含雨水紋的圖片以及模型將雨水紋移除的輸出，$z_R$、$z_B$ 是 CRB 中的視覺化圖像。</p>
 <hr>
 <h2 id="mfdnet">MFDNet</h2>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1280x0_resize_q75_h2_box_3.webp 1280w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1600x0_resize_q75_h2_box_3.webp 1600w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1920x0_resize_q75_h2_box_3.webp 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1280x0_resize_q75_bgffffff_box_3.jpg 1280w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1600x0_resize_q75_bgffffff_box_3.jpg 1600w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1920x0_resize_q75_bgffffff_box_3.jpg 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_640x0_resize_q75_bgffffff_box_3.jpg" width="1926" height="699" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_1.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <p>上圖是 MFDNet 的架構，我用粉紅色框框把架構拆解成了三個部分，分別是捕捉多尺度特徵、分解雨水紋和原始圖片特徵、重組雨水紋和原始圖片。</p>
 <h3 id="捕捉多尺度特徵">捕捉多尺度特徵</h3>
 <p>首先看到的是最左邊的部分，輸入圖片進入模型後會先到 Patch Embedding Module，這邊就等於是做了下採樣的處理，這邊分成了三種維度大小，分別是原尺寸、1/2、1/4，進入 HRM 後，會把</p>
@@ -389,12 +393,12 @@
 <blockquote class="note"><p>這篇論文的 loss 是用監督式學習的方式，因為在 Char() 和 edges() 中，$I_B*$ 和 $I_B$ 分別代表 Ground truth 和預測結果，它並不是用自己預測的結果再去調整參數，所以不是自監督式學習。</p>
 </blockquote>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_1280x0_resize_q75_h2_box_3.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_1280x0_resize_q75_bgffffff_box_3.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_640x0_resize_q75_bgffffff_box_3.jpg" width="1475" height="560" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_9.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <h2 id="實驗">實驗</h2>
 <p>在影像復原領域的資料集可以根據有無 ground truth 進行分類:</p>
 <h3 id="1-有-ground-truth">1. 有 Ground Truth</h3>
@@ -407,12 +411,12 @@
 <li>Structural SIMilarity (SSIM)：比較兩圖像間的亮度、對比度、結構</li>
 </ul>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1280x0_resize_q75_h2_box_3.webp 1280w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1600x0_resize_q75_h2_box_3.webp 1600w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1920x0_resize_q75_h2_box_3.webp 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1280x0_resize_q75_bgffffff_box_3.jpg 1280w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1600x0_resize_q75_bgffffff_box_3.jpg 1600w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1920x0_resize_q75_bgffffff_box_3.jpg 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_640x0_resize_q75_bgffffff_box_3.jpg" width="1975" height="660" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_10.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <h3 id="2-無-ground-truth">2. 無 Ground Truth</h3>
 <blockquote>
 <p>這種是自然界出現的下雨影像，所以不會有 ground truth</p>
@@ -422,29 +426,29 @@
 <li>Spatial-Spectral Entropy-based Quality (SSEQ)</li>
 </ul>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1280x0_resize_q75_h2_box_3.webp 1280w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1600x0_resize_q75_h2_box_3.webp 1600w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1920x0_resize_q75_h2_box_3.webp 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1280x0_resize_q75_bgffffff_box_3.jpg 1280w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1600x0_resize_q75_bgffffff_box_3.jpg 1600w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1920x0_resize_q75_bgffffff_box_3.jpg 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_640x0_resize_q75_bgffffff_box_3.jpg" width="1970" height="277" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_11.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <h2 id="消融實驗">消融實驗</h2>
 <h3 id="1-loss-function-中不同權重參數的比較">1. Loss function 中不同權重參數的比較</h3>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_1280x0_resize_q75_h2_box_3.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_1280x0_resize_q75_bgffffff_box_3.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_640x0_resize_q75_bgffffff_box_3.jpg" width="1382" height="569" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_12.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 <h3 id="2-hrm-和-transformer-block-數量比較">2. HRM 和 Transformer block 數量比較</h3>
 <div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="/posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_1280x0_resize_q75_h2_box_3.webp 1280w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_1600x0_resize_q75_h2_box_3.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="/posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_1280x0_resize_q75_bgffffff_box_3.jpg 1280w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_1600x0_resize_q75_bgffffff_box_3.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_640x0_resize_q75_bgffffff_box_3.jpg" width="1620" height="640" alt="photo" title="photo" loading="lazy" />
-  </picture>
-</div>
+<figure>
+    <img src="img_13.png"
+      alt="photo" 
+      loading="lazy"
+    >
+  </figure></div>
 
       </article>
 

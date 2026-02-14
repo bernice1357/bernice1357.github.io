@@ -24,17 +24,24 @@
       <description></description>
     </item>
     <item>
+      <title>Note</title>
+      <link>https://example.com/tags/note/</link>
+      <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.com/tags/note/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VLM</title>
+      <link>https://example.com/tags/vlm/</link>
+      <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.com/tags/vlm/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>心得</title>
       <link>https://example.com/tags/%E5%BF%83%E5%BE%97/</link>
       <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
       <guid>https://example.com/tags/%E5%BF%83%E5%BE%97/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Note</title>
-      <link>https://example.com/tags/note/</link>
-      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.com/tags/note/</guid>
       <description></description>
     </item>
     <item>

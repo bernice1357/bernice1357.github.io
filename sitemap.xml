@@ -26,6 +26,15 @@
     <loc>https://example.com/tags/</loc>
     <lastmod>2025-08-19T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://example.com/tags/note/</loc>
+    <lastmod>2025-03-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/posts/trafficvlm/</loc>
+    <lastmod>2025-03-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/vlm/</loc>
+    <lastmod>2025-03-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://example.com/categories/2024/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -34,9 +43,6 @@
   </url><url>
     <loc>https://example.com/tags/%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.com/tags/note/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.com/posts/%E6%A8%A1%E5%9E%8B%E8%A9%95%E4%BC%B0%E6%8C%87%E6%A8%99/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
