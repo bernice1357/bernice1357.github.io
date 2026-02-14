@@ -2,271 +2,278 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bernice&#39;s website</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://example.com/posts/</link>
     <description>Recent content on Bernice&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tw</language>
     <copyright>BerniceChaung</copyright>
-    <lastBuildDate>Fri, 10 May 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>BiFormer: Vision Transformer with Bi-Level Routing Attention</title>
-      <link>http://localhost:1313/posts/aigo%E4%BA%BA%E6%89%8D%E4%BA%A4%E6%B5%81%E6%9C%83/</link>
+      <title>Haystack</title>
+      <link>https://example.com/posts/haystack/</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.com/posts/haystack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AIGO 人才交流會心得分享</title>
+      <link>https://example.com/posts/aigo%E4%BA%BA%E6%89%8D%E4%BA%A4%E6%B5%81%E6%9C%83/</link>
       <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/aigo%E4%BA%BA%E6%89%8D%E4%BA%A4%E6%B5%81%E6%9C%83/</guid>
-      <description>實驗室這幾年都會參加 AI 的解題競賽，而這次的交流會是實驗室之前已經參加三年的 AIGO 競賽舉辦的，但我們今年還</description>
+      <guid>https://example.com/posts/aigo%E4%BA%BA%E6%89%8D%E4%BA%A4%E6%B5%81%E6%9C%83/</guid>
+      <description></description>
     </item>
     <item>
       <title>模型評估指標</title>
-      <link>http://localhost:1313/posts/%E6%A8%A1%E5%9E%8B%E8%A9%95%E4%BC%B0%E6%8C%87%E6%A8%99/</link>
+      <link>https://example.com/posts/%E6%A8%A1%E5%9E%8B%E8%A9%95%E4%BC%B0%E6%8C%87%E6%A8%99/</link>
       <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E6%A8%A1%E5%9E%8B%E8%A9%95%E4%BC%B0%E6%8C%87%E6%A8%99/</guid>
-      <description>前言 這篇整理了混淆矩陣、評估指標和一些相關的東西，對深度學習領域來說，這些東西應該是蠻重要的。 混淆矩</description>
+      <guid>https://example.com/posts/%E6%A8%A1%E5%9E%8B%E8%A9%95%E4%BC%B0%E6%8C%87%E6%A8%99/</guid>
+      <description></description>
     </item>
     <item>
       <title>面對不平衡 dataset 的處理方式</title>
-      <link>http://localhost:1313/posts/%E9%9D%A2%E5%B0%8D%E4%B8%8D%E5%B9%B3%E8%A1%A1%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E8%99%95%E7%90%86%E6%96%B9%E5%BC%8F/</link>
+      <link>https://example.com/posts/%E9%9D%A2%E5%B0%8D%E4%B8%8D%E5%B9%B3%E8%A1%A1%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E8%99%95%E7%90%86%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E9%9D%A2%E5%B0%8D%E4%B8%8D%E5%B9%B3%E8%A1%A1%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E8%99%95%E7%90%86%E6%96%B9%E5%BC%8F/</guid>
-      <description>前言 這篇整理了一些在處理不平衡資料集會進行的常見處理方式。 蒐集新特徵 抽樣方法：透過個體的複製與刪除，</description>
+      <guid>https://example.com/posts/%E9%9D%A2%E5%B0%8D%E4%B8%8D%E5%B9%B3%E8%A1%A1%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E8%99%95%E7%90%86%E6%96%B9%E5%BC%8F/</guid>
+      <description></description>
     </item>
     <item>
       <title>Hugo 使用上的一些筆記</title>
-      <link>http://localhost:1313/posts/hugo-%E7%9B%B8%E9%97%9C%E7%AD%86%E8%A8%98/</link>
+      <link>https://example.com/posts/hugo-%E7%9B%B8%E9%97%9C%E7%AD%86%E8%A8%98/</link>
       <pubDate>Fri, 29 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hugo-%E7%9B%B8%E9%97%9C%E7%AD%86%E8%A8%98/</guid>
-      <description>我記得一開始使用 Hugo 的時候是大四上，一開始在找有沒有方便好用的架站工具，結果就找到了這個。只需要選擇喜</description>
+      <guid>https://example.com/posts/hugo-%E7%9B%B8%E9%97%9C%E7%AD%86%E8%A8%98/</guid>
+      <description></description>
     </item>
     <item>
       <title>BiFormer: Vision Transformer with Bi-Level Routing Attention</title>
-      <link>http://localhost:1313/posts/biformer/</link>
+      <link>https://example.com/posts/biformer/</link>
       <pubDate>Sat, 23 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/biformer/</guid>
-      <description>前言 今天介紹的這篇是 vision transformer 領域的一篇論文，作者的主要貢獻是提出 Bi-Level Routing Attention， 這種 attention 使得 query 可以</description>
+      <guid>https://example.com/posts/biformer/</guid>
+      <description></description>
     </item>
     <item>
       <title>Multi-Scale Fusion and Decomposition Network for Single Image Deraining</title>
-      <link>http://localhost:1313/posts/deraining/</link>
+      <link>https://example.com/posts/deraining/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/deraining/</guid>
-      <description>前言 這篇論文是在 2024 年在 IEEE 發表的，這篇是影像復原領域的，主要任務是去除圖片中的雨水紋 (消除雜訊)，提出</description>
+      <guid>https://example.com/posts/deraining/</guid>
+      <description></description>
     </item>
     <item>
       <title>⟪抄襲與引用⟫ 講座筆記</title>
-      <link>http://localhost:1313/posts/%E6%8A%84%E8%A5%B2%E5%BC%95%E7%94%A8/</link>
+      <link>https://example.com/posts/%E6%8A%84%E8%A5%B2%E5%BC%95%E7%94%A8/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E6%8A%84%E8%A5%B2%E5%BC%95%E7%94%A8/</guid>
-      <description>這篇把 2022 年 10 月參加的「學術倫理-抄襲與引用面面觀」講座的一些筆記整理起來，聽到了蠻多值得紀錄的東西，</description>
+      <guid>https://example.com/posts/%E6%8A%84%E8%A5%B2%E5%BC%95%E7%94%A8/</guid>
+      <description></description>
     </item>
     <item>
       <title>在 Github 上使用 SSH Key push 靜態網頁展示</title>
-      <link>http://localhost:1313/posts/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/</link>
+      <link>https://example.com/posts/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/</link>
       <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/</guid>
-      <description>在開發過程中，我們經常需要將程式碼推送到 GitHub。使用 SSH Key 可以讓我們安全且方便地進行 Git 操作，而不</description>
+      <guid>https://example.com/posts/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/</guid>
+      <description></description>
     </item>
     <item>
       <title>如何購買自己的 DNS</title>
-      <link>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</link>
+      <link>https://example.com/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</link>
       <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</guid>
-      <description>前言 這篇把之前購買網域並連到個人網站上的一些心得整理出來，但每個人買網域的地方都不太一樣 (我是在 pchome 買</description>
+      <guid>https://example.com/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day21 - npm&amp;nvm</title>
-      <link>http://localhost:1313/posts/day21-npmnvm/</link>
+      <link>https://example.com/posts/day21-npmnvm/</link>
       <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day21-npmnvm/</guid>
-      <description>在 Node.js 的生態系中，npm 和 nvm 是兩個非常重要的工具。npm 是套件管理器，而 nvm 是 Node.js 版本管理器。 什麼是 npm npm 全</description>
+      <guid>https://example.com/posts/day21-npmnvm/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day20 - 瀏覽器 DOM 元素的事件代理</title>
-      <link>http://localhost:1313/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</link>
+      <link>https://example.com/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</link>
       <pubDate>Thu, 29 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</guid>
-      <description>在網頁開發中，我們經常需要為 DOM 元素添加事件監聽器。但是當頁面中有大量元素需要相同的事件處理時，為每個</description>
+      <guid>https://example.com/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day19 - Axios 實作</title>
-      <link>http://localhost:1313/posts/day19-axios-%E5%AF%A6%E4%BD%9C/</link>
+      <link>https://example.com/posts/day19-axios-%E5%AF%A6%E4%BD%9C/</link>
       <pubDate>Wed, 28 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day19-axios-%E5%AF%A6%E4%BD%9C/</guid>
-      <description>上一篇介紹了 Axios 的基本概念，這篇我們來實際練習如何使用 Axios 來進行 HTTP 請求。 建立 Axios 實例 我們可以建立一個 Axios 實例</description>
+      <guid>https://example.com/posts/day19-axios-%E5%AF%A6%E4%BD%9C/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day18 - AJAX &amp; Axios 介紹</title>
-      <link>http://localhost:1313/posts/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</link>
+      <link>https://example.com/posts/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</link>
       <pubDate>Tue, 27 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</guid>
-      <description>在現代網頁開發中，我們經常需要在不重新載入整個頁面的情況下，與伺服器進行資料交換。這就需要用到 AJAX 技術</description>
+      <guid>https://example.com/posts/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day17 - Postman</title>
-      <link>http://localhost:1313/posts/day17-postman/</link>
+      <link>https://example.com/posts/day17-postman/</link>
       <pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day17-postman/</guid>
-      <description>在開發 API 時，我們需要一個工具來測試 API 是否正常運作，Postman 就是一個非常好用的 API 測試工具。 什麼是</description>
+      <guid>https://example.com/posts/day17-postman/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day16 - RESTful API</title>
-      <link>http://localhost:1313/posts/day16-restful-api/</link>
+      <link>https://example.com/posts/day16-restful-api/</link>
       <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day16-restful-api/</guid>
-      <description>API 的全名是 Application Programming Interface，中文翻譯為「應用程式介面」，簡單來說就是一個介面，讓不同的程式可以</description>
+      <guid>https://example.com/posts/day16-restful-api/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day15 - Web Storage</title>
-      <link>http://localhost:1313/posts/day15-web-storage/</link>
+      <link>https://example.com/posts/day15-web-storage/</link>
       <pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day15-web-storage/</guid>
-      <description>上一篇介紹了 Cookie，Cookie 雖然方便，但只能存放 4KB 的資料，除了 Cookie，還有其他的方法</description>
+      <guid>https://example.com/posts/day15-web-storage/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day14 - Cookie</title>
-      <link>http://localhost:1313/posts/day14-cookie/</link>
+      <link>https://example.com/posts/day14-cookie/</link>
       <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day14-cookie/</guid>
-      <description>當我們在 Stackoverflow 上尋找為什麼會出現某個 bug 時，常常會在網站的左下角看到一個視窗，要你點選「同意所有 cooki</description>
+      <guid>https://example.com/posts/day14-cookie/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day13 - CORS 同源政策</title>
-      <link>http://localhost:1313/posts/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</link>
+      <link>https://example.com/posts/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</link>
       <pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</guid>
-      <description>相信有進行過網站開發，特別是後端開發的人，對下面的錯誤訊息應該不陌生： request has been blocked by CORS policy: No &amp;#39;Access-Control-Allow-Origin&amp;#39; header is present on the requested</description>
+      <guid>https://example.com/posts/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day12 - Chrome Developer Tool</title>
-      <link>http://localhost:1313/posts/day12-chrome-developer-tool/</link>
+      <link>https://example.com/posts/day12-chrome-developer-tool/</link>
       <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day12-chrome-developer-tool/</guid>
-      <description>在瀏覽器打開任何一個網頁，在 Windows 系統按下鍵盤中的 F12，如果是 macOS 系統則按下 fn + F12，或是按下滑鼠右鍵</description>
+      <guid>https://example.com/posts/day12-chrome-developer-tool/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day11 - HTTP Request Method</title>
-      <link>http://localhost:1313/posts/day11-http-request-method/</link>
+      <link>https://example.com/posts/day11-http-request-method/</link>
       <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day11-http-request-method/</guid>
-      <description>HTTP Request 根據網頁開發的需求，會有不同的種類，以下介紹幾個常見的 Request Method GET：取得資料 傳遞的參數會顯示在 URL 上</description>
+      <guid>https://example.com/posts/day11-http-request-method/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day10 - HTTP 狀態碼</title>
-      <link>http://localhost:1313/posts/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</link>
+      <link>https://example.com/posts/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</link>
       <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</guid>
-      <description>當我們送出 HTTP Request，就會收到由伺服器傳回的 HTTP Response，但每個 Response 可能會被很多因素阻礙，</description>
+      <guid>https://example.com/posts/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day8 - URL 的組成</title>
-      <link>http://localhost:1313/posts/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</link>
+      <link>https://example.com/posts/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</link>
       <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</guid>
-      <description>URL 的全名是 Uniform Resource Locator，翻成中文的話就是「統一資源定位符」，也就是我們俗稱的網址，它就像是網路</description>
+      <guid>https://example.com/posts/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day9 - HTTP/HTTPS</title>
-      <link>http://localhost:1313/posts/day9-http/https/</link>
+      <link>https://example.com/posts/day9-http/https/</link>
       <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day9-http/https/</guid>
-      <description>平常我們在使用瀏覽器時，都可以看到上方輸入網址的地方有個鎖頭，這代表我們現在在瀏覽時向伺服器傳送的資</description>
+      <guid>https://example.com/posts/day9-http/https/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day7 - DNS 和 IP 的關係</title>
-      <link>http://localhost:1313/posts/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</link>
+      <link>https://example.com/posts/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</guid>
-      <description>網際網路就像是車水馬龍的道路，而世界各地的電腦就像是一棟棟房子，網際網路上所建構的道路可以連接每台電</description>
+      <guid>https://example.com/posts/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day6 - MAC 地址</title>
-      <link>http://localhost:1313/posts/day6-mac-%E5%9C%B0%E5%9D%80/</link>
+      <link>https://example.com/posts/day6-mac-%E5%9C%B0%E5%9D%80/</link>
       <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day6-mac-%E5%9C%B0%E5%9D%80/</guid>
-      <description>MAC 位址(Media Access Control Address)，中文翻譯為「媒體存取控制位址」，其實就是乙太網路位址(Eth</description>
+      <guid>https://example.com/posts/day6-mac-%E5%9C%B0%E5%9D%80/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day5 - IPV4 &amp; IPV6</title>
-      <link>http://localhost:1313/posts/day5-ipv4-ipv6/</link>
+      <link>https://example.com/posts/day5-ipv4-ipv6/</link>
       <pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day5-ipv4-ipv6/</guid>
-      <description>這篇主要會介紹 IPV4 &amp;amp; IPV6 的歷史，以及介紹這兩種位址的表示方式的主要差異。 網路上很常看到流傳著 IPV4 即將用盡的</description>
+      <guid>https://example.com/posts/day5-ipv4-ipv6/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day4 - TCP/UDP</title>
-      <link>http://localhost:1313/posts/day4-tcp/udp/</link>
+      <link>https://example.com/posts/day4-tcp/udp/</link>
       <pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day4-tcp/udp/</guid>
-      <description>TCP、UDP 是什麼？ 這兩種都是常見的網路協定，雖然同樣都是傳送資料，但在性質上卻有很大的不同。 TC</description>
+      <guid>https://example.com/posts/day4-tcp/udp/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day3 - SSH/Telnet</title>
-      <link>http://localhost:1313/posts/day3-ssh/telnet/</link>
+      <link>https://example.com/posts/day3-ssh/telnet/</link>
       <pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day3-ssh/telnet/</guid>
-      <description>今天介紹兩種常用在連接遠端電腦的通訊協定 Telnet 是一種應用層協定，因為是明文傳輸，沒有加密的流程，可能會有</description>
+      <guid>https://example.com/posts/day3-ssh/telnet/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day2 - 網路是如何傳遞資料的？</title>
-      <link>http://localhost:1313/posts/day2-%E7%B6%B2%E8%B7%AF%E6%98%AF%E5%A6%82%E4%BD%95%E5%82%B3%E9%81%9E%E8%B3%87%E6%96%99%E7%9A%84/</link>
+      <link>https://example.com/posts/day2-%E7%B6%B2%E8%B7%AF%E6%98%AF%E5%A6%82%E4%BD%95%E5%82%B3%E9%81%9E%E8%B3%87%E6%96%99%E7%9A%84/</link>
       <pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day2-%E7%B6%B2%E8%B7%AF%E6%98%AF%E5%A6%82%E4%BD%95%E5%82%B3%E9%81%9E%E8%B3%87%E6%96%99%E7%9A%84/</guid>
-      <description>到了中午，當我們不知道要吃什麼，就會想要到 google 搜尋附近有哪些餐廳，然後在網頁中的搜尋欄輸入關鍵字，按下</description>
+      <guid>https://example.com/posts/day2-%E7%B6%B2%E8%B7%AF%E6%98%AF%E5%A6%82%E4%BD%95%E5%82%B3%E9%81%9E%E8%B3%87%E6%96%99%E7%9A%84/</guid>
+      <description></description>
     </item>
     <item>
       <title>Day1 - 前言</title>
-      <link>http://localhost:1313/posts/day1-%E5%89%8D%E8%A8%80/</link>
+      <link>https://example.com/posts/day1-%E5%89%8D%E8%A8%80/</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/day1-%E5%89%8D%E8%A8%80/</guid>
-      <description>(先來個開場白幹話) 網路大家每天都在使用，可以隨時方便地到達各個網站搜尋或是購買各種需要的東西，但這</description>
+      <guid>https://example.com/posts/day1-%E5%89%8D%E8%A8%80/</guid>
+      <description></description>
     </item>
     <item>
       <title>Vuex 介紹</title>
-      <link>http://localhost:1313/posts/vuex-%E4%BB%8B%E7%B4%B9/</link>
+      <link>https://example.com/posts/vuex-%E4%BB%8B%E7%B4%B9/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/vuex-%E4%BB%8B%E7%B4%B9/</guid>
-      <description>這篇會介紹 Vuex 的基本名詞以及他們的差異！ 在撰寫 Vue 專案的過程中，時常會遇到多個檔案需要使用同樣變數的情況</description>
+      <guid>https://example.com/posts/vuex-%E4%BB%8B%E7%B4%B9/</guid>
+      <description></description>
     </item>
     <item>
       <title>如何將 VScode 的提示框關閉</title>
-      <link>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E5%B0%87-vscode-%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A1%86%E9%97%9C%E9%96%89/</link>
+      <link>https://example.com/posts/%E5%A6%82%E4%BD%95%E5%B0%87-vscode-%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A1%86%E9%97%9C%E9%96%89/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E5%B0%87-vscode-%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A1%86%E9%97%9C%E9%96%89/</guid>
-      <description>前言 在用 vscode 寫網頁時，常常會出現這樣的提示框 下面來講講怎麼關掉這些提示框～ 步驟 在 vscode 的左下角有個設定的符</description>
+      <guid>https://example.com/posts/%E5%A6%82%E4%BD%95%E5%B0%87-vscode-%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A1%86%E9%97%9C%E9%96%89/</guid>
+      <description></description>
     </item>
     <item>
       <title>Create a Vue project!</title>
-      <link>http://localhost:1313/posts/create-a-vue-project/</link>
+      <link>https://example.com/posts/create-a-vue-project/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/create-a-vue-project/</guid>
-      <description>本篇會介紹 Vue 環境的安裝及建立！ Environment: Ubuntu 安裝 npm(Node Package Manager) :::info 要確認裝的版本是 12 or 14以上（最新版本是 17） 用 14 就好</description>
+      <guid>https://example.com/posts/create-a-vue-project/</guid>
+      <description></description>
     </item>
     <item>
       <title>Cypress 使用</title>
-      <link>http://localhost:1313/posts/cypress-%E4%BD%BF%E7%94%A8/</link>
+      <link>https://example.com/posts/cypress-%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/cypress-%E4%BD%BF%E7%94%A8/</guid>
-      <description>這篇會介紹 Cypress 的安裝和使用方法！ version 10.3.1 安裝 官方文件 % npm install cypress --save-dev 安裝後就能看到 cypress 目錄了 開啟環境 % npx cypress open 之後會</description>
+      <guid>https://example.com/posts/cypress-%E4%BD%BF%E7%94%A8/</guid>
+      <description></description>
     </item>
     <item>
       <title>Github 解決有衝突的分支合併</title>
-      <link>http://localhost:1313/posts/github-%E8%A7%A3%E6%B1%BA%E6%9C%89%E8%A1%9D%E7%AA%81%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E4%BD%B5/</link>
+      <link>https://example.com/posts/github-%E8%A7%A3%E6%B1%BA%E6%9C%89%E8%A1%9D%E7%AA%81%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E4%BD%B5/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/github-%E8%A7%A3%E6%B1%BA%E6%9C%89%E8%A1%9D%E7%AA%81%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E4%BD%B5/</guid>
-      <description>情境如下： 如果遠端有人 push 了新的版本，但本地這邊現在也有不一樣的版本正在進行，現在你想要合併本地和遠端</description>
+      <guid>https://example.com/posts/github-%E8%A7%A3%E6%B1%BA%E6%9C%89%E8%A1%9D%E7%AA%81%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E4%BD%B5/</guid>
+      <description></description>
     </item>
     <item>
       <title>將網域連到個人網站 (Pchome&#43;CloudFlare)</title>
-      <link>http://localhost:1313/posts/%E5%B0%87%E7%B6%B2%E5%9F%9F%E9%80%A3%E5%88%B0%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99pchome-cloudflare/</link>
+      <link>https://example.com/posts/%E5%B0%87%E7%B6%B2%E5%9F%9F%E9%80%A3%E5%88%B0%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99pchome-cloudflare/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E5%B0%87%E7%B6%B2%E5%9F%9F%E9%80%A3%E5%88%B0%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99pchome-cloudflare/</guid>
-      <description>最近終於把買好的網域連到個人網站上，趕緊來寫一篇心得怕忘記，不過每個人買網域的機構都不太一樣，我是在</description>
+      <guid>https://example.com/posts/%E5%B0%87%E7%B6%B2%E5%9F%9F%E9%80%A3%E5%88%B0%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99pchome-cloudflare/</guid>
+      <description></description>
     </item>
     <item>
       <title>使用 Hugo 建立一個 Blog</title>
-      <link>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</link>
+      <link>https://example.com/posts/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</guid>
-      <description>說了好久的部落格，我終於把它建起來了…(淚 網域都買了幾個月了，現在才用真的慚愧。 就以建這個 Blog 的筆記作</description>
+      <guid>https://example.com/posts/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

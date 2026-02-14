@@ -2,33 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Bernice&#39;s website</title>
-    <link>http://localhost:1313/tags/hugo/</link>
+    <link>https://example.com/tags/hugo/</link>
     <description>Recent content in Hugo on Bernice&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tw</language>
     <copyright>BerniceChaung</copyright>
-    <lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>模型評估指標</title>
-      <link>http://localhost:1313/posts/%E6%A8%A1%E5%9E%8B%E8%A9%95%E4%BC%B0%E6%8C%87%E6%A8%99/</link>
-      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E6%A8%A1%E5%9E%8B%E8%A9%95%E4%BC%B0%E6%8C%87%E6%A8%99/</guid>
-      <description>前言 這篇整理了混淆矩陣、評估指標和一些相關的東西，對深度學習領域來說，這些東西應該是蠻重要的。 混淆矩</description>
-    </item>
-    <item>
-      <title>面對不平衡 dataset 的處理方式</title>
-      <link>http://localhost:1313/posts/%E9%9D%A2%E5%B0%8D%E4%B8%8D%E5%B9%B3%E8%A1%A1%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E8%99%95%E7%90%86%E6%96%B9%E5%BC%8F/</link>
-      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E9%9D%A2%E5%B0%8D%E4%B8%8D%E5%B9%B3%E8%A1%A1%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E8%99%95%E7%90%86%E6%96%B9%E5%BC%8F/</guid>
-      <description>前言 這篇整理了一些在處理不平衡資料集會進行的常見處理方式。 蒐集新特徵 抽樣方法：透過個體的複製與刪除，</description>
-    </item>
+    <lastBuildDate>Fri, 29 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo 使用上的一些筆記</title>
-      <link>http://localhost:1313/posts/hugo-%E7%9B%B8%E9%97%9C%E7%AD%86%E8%A8%98/</link>
+      <link>https://example.com/posts/hugo-%E7%9B%B8%E9%97%9C%E7%AD%86%E8%A8%98/</link>
       <pubDate>Fri, 29 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hugo-%E7%9B%B8%E9%97%9C%E7%AD%86%E8%A8%98/</guid>
-      <description>我記得一開始使用 Hugo 的時候是大四上，一開始在找有沒有方便好用的架站工具，結果就找到了這個。只需要選擇喜</description>
+      <guid>https://example.com/posts/hugo-%E7%9B%B8%E9%97%9C%E7%AD%86%E8%A8%98/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vue on Bernice&#39;s website</title>
-    <link>http://localhost:1313/categories/vue/</link>
+    <link>https://example.com/categories/vue/</link>
     <description>Recent content in Vue on Bernice&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tw</language>
     <copyright>BerniceChaung</copyright>
     <lastBuildDate>Sat, 23 Jul 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.com/categories/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vuex 介紹</title>
-      <link>http://localhost:1313/posts/vuex-%E4%BB%8B%E7%B4%B9/</link>
+      <link>https://example.com/posts/vuex-%E4%BB%8B%E7%B4%B9/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/vuex-%E4%BB%8B%E7%B4%B9/</guid>
-      <description>這篇會介紹 Vuex 的基本名詞以及他們的差異！ 在撰寫 Vue 專案的過程中，時常會遇到多個檔案需要使用同樣變數的情況</description>
+      <guid>https://example.com/posts/vuex-%E4%BB%8B%E7%B4%B9/</guid>
+      <description></description>
     </item>
     <item>
       <title>Create a Vue project!</title>
-      <link>http://localhost:1313/posts/create-a-vue-project/</link>
+      <link>https://example.com/posts/create-a-vue-project/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/create-a-vue-project/</guid>
-      <description>本篇會介紹 Vue 環境的安裝及建立！ Environment: Ubuntu 安裝 npm(Node Package Manager) :::info 要確認裝的版本是 12 or 14以上（最新版本是 17） 用 14 就好</description>
+      <guid>https://example.com/posts/create-a-vue-project/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

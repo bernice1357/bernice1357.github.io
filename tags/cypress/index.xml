@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cypress on Bernice&#39;s website</title>
-    <link>http://localhost:1313/tags/cypress/</link>
+    <link>https://example.com/tags/cypress/</link>
     <description>Recent content in Cypress on Bernice&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tw</language>
     <copyright>BerniceChaung</copyright>
     <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/cypress/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.com/tags/cypress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cypress 使用</title>
-      <link>http://localhost:1313/posts/cypress-%E4%BD%BF%E7%94%A8/</link>
+      <link>https://example.com/posts/cypress-%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/cypress-%E4%BD%BF%E7%94%A8/</guid>
-      <description>這篇會介紹 Cypress 的安裝和使用方法！ version 10.3.1 安裝 官方文件 % npm install cypress --save-dev 安裝後就能看到 cypress 目錄了 開啟環境 % npx cypress open 之後會</description>
+      <guid>https://example.com/posts/cypress-%E4%BD%BF%E7%94%A8/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

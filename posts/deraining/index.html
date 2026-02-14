@@ -1,66 +1,61 @@
 <!DOCTYPE html>
 <html lang="tw" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <title>Multi-Scale Fusion and Decomposition Network for Single Image Deraining :: Bernice&#39;s website - Example site for hugo-theme-tailwind</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="前言 這篇論文是在 2024 年在 IEEE 發表的，這篇是影像復原領域的，主要任務是去除圖片中的雨水紋 (消除雜訊)，提出"
+  content=""
 />
 <meta
   name="keywords"
   content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
 />
-<meta name="robots" content="noodp" />
-<meta property="og:title" content="Multi-Scale Fusion and Decomposition Network for Single Image Deraining" />
-<meta property="og:description" content="前言 這篇論文是在 2024 年在 IEEE 發表的，這篇是影像復原領域的，主要任務是去除圖片中的雨水紋 (消除雜訊)，提出" />
+<meta name="robots" content="noodp" /><meta property="og:title" content="Multi-Scale Fusion and Decomposition Network for Single Image Deraining" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/posts/deraining/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://example.com/posts/deraining/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-01-15T00:00:00+00:00" />
 <meta property="article:modified_time" content="2024-01-15T00:00:00+00:00" />
 
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Multi-Scale Fusion and Decomposition Network for Single Image Deraining"/>
-<meta name="twitter:description" content="前言 這篇論文是在 2024 年在 IEEE 發表的，這篇是影像復原領域的，主要任務是去除圖片中的雨水紋 (消除雜訊)，提出"/>
+<meta name="twitter:description" content=""/>
 
 
-<link rel="canonical" href="http://localhost:1313/posts/deraining/" />
+<link rel="canonical" href="https://example.com/posts/deraining/" />
 
 <link rel="shortcut icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/index.8bc6b7b01cd4690646915651e50f8e706f707da222b16f331d4315feddf1d29d.css">
+<link rel="stylesheet" href="/css/index.min.be14db9232647733b0febb286269b110d4ecc7f5583129508c666c15c7697656.css">
 
 
 
 
-<link rel="stylesheet" href="http://localhost:1313/css/start.css">
-
-
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<script>
-    MathJax = {
-        tex: {
-            displayMath: [['\\[', '\\]']],  
-            inlineMath: [['$', '$']]                  
-        }
-    };
-</script>
 
 
 
 
 
   
+  
+
 </head>
-<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800">
-  <header class="flex flex-none justify-center z-10">
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800"><header class="flex flex-none justify-center z-10">
     <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
   <div class="flex-none ml-2 md:ml-0">
     <a href="/" class="">
       <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/logo.jpg" alt="logo">
     </a>
   </div>
+  
+  <h1 class="hidden md:flex flex-col justify-center mx-2">
+    <a href="/" class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+      Bernice&#39;s website
+    </a>
+  </h1>
+  
   <div class="flex-1"></div>
   <div class="flex-none">
     
@@ -81,7 +76,7 @@
     </i>
   </button>
   <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
-    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-xs md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
     
         <li id="about" class="">
           <a class="block px-3 py-3 hover:text-emerald-600"
@@ -118,11 +113,11 @@
     </a>
   </div>
   <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
-    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+    <label for="darkmode-toggle" class="relative flex items-center gap-1 px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
       <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
-      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
-        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <div class="absolute z-10 w-15 h-8 rounded-full bg-white dark:bg-gray-700"></div>
+      <i class="h-6 w-6 z-20 ml-1 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
    <path d="M12 5l0 .01"></path>
@@ -135,17 +130,16 @@
    <path d="M7 7l0 .01"></path>
 </svg>
 
-        </i>
-        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      </i>
+      <i class="h-6 w-6 z-20 mr-1 flex-none rounded-full place-self-center invisible peer-checked:visible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
    <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
    <path d="M19 11h2m-1 -1v2"></path>
 </svg>
 
-        </i>
-      </div>
+      </i>
     </label>
   </div>
 </div>
@@ -153,20 +147,27 @@
   </header>
   <main class="flex flex-auto justify-center">
     
+<div id="progress" class="fixed top-0 left-0 w-full h-1 bg-blue-500"></div>
 <div class="w-full max-w-4xl lg:max-w-5xl">
-  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
-    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
-      <a href="/posts/deraining/">Multi-Scale Fusion and Decomposition Network for Single Image Deraining</a>
-    </h1>
+  <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
+    <div>
+      <a href="/posts/deraining/">
+        
+      </a>
+    </div>
+    <div class="flex flex-col gap-y-3 p-6">
+      <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+        <a href="/posts/deraining/">Multi-Scale Fusion and Decomposition Network for Single Image Deraining</a>
+      </h1>
 
-    
-    
+      
+      
   <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
     
       
       <li>
         <a href="/categories/2024/"
-          class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
+          class="text-sm mr-2 px-2 py-1 rounded-sm border border-emerald-800 bg-emerald-800 text-slate-50">
           2024
         </a>
       </li>
@@ -180,7 +181,7 @@
           <i class="h-5 w-5 flex-none">
             <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flower"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 2a3 3 0 0 1 3 3c0 .562 -.259 1.442 -.776 2.64l-.724 1.36l1.76 -1.893c.499 -.6 .922 -1 1.27 -1.205a2.968 2.968 0 0 1 4.07 1.099a3.011 3.011 0 0 1 -1.09 4.098c-.374 .217 -.99 .396 -1.846 .535l-2.664 .366l2.4 .326c1 .145 1.698 .337 2.11 .576a3.011 3.011 0 0 1 1.09 4.098a2.968 2.968 0 0 1 -4.07 1.098c-.348 -.202 -.771 -.604 -1.27 -1.205l-1.76 -1.893l.724 1.36c.516 1.199 .776 2.079 .776 2.64a3 3 0 0 1 -6 0c0 -.562 .259 -1.442 .776 -2.64l.724 -1.36l-1.76 1.893c-.499 .601 -.922 1 -1.27 1.205a2.968 2.968 0 0 1 -4.07 -1.098a3.011 3.011 0 0 1 1.09 -4.098c.374 -.218 .99 -.396 1.846 -.536l2.664 -.366l-2.4 -.325c-1 -.145 -1.698 -.337 -2.11 -.576a3.011 3.011 0 0 1 -1.09 -4.099a2.968 2.968 0 0 1 4.07 -1.099c.348 .203 .771 .604 1.27 1.205l1.76 1.894c-1 -2.292 -1.5 -3.625 -1.5 -4a3 3 0 0 1 3 -3z" /></svg>
           </i>
-          <span class="ml-0">denoising</span>
+          <span class="ml-0">Denoising</span>
         </a>
       </li>
       
@@ -190,7 +191,7 @@
           <i class="h-5 w-5 flex-none">
             <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flower"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 2a3 3 0 0 1 3 3c0 .562 -.259 1.442 -.776 2.64l-.724 1.36l1.76 -1.893c.499 -.6 .922 -1 1.27 -1.205a2.968 2.968 0 0 1 4.07 1.099a3.011 3.011 0 0 1 -1.09 4.098c-.374 .217 -.99 .396 -1.846 .535l-2.664 .366l2.4 .326c1 .145 1.698 .337 2.11 .576a3.011 3.011 0 0 1 1.09 4.098a2.968 2.968 0 0 1 -4.07 1.098c-.348 -.202 -.771 -.604 -1.27 -1.205l-1.76 -1.893l.724 1.36c.516 1.199 .776 2.079 .776 2.64a3 3 0 0 1 -6 0c0 -.562 .259 -1.442 .776 -2.64l.724 -1.36l-1.76 1.893c-.499 .601 -.922 1 -1.27 1.205a2.968 2.968 0 0 1 -4.07 -1.098a3.011 3.011 0 0 1 1.09 -4.098c.374 -.218 .99 -.396 1.846 -.536l2.664 -.366l-2.4 -.325c-1 -.145 -1.698 -.337 -2.11 -.576a3.011 3.011 0 0 1 -1.09 -4.099a2.968 2.968 0 0 1 4.07 -1.099c.348 .203 .771 .604 1.27 1.205l1.76 1.894c-1 -2.292 -1.5 -3.625 -1.5 -4a3 3 0 0 1 3 -3z" /></svg>
           </i>
-          <span class="ml-0">paper</span>
+          <span class="ml-0">Paper</span>
         </a>
       </li>
       
@@ -199,12 +200,21 @@
 
 
 
-    <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+      <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
   
   
   <div class="flex flex-row text-base gap-x-1">
     <i class="h-6 w-6 flex-none">
-      <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-smile"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12zm12 -4v4m-8 -4v4m-4 4h16m-9.995 3h.01m3.99 0h.01" /><path d="M10.005 17a3.5 3.5 0 0 0 4 0" /></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+   <path d="M16 3v4"></path>
+   <path d="M8 3v4"></path>
+   <path d="M4 11h16"></path>
+   <path d="M11 15h1"></path>
+   <path d="M12 15v3"></path>
+</svg>
+
     </i>
     <time datetime="2024-01-15T00:00:00&#43;00:00">
       2024-01-15
@@ -227,12 +237,13 @@
   </div>
 </div>
 
-
-    
       
-      <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
-        <h2>Table of Contents</h2>
-        <aside><nav id="TableOfContents">
+
+      
+        
+        <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+          <h2>Table of Contents</h2>
+          <aside><nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#hrm-hybrid-representation-module">HRM (Hybrid Representation Module)</a>
@@ -264,48 +275,48 @@
     </li>
   </ul>
 </nav></aside>
-      </section>
+        </section>
+        
       
-    
 
-    <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
-      <h2 id="前言">前言</h2>
+      <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+        <h2 id="前言">前言</h2>
 <p>這篇論文是在 2024 年在 IEEE 發表的，這篇是影像復原領域的，主要任務是去除圖片中的雨水紋 (消除雜訊)，提出了一個的模型叫做 MFDNet，
 這個模型結合了傳統 CNN 和 Transformer 的優點，還有 Asymmetrical dual-path representation 這個特殊的架構，可以幫助更好地分解原本的圖片和雨水紋。</p>
 <div class="not-prose">
-<figure>
-    <img src="img_2.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_2_hu20cbaf03c3129055dbbcf90938868a60_625996_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_2_hu20cbaf03c3129055dbbcf90938868a60_625996_640x0_resize_q75_h2_box_3.webp 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_2_hu20cbaf03c3129055dbbcf90938868a60_625996_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_2_hu20cbaf03c3129055dbbcf90938868a60_625996_640x0_resize_q75_bgffffff_box_3.jpg 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_2_hu20cbaf03c3129055dbbcf90938868a60_625996_640x0_resize_q75_bgffffff_box_3.jpg" width="718" height="412" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <hr>
 <h2 id="hrm-hybrid-representation-module">HRM (Hybrid Representation Module)</h2>
 <div class="not-prose">
-<figure>
-    <img src="img_4.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_4_hud85ce1c1bcda3d1c441ba5b5da176f46_113017_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_4_hud85ce1c1bcda3d1c441ba5b5da176f46_113017_640x0_resize_q75_h2_box_3.webp 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_4_hud85ce1c1bcda3d1c441ba5b5da176f46_113017_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_4_hud85ce1c1bcda3d1c441ba5b5da176f46_113017_640x0_resize_q75_bgffffff_box_3.jpg 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_4_hud85ce1c1bcda3d1c441ba5b5da176f46_113017_640x0_resize_q75_bgffffff_box_3.jpg" width="799" height="507" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <p>這邊要先提到 HRM 的架構，他算是這篇論文裡面最重要的一個部分，在整個模型裡用了非常多次，主要是在執行分解雨水紋和原始圖片兩種特徵。整體架構是上面右圖，可以看到他分為上下兩個通道同步進行，而這就是在前言所提到的 &ldquo;<em>Asymmetrical dual-path representation</em>&quot;，上面處理的是雨水紋的特徵，下面處理的是原始圖片的特徵。</p>
 <div class="not-prose">
-<figure>
-    <img src="img_5.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_960x0_resize_q75_h2_box_3.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_960x0_resize_q75_bgffffff_box_3.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_5_hu6daf25ad3b4796f52e01fe74631f6d71_176186_640x0_resize_q75_bgffffff_box_3.jpg" width="1058" height="758" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <p>再來以左右方向來看這個 module，他分成 HEFB(Hybrid Feature Extraction Block) 和 CRB(Coupled Representation Block) 兩個部分，接下來下面會以左右方向來介紹這個 module。</p>
 <hr>
 <h3 id="hefb-hybrid-representation-module">HEFB (Hybrid Representation Module)</h3>
 <div class="not-prose">
-<figure>
-    <img src="img_6.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_960x0_resize_q75_h2_box_3.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_960x0_resize_q75_bgffffff_box_3.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_6_hu9350618fd07c80459630309ccdc7ad7f_168131_640x0_resize_q75_bgffffff_box_3.jpg" width="1167" height="483" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <p>首先先看到上通道的部分，又可以細分為 CAB(Channel Attention Block) 和 Trasformer Block 兩個部分：</p>
 <blockquote>
 <p>在這個模型裡特徵會分成雨水紋和原始圖片兩個部分，最一開始拆分兩種特徵是在 Patch Embedding Module 處理的，下面會介紹。</p>
@@ -315,12 +326,12 @@
 </ul>
 <blockquote class="note"><p>Channel Attention 其實是一種調整不同 channel 權重的方式，如下圖，中間會經過 Global pooling、Down sampling、fully connection 得到所有 channel 的權重後，在和最一開始的 features 相乘，就完成調整權重的處理。
 <div class="not-prose">
-<figure>
-    <img src="img_7.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_960x0_resize_q75_h2_box_3.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_960x0_resize_q75_bgffffff_box_3.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_7_hu137b62905a50bed3899faaded2351ab8_111977_640x0_resize_q75_bgffffff_box_3.jpg" width="1268" height="288" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 </p>
 </blockquote>
 <ul>
@@ -331,12 +342,12 @@
 <p>接著是下通道的部分，這邊就是做 identity mapping 和 CAB 的處理而已，identity mapping 在論文中沒有細講。</p>
 <h3 id="crb-coupled-representation-block">CRB (Coupled Representation Block)</h3>
 <div class="not-prose">
-<figure>
-    <img src="img_8.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_1280x0_resize_q75_h2_box_3.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_1280x0_resize_q75_bgffffff_box_3.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_8_hu289c31190a4fc538877a9d167cc7f52b_128817_640x0_resize_q75_bgffffff_box_3.jpg" width="1352" height="635" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <blockquote class="note"><p>作者看到以往的論文將兩種特徵分開處理，但模型表現不好，因此把兩種特徵混合在一起做特徵萃取，中間有很多條交叉的通道就是混合的步驟。</p>
 </blockquote>
 <blockquote class="warn"><p>中間的 weights 通道的架構是粉色箭頭指向的圖，這一塊主要是想調整另一個特徵的權重，因為如果直接把另一個特徵直接加進去相乘可能反而會被影響太多，因此把它調整的小一點讓他的影響力不會這麼大。</p>
@@ -344,22 +355,22 @@
 <p><strong>$z_R$、$z_B$</strong>: $g_R$、$g_B$ 是前面 HEFB 最後的輸出，接下來看到中間 $z_B$ 的地方，有兩個箭頭指向 $z_B$，代表有兩個輸入，這邊作者把改變過權重的輸入 (weights)和 $g_R$ 做相乘，同理的 $g_B$ 也是一樣的處理方式。</p>
 <h3 id="輸出結果視覺化">輸出結果視覺化</h3>
 <div class="not-prose">
-<figure>
-    <img src="img_3.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_1280x0_resize_q75_h2_box_3.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_1280x0_resize_q75_bgffffff_box_3.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_3_hu711cb3e21564279cc03c0cd7052aa818_1868116_640x0_resize_q75_bgffffff_box_3.jpg" width="1540" height="828" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <p>上圖可以看到包含雨水紋的圖片以及模型將雨水紋移除的輸出，$z_R$、$z_B$ 是 CRB 中的視覺化圖像。</p>
 <hr>
 <h2 id="mfdnet">MFDNet</h2>
 <div class="not-prose">
-<figure>
-    <img src="img_1.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1280x0_resize_q75_h2_box_3.webp 1280w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1600x0_resize_q75_h2_box_3.webp 1600w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1920x0_resize_q75_h2_box_3.webp 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1280x0_resize_q75_bgffffff_box_3.jpg 1280w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1600x0_resize_q75_bgffffff_box_3.jpg 1600w, /posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_1920x0_resize_q75_bgffffff_box_3.jpg 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_1_huf239645ea41249ef538e9e66947dfdc5_463675_640x0_resize_q75_bgffffff_box_3.jpg" width="1926" height="699" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <p>上圖是 MFDNet 的架構，我用粉紅色框框把架構拆解成了三個部分，分別是捕捉多尺度特徵、分解雨水紋和原始圖片特徵、重組雨水紋和原始圖片。</p>
 <h3 id="捕捉多尺度特徵">捕捉多尺度特徵</h3>
 <p>首先看到的是最左邊的部分，輸入圖片進入模型後會先到 Patch Embedding Module，這邊就等於是做了下採樣的處理，這邊分成了三種維度大小，分別是原尺寸、1/2、1/4，進入 HRM 後，會把</p>
@@ -378,12 +389,12 @@
 <blockquote class="note"><p>這篇論文的 loss 是用監督式學習的方式，因為在 Char() 和 edges() 中，$I_B*$ 和 $I_B$ 分別代表 Ground truth 和預測結果，它並不是用自己預測的結果再去調整參數，所以不是自監督式學習。</p>
 </blockquote>
 <div class="not-prose">
-<figure>
-    <img src="img_9.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_1280x0_resize_q75_h2_box_3.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_1280x0_resize_q75_bgffffff_box_3.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_9_hu400d26699d5ece95307377d2c6739f6d_30588_640x0_resize_q75_bgffffff_box_3.jpg" width="1475" height="560" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <h2 id="實驗">實驗</h2>
 <p>在影像復原領域的資料集可以根據有無 ground truth 進行分類:</p>
 <h3 id="1-有-ground-truth">1. 有 Ground Truth</h3>
@@ -396,12 +407,12 @@
 <li>Structural SIMilarity (SSIM)：比較兩圖像間的亮度、對比度、結構</li>
 </ul>
 <div class="not-prose">
-<figure>
-    <img src="img_10.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1280x0_resize_q75_h2_box_3.webp 1280w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1600x0_resize_q75_h2_box_3.webp 1600w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1920x0_resize_q75_h2_box_3.webp 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1280x0_resize_q75_bgffffff_box_3.jpg 1280w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1600x0_resize_q75_bgffffff_box_3.jpg 1600w, /posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_1920x0_resize_q75_bgffffff_box_3.jpg 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_10_hueebacf8757e64a0ecdd186411738d9fa_395998_640x0_resize_q75_bgffffff_box_3.jpg" width="1975" height="660" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <h3 id="2-無-ground-truth">2. 無 Ground Truth</h3>
 <blockquote>
 <p>這種是自然界出現的下雨影像，所以不會有 ground truth</p>
@@ -411,36 +422,38 @@
 <li>Spatial-Spectral Entropy-based Quality (SSEQ)</li>
 </ul>
 <div class="not-prose">
-<figure>
-    <img src="img_11.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1280x0_resize_q75_h2_box_3.webp 1280w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1600x0_resize_q75_h2_box_3.webp 1600w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1920x0_resize_q75_h2_box_3.webp 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1280x0_resize_q75_bgffffff_box_3.jpg 1280w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1600x0_resize_q75_bgffffff_box_3.jpg 1600w, /posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_1920x0_resize_q75_bgffffff_box_3.jpg 1920w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_11_huf7cc4b129cedaa6a87f03d1668deeb15_147876_640x0_resize_q75_bgffffff_box_3.jpg" width="1970" height="277" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <h2 id="消融實驗">消融實驗</h2>
 <h3 id="1-loss-function-中不同權重參數的比較">1. Loss function 中不同權重參數的比較</h3>
 <div class="not-prose">
-<figure>
-    <img src="img_12.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_1280x0_resize_q75_h2_box_3.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_1280x0_resize_q75_bgffffff_box_3.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_12_hu3f19c684a034439bca1e5d972666c1c0_139070_640x0_resize_q75_bgffffff_box_3.jpg" width="1382" height="569" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 <h3 id="2-hrm-和-transformer-block-數量比較">2. HRM 和 Transformer block 數量比較</h3>
 <div class="not-prose">
-<figure>
-    <img src="img_13.png"
-      alt="photo" 
-      loading="lazy"
-    >
-  </figure></div>
+<picture>
+    <source type="image/webp" srcset="/posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_320x0_resize_q75_h2_box_3.webp 320w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_640x0_resize_q75_h2_box_3.webp 640w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_960x0_resize_q75_h2_box_3.webp 960w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_1280x0_resize_q75_h2_box_3.webp 1280w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_1600x0_resize_q75_h2_box_3.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_320x0_resize_q75_bgffffff_box_3.jpg 320w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_640x0_resize_q75_bgffffff_box_3.jpg 640w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_960x0_resize_q75_bgffffff_box_3.jpg 960w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_1280x0_resize_q75_bgffffff_box_3.jpg 1280w, /posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_1600x0_resize_q75_bgffffff_box_3.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/posts/deraining/img_13_huf82db67ad431581eb7b6456d146c62fc_269997_640x0_resize_q75_bgffffff_box_3.jpg" width="1620" height="640" alt="photo" title="photo" loading="lazy" />
+  </picture>
+</div>
 
-    </article>
+      </article>
 
-    
+      
 
 
 
+
+    </div>
   </div>
 </div>
 
@@ -464,14 +477,15 @@
   
     <a href="https://www.linkedin.com/in/bernice-chaung/" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
       <span class="hidden">LinkedIn</span>
-      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg> </i>
-    </a>
-  
-  
-  
-    <a href="https://twitter.com/vfk38" target="_blank" title="X" class="flex flex-row mr-2">
-      <span class="hidden">X</span>
-      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg> </i>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+   <path d="M8 11l0 5"></path>
+   <path d="M8 8l0 .01"></path>
+   <path d="M12 16l0 -5"></path>
+   <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+</svg>
+ </i>
     </a>
   
   
@@ -485,7 +499,13 @@
   
     <a href="https://www.instagram.com/bernice1357689/" target="_blank" title="Instagram" class="flex flex-row mr-2">
       <span class="hidden">Instagram</span>
-      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg> </i>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M16.5 7.5l0 .01"></path>
+</svg>
+ </i>
     </a>
   
   
@@ -506,14 +526,14 @@
    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
    <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
 </svg>
-</i> 2022 - 2025 BerniceChaung
+</i> 2022 - 2026 BerniceChaung
     
   </div>
   
 </section>
 
   </footer>
-  <script src="/main.js"></script>
+  <script src="/main.min.65ca5b0808abf278fcec5d424701ebf0b4bc46a737129cd5e57fdb739f463e79.js"></script>
 
 
 

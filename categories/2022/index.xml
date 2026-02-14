@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2022 on Bernice&#39;s website</title>
-    <link>http://localhost:1313/categories/2022/</link>
+    <link>https://example.com/categories/2022/</link>
     <description>Recent content in 2022 on Bernice&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tw</language>
     <copyright>BerniceChaung</copyright>
     <lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/2022/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.com/categories/2022/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>⟪抄襲與引用⟫ 講座筆記</title>
-      <link>http://localhost:1313/posts/%E6%8A%84%E8%A5%B2%E5%BC%95%E7%94%A8/</link>
+      <link>https://example.com/posts/%E6%8A%84%E8%A5%B2%E5%BC%95%E7%94%A8/</link>
       <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E6%8A%84%E8%A5%B2%E5%BC%95%E7%94%A8/</guid>
-      <description>這篇把 2022 年 10 月參加的「學術倫理-抄襲與引用面面觀」講座的一些筆記整理起來，聽到了蠻多值得紀錄的東西，</description>
+      <guid>https://example.com/posts/%E6%8A%84%E8%A5%B2%E5%BC%95%E7%94%A8/</guid>
+      <description></description>
     </item>
     <item>
       <title>如何購買自己的 DNS</title>
-      <link>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</link>
+      <link>https://example.com/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</link>
       <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</guid>
-      <description>前言 這篇把之前購買網域並連到個人網站上的一些心得整理出來，但每個人買網域的地方都不太一樣 (我是在 pchome 買</description>
+      <guid>https://example.com/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</guid>
+      <description></description>
     </item>
     <item>
       <title>Cypress 使用</title>
-      <link>http://localhost:1313/posts/cypress-%E4%BD%BF%E7%94%A8/</link>
+      <link>https://example.com/posts/cypress-%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/cypress-%E4%BD%BF%E7%94%A8/</guid>
-      <description>這篇會介紹 Cypress 的安裝和使用方法！ version 10.3.1 安裝 官方文件 % npm install cypress --save-dev 安裝後就能看到 cypress 目錄了 開啟環境 % npx cypress open 之後會</description>
+      <guid>https://example.com/posts/cypress-%E4%BD%BF%E7%94%A8/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

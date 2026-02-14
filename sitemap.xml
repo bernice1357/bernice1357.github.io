@@ -2,197 +2,212 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://example.com/posts/</loc>
+    <lastmod>2025-08-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/categories/2025/</loc>
+    <lastmod>2025-08-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/</loc>
+    <lastmod>2025-08-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/categories/</loc>
+    <lastmod>2025-08-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/deeplearning-ai/</loc>
+    <lastmod>2025-08-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/posts/haystack/</loc>
+    <lastmod>2025-08-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/llm/</loc>
+    <lastmod>2025-08-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/</loc>
+    <lastmod>2025-08-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/categories/2024/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/2024/</loc>
+    <loc>https://example.com/posts/aigo%E4%BA%BA%E6%89%8D%E4%BA%A4%E6%B5%81%E6%9C%83/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://example.com/tags/%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/aigo%E4%BA%BA%E6%89%8D%E4%BA%A4%E6%B5%81%E6%9C%83/</loc>
-    <lastmod>2024-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/note/</loc>
-    <lastmod>2024-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
+    <loc>https://example.com/tags/note/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E6%A8%A1%E5%9E%8B%E8%A9%95%E4%BC%B0%E6%8C%87%E6%A8%99/</loc>
+    <loc>https://example.com/posts/%E6%A8%A1%E5%9E%8B%E8%A9%95%E4%BC%B0%E6%8C%87%E6%A8%99/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E9%9D%A2%E5%B0%8D%E4%B8%8D%E5%B9%B3%E8%A1%A1%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E8%99%95%E7%90%86%E6%96%B9%E5%BC%8F/</loc>
+    <loc>https://example.com/posts/%E9%9D%A2%E5%B0%8D%E4%B8%8D%E5%B9%B3%E8%A1%A1%E8%B3%87%E6%96%99%E9%9B%86%E7%9A%84%E8%99%95%E7%90%86%E6%96%B9%E5%BC%8F/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hugo-%E7%9B%B8%E9%97%9C%E7%AD%86%E8%A8%98/</loc>
+    <loc>https://example.com/tags/hugo/</loc>
     <lastmod>2024-03-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/biformer/</loc>
+    <loc>https://example.com/posts/hugo-%E7%9B%B8%E9%97%9C%E7%AD%86%E8%A8%98/</loc>
+    <lastmod>2024-03-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/posts/biformer/</loc>
     <lastmod>2024-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/paper/</loc>
+    <loc>https://example.com/tags/paper/</loc>
     <lastmod>2024-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vision-trasformer/</loc>
+    <loc>https://example.com/tags/vision-trasformer/</loc>
     <lastmod>2024-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/denoising/</loc>
+    <loc>https://example.com/tags/denoising/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/deraining/</loc>
+    <loc>https://example.com/posts/deraining/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E6%8A%84%E8%A5%B2%E5%BC%95%E7%94%A8/</loc>
+    <loc>https://example.com/posts/%E6%8A%84%E8%A5%B2%E5%BC%95%E7%94%A8/</loc>
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/2022/</loc>
+    <loc>https://example.com/categories/2022/</loc>
     <lastmod>2022-10-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dns/</loc>
+    <loc>https://example.com/tags/dns/</loc>
     <lastmod>2022-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/github/</loc>
+    <loc>https://example.com/categories/github/</loc>
     <lastmod>2022-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/</loc>
+    <loc>https://example.com/posts/%E5%9C%A8-github-%E4%B8%8A%E4%BD%BF%E7%94%A8-ssh-key-push-%E9%9D%9C%E6%85%8B%E7%B6%B2%E9%A0%81%E5%B1%95%E7%A4%BA/</loc>
     <lastmod>2022-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</loc>
+    <loc>https://example.com/posts/%E5%A6%82%E4%BD%95%E8%B3%BC%E8%B2%B7%E8%87%AA%E5%B7%B1%E7%9A%84-dns/</loc>
     <lastmod>2022-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/</loc>
+    <loc>https://example.com/categories/2022-%E9%90%B5%E4%BA%BA%E8%B3%BD%E7%B3%BB%E5%88%97/</loc>
     <lastmod>2022-09-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day21-npmnvm/</loc>
+    <loc>https://example.com/posts/day21-npmnvm/</loc>
     <lastmod>2022-09-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</loc>
+    <loc>https://example.com/posts/day20-%E7%80%8F%E8%A6%BD%E5%99%A8-dom-%E5%85%83%E7%B4%A0%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2022-09-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day19-axios-%E5%AF%A6%E4%BD%9C/</loc>
+    <loc>https://example.com/posts/day19-axios-%E5%AF%A6%E4%BD%9C/</loc>
     <lastmod>2022-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</loc>
+    <loc>https://example.com/posts/day18-ajax-axios-%E4%BB%8B%E7%B4%B9/</loc>
     <lastmod>2022-09-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day17-postman/</loc>
+    <loc>https://example.com/posts/day17-postman/</loc>
     <lastmod>2022-09-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day16-restful-api/</loc>
+    <loc>https://example.com/posts/day16-restful-api/</loc>
     <lastmod>2022-09-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day15-web-storage/</loc>
+    <loc>https://example.com/posts/day15-web-storage/</loc>
     <lastmod>2022-09-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day14-cookie/</loc>
+    <loc>https://example.com/posts/day14-cookie/</loc>
     <lastmod>2022-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</loc>
+    <loc>https://example.com/posts/day13-cors-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/</loc>
     <lastmod>2022-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day12-chrome-developer-tool/</loc>
+    <loc>https://example.com/posts/day12-chrome-developer-tool/</loc>
     <lastmod>2022-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day11-http-request-method/</loc>
+    <loc>https://example.com/posts/day11-http-request-method/</loc>
     <lastmod>2022-09-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</loc>
+    <loc>https://example.com/posts/day10-http-%E7%8B%80%E6%85%8B%E7%A2%BC/</loc>
     <lastmod>2022-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</loc>
+    <loc>https://example.com/posts/day8-url-%E7%9A%84%E7%B5%84%E6%88%90/</loc>
     <lastmod>2022-09-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day9-http/https/</loc>
+    <loc>https://example.com/posts/day9-http/https/</loc>
     <lastmod>2022-09-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</loc>
+    <loc>https://example.com/posts/day7-dns-%E5%92%8C-ip-%E7%9A%84%E9%97%9C%E4%BF%82/</loc>
     <lastmod>2022-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day6-mac-%E5%9C%B0%E5%9D%80/</loc>
+    <loc>https://example.com/posts/day6-mac-%E5%9C%B0%E5%9D%80/</loc>
     <lastmod>2022-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day5-ipv4-ipv6/</loc>
+    <loc>https://example.com/posts/day5-ipv4-ipv6/</loc>
     <lastmod>2022-09-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day4-tcp/udp/</loc>
+    <loc>https://example.com/posts/day4-tcp/udp/</loc>
     <lastmod>2022-09-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day3-ssh/telnet/</loc>
+    <loc>https://example.com/posts/day3-ssh/telnet/</loc>
     <lastmod>2022-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day2-%E7%B6%B2%E8%B7%AF%E6%98%AF%E5%A6%82%E4%BD%95%E5%82%B3%E9%81%9E%E8%B3%87%E6%96%99%E7%9A%84/</loc>
+    <loc>https://example.com/posts/day2-%E7%B6%B2%E8%B7%AF%E6%98%AF%E5%A6%82%E4%BD%95%E5%82%B3%E9%81%9E%E8%B3%87%E6%96%99%E7%9A%84/</loc>
     <lastmod>2022-09-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/day1-%E5%89%8D%E8%A8%80/</loc>
+    <loc>https://example.com/posts/day1-%E5%89%8D%E8%A8%80/</loc>
     <lastmod>2022-09-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/vue/</loc>
+    <loc>https://example.com/categories/vue/</loc>
     <lastmod>2022-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/vuex-%E4%BB%8B%E7%B4%B9/</loc>
+    <loc>https://example.com/posts/vuex-%E4%BB%8B%E7%B4%B9/</loc>
     <lastmod>2022-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/vscode/</loc>
+    <loc>https://example.com/categories/vscode/</loc>
     <lastmod>2022-04-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E5%B0%87-vscode-%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A1%86%E9%97%9C%E9%96%89/</loc>
+    <loc>https://example.com/posts/%E5%A6%82%E4%BD%95%E5%B0%87-vscode-%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A1%86%E9%97%9C%E9%96%89/</loc>
     <lastmod>2022-04-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/create-a-vue-project/</loc>
+    <loc>https://example.com/posts/create-a-vue-project/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cypress/</loc>
+    <loc>https://example.com/tags/cypress/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/cypress-%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://example.com/posts/cypress-%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/github-%E8%A7%A3%E6%B1%BA%E6%9C%89%E8%A1%9D%E7%AA%81%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E4%BD%B5/</loc>
+    <loc>https://example.com/posts/github-%E8%A7%A3%E6%B1%BA%E6%9C%89%E8%A1%9D%E7%AA%81%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E4%BD%B5/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E5%B0%87%E7%B6%B2%E5%9F%9F%E9%80%A3%E5%88%B0%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99pchome-cloudflare/</loc>
+    <loc>https://example.com/posts/%E5%B0%87%E7%B6%B2%E5%9F%9F%E9%80%A3%E5%88%B0%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99pchome-cloudflare/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E6%9E%B6%E7%AB%99/</loc>
+    <loc>https://example.com/categories/%E6%9E%B6%E7%AB%99/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</loc>
+    <loc>https://example.com/posts/%E4%BD%BF%E7%94%A8-hugo-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-blog/</loc>
     <lastmod>2020-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://example.com/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://example.com/search/</loc>
     <priority>0.1</priority>
   </url><url>
-    <loc>http://localhost:1313/search/_index.es/</loc>
+    <loc>https://example.com/search/_index.es/</loc>
     <priority>0.1</priority>
   </url><url>
-    <loc>http://localhost:1313/search/_index.fr/</loc>
+    <loc>https://example.com/search/_index.fr/</loc>
     <priority>0.1</priority>
   </url><url>
-    <loc>http://localhost:1313/search/_index.hi/</loc>
+    <loc>https://example.com/search/_index.hi/</loc>
     <priority>0.1</priority>
   </url><url>
-    <loc>http://localhost:1313/search/_index.jp/</loc>
+    <loc>https://example.com/search/_index.jp/</loc>
     <priority>0.1</priority>
   </url><url>
-    <loc>http://localhost:1313/search/_index.pl/</loc>
+    <loc>https://example.com/search/_index.pl/</loc>
     <priority>0.1</priority>
   </url><url>
-    <loc>http://localhost:1313/search/_index.ru/</loc>
+    <loc>https://example.com/search/_index.ru/</loc>
     <priority>0.1</priority>
   </url><url>
-    <loc>http://localhost:1313/search/_index.zh-cn/</loc>
+    <loc>https://example.com/search/_index.zh-cn/</loc>
     <priority>0.1</priority>
   </url><url>
-    <loc>http://localhost:1313/year/</loc>
+    <loc>https://example.com/year/</loc>
   </url>
 </urlset>

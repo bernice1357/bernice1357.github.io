@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VScode on Bernice&#39;s website</title>
-    <link>http://localhost:1313/categories/vscode/</link>
+    <link>https://example.com/categories/vscode/</link>
     <description>Recent content in VScode on Bernice&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tw</language>
     <copyright>BerniceChaung</copyright>
     <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.com/categories/vscode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何將 VScode 的提示框關閉</title>
-      <link>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E5%B0%87-vscode-%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A1%86%E9%97%9C%E9%96%89/</link>
+      <link>https://example.com/posts/%E5%A6%82%E4%BD%95%E5%B0%87-vscode-%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A1%86%E9%97%9C%E9%96%89/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E5%B0%87-vscode-%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A1%86%E9%97%9C%E9%96%89/</guid>
-      <description>前言 在用 vscode 寫網頁時，常常會出現這樣的提示框 下面來講講怎麼關掉這些提示框～ 步驟 在 vscode 的左下角有個設定的符</description>
+      <guid>https://example.com/posts/%E5%A6%82%E4%BD%95%E5%B0%87-vscode-%E7%9A%84%E6%8F%90%E7%A4%BA%E6%A1%86%E9%97%9C%E9%96%89/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
