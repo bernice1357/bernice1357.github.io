@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="tw" dir="ltr">
+<head>
+  <title>AI 應用鬥智賽心路歷程 :: Bernice&#39;s website - Example site for hugo-theme-tailwind</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content=""
+/>
+<meta
+  name="keywords"
+  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+/>
+<meta name="robots" content="noodp" /><meta property="og:title" content="AI 應用鬥智賽心路歷程" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-02-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-02-15T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="AI 應用鬥智賽心路歷程"/>
+<meta name="twitter:description" content=""/>
+
+
+<link rel="canonical" href="https://example.com/posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.min.be14db9232647733b0febb286269b110d4ecc7f5583129508c666c15c7697656.css">
+
+
+
+
+
+
+
+
+
+  
+  
+
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800"><header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/logo.jpg" alt="logo">
+    </a>
+  </div>
+  
+  <h1 class="hidden md:flex flex-col justify-center mx-2">
+    <a href="/" class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+      Bernice&#39;s website
+    </a>
+  </h1>
+  
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-xs md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/about/" title="About">About</a>
+        </li>
+      
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/posts/" title="Post">Post</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none mx-1"></div>
+  
+  <div class="flex-none md:hidden">
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="relative flex items-center gap-1 px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="absolute z-10 w-15 h-8 rounded-full bg-white dark:bg-gray-700"></div>
+      <i class="h-6 w-6 z-20 ml-1 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+      </i>
+      <i class="h-6 w-6 z-20 mr-1 flex-none rounded-full place-self-center invisible peer-checked:visible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+      </i>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div id="progress" class="fixed top-0 left-0 w-full h-1 bg-blue-500"></div>
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
+    <div>
+      <a href="/posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/">
+        <picture>
+    <source type="image/webp" srcset="/posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/images/cover_hu28b8c5483ebb25033485537f3c987473_360172_960x0_resize_q75_h2_box.webp 960w, /posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/images/cover_hu28b8c5483ebb25033485537f3c987473_360172_1600x0_resize_q75_h2_box.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/images/cover_hu28b8c5483ebb25033485537f3c987473_360172_960x0_resize_q75_box.jpg 960w, /posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/images/cover_hu28b8c5483ebb25033485537f3c987473_360172_1600x0_resize_q75_box.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="/posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/images/cover_hu28b8c5483ebb25033485537f3c987473_360172_640x0_resize_q75_box.jpg" width="4000" height="1305" alt="AI 應用鬥智賽心路歷程" title="AI 應用鬥智賽心路歷程" loading="lazy" />
+  </picture>
+      </a>
+    </div>
+    <div class="flex flex-col gap-y-3 p-6">
+      <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+        <a href="/posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/">AI 應用鬥智賽心路歷程</a>
+      </h1>
+
+      
+      
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+      
+      <li>
+        <a href="/categories/2026/"
+          class="text-sm mr-2 px-2 py-1 rounded-sm border border-emerald-800 bg-emerald-800 text-slate-50">
+          2026
+        </a>
+      </li>
+      
+    
+    
+      
+      <li>
+        <a href="/tags/%E5%BF%83%E5%BE%97/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flower"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M12 2a3 3 0 0 1 3 3c0 .562 -.259 1.442 -.776 2.64l-.724 1.36l1.76 -1.893c.499 -.6 .922 -1 1.27 -1.205a2.968 2.968 0 0 1 4.07 1.099a3.011 3.011 0 0 1 -1.09 4.098c-.374 .217 -.99 .396 -1.846 .535l-2.664 .366l2.4 .326c1 .145 1.698 .337 2.11 .576a3.011 3.011 0 0 1 1.09 4.098a2.968 2.968 0 0 1 -4.07 1.098c-.348 -.202 -.771 -.604 -1.27 -1.205l-1.76 -1.893l.724 1.36c.516 1.199 .776 2.079 .776 2.64a3 3 0 0 1 -6 0c0 -.562 .259 -1.442 .776 -2.64l.724 -1.36l-1.76 1.893c-.499 .601 -.922 1 -1.27 1.205a2.968 2.968 0 0 1 -4.07 -1.098a3.011 3.011 0 0 1 1.09 -4.098c.374 -.218 .99 -.396 1.846 -.536l2.664 -.366l-2.4 -.325c-1 -.145 -1.698 -.337 -2.11 -.576a3.011 3.011 0 0 1 -1.09 -4.099a2.968 2.968 0 0 1 4.07 -1.099c.348 .203 .771 .604 1.27 1.205l1.76 1.894c-1 -2.292 -1.5 -3.625 -1.5 -4a3 3 0 0 1 3 -3z" /></svg>
+          </i>
+          <span class="ml-0">心得</span>
+        </a>
+      </li>
+      
+    
+  </ul>
+
+
+
+      <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+   <path d="M16 3v4"></path>
+   <path d="M8 3v4"></path>
+   <path d="M4 11h16"></path>
+   <path d="M11 15h1"></path>
+   <path d="M12 15v3"></path>
+</svg>
+
+    </i>
+    <time datetime="2026-02-15T00:00:00&#43;00:00">
+      2026-02-15
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      5 minutes to read
+    </span>
+  </div>
+</div>
+
+      
+
+      
+        
+        <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+          <h2>Table of Contents</h2>
+          <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#背景介紹">背景介紹</a></li>
+    <li><a href="#比賽階段">比賽階段</a>
+      <ul>
+        <li><a href="#題目介紹">題目介紹</a></li>
+        <li><a href="#系統架構">系統架構</a></li>
+        <li><a href="#遇到的問題">遇到的問題</a></li>
+      </ul>
+    </li>
+    <li><a href="#獲獎階段">獲獎階段</a></li>
+    <li><a href="#系統落地階段">系統落地階段</a>
+      <ul>
+        <li><a href="#至刑大資訊室安裝系統">至刑大、資訊室安裝系統</a></li>
+        <li><a href="#參與-2025-高雄智慧程市展">參與 2025 高雄智慧程市展</a></li>
+      </ul>
+    </li>
+    <li><a href="#真正的心得感想">真正的心得感想</a></li>
+  </ul>
+</nav></aside>
+        </section>
+        
+      
+
+      <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+        <h2 id="前言">前言</h2>
+<p>會參加這個比賽是因為指導教授問我們想不想參加，因為毎年都會參加一些關於 AI 應用的競賽，我當時覺得這放履歷肯定讚，再加上教授寫計劃書的功力很強，而且獎金真的挺高的，因此我和其他同屆的同學就報名參加了 2024 年由數發部舉辦的 <strong>AI 應用鬥智賽</strong>。然後這篇我可能會以流水帳的方式寫，想說寫成日記的感覺這樣。</p>
+<blockquote>
+<p>系統原始碼: <a href="https://github.com/bernice1357/VIChatBot" target="_blank" rel="noopener">https://github.com/bernice1357/VIChatBot</a>
+</p>
+</blockquote>
+<h2 id="背景介紹">背景介紹</h2>
+<p>我先介紹一下這個比賽的形式好了，它是以配對的方式，一個出題方會對應到一個解題方，然後主辦單位已經有和一些出題方合作，所以有一些現成的題目可以挑，但是也可以由解題方自己找題目這樣 (其實有點不太公平我覺得)，我們挑的題目是由高雄刑事大隊 (以下簡稱刑大) 出的「運用生成式 AI 以文字搜尋影像」，他們的初衷是希望輸入一段影片，然後利用 LLM 詢問影片中出現的人物、商店、汽機車數量或特徵這樣，這樣聽起來是一個非常大的系統，它的確也是，我們是用了 4 個模型才組成符合他們需求的系統。</p>
+<h2 id="比賽階段">比賽階段</h2>
+<h3 id="題目介紹">題目介紹</h3>
+<p>再來講一下他們到底實際想要什麼樣的系統，因為刑大在辦案的時候會收到一些由民眾提供的相關影片，但他們不知道影片中的地點在哪裡，所以他們以前的做法就是只能把影片看完，當然這非常消耗時間。所以刑大希望可以建立一個能夠縮短他們辦案效率的系統，他們的需求是輸入影片，就能夠透過 LLM 問答的方式詢問影片中是否出現某個物體，藉此找出影片中發生的地點，根據他們輸入的不同影片有不同的問題產生:</p>
+<ol>
+<li>如果影片是對著馬路的監視器影片，輸入問題就會像是「紅色機車有幾台?」、「有沒有穿黃色衣服的人?」這樣子的問題，然後他們希望可以問的物體有商店、人物、汽機車、門牌、車牌這些物件。</li>
+<li>如果是直接正對著嫌犯住處的影片，他們就會需要知道這個住處內有多少人，用於估算到時候攻破需要花費多少警力，所以針對這種影片就會詢問「某段時間內進出多少人?」這樣子的問題。</li>
+</ol>
+<blockquote>
+<p>影片來源可能有監視器、行車紀錄器、民眾用手機拍攝的影片，所以畫質可能是很模糊的。</p>
+</blockquote>
+<h3 id="系統架構">系統架構</h3>
+<p>我們的系統由於輸入型態是影片，所以必須一幀一幀地把影片切開來處理，然後因為前面有提到原始影片可能是模糊的，所以我們有使用<a href="https://github.com/xinntao/Real-ESRGAN" target="_blank" rel="noopener">Real-ESRGAN</a>
+去做調整畫質，之後就會根據使用者需求調整使用的模型，大概講一下我們用了哪些模型:</p>
+<ol>
+<li>
+<p><a href="https://github.com/PaddlePaddle/PaddleOCR" target="_blank" rel="noopener">PaddleOcr</a>
+: 用於門牌、車牌辨識，但這個都還是需要再微調才能適合台灣車牌門牌。</p>
+</li>
+<li>
+<p><a href="https://huggingface.co/docs/transformers/model_doc/grounding-dino" target="_blank" rel="noopener">GroudingDINO</a>
+: 這個模型是用於除了我們自己訓練的物件以外的所有物件判斷，因為他是一個 Open-Vocabulary Detection 的模型，所以基本上他應該都要能判斷，但我們有發現他沒辦法處理複合物件，像是「坐兩個人的銀色機車」，這句話對這個模型來說「兩個人」和「銀色機車」是兩個物件，所以他會畫出兩個 bbox 而不是一個。</p>
+</li>
+<li>
+<p><a href="https://github.com/PaddlePaddle/PaddleDetection" target="_blank" rel="noopener">PaddleDetection</a>
+: 這是用來判斷人物進出的 ReID 模型，但其實這部分不只使用這個模型就搞定了，我們還需要電子圍籬的邏輯才能完成進出判斷。</p>
+</li>
+<li>
+<p><a href="https://github.com/WongKinYiu/yolov9" target="_blank" rel="noopener">YOLOv9</a>
+: 物件偵測的 King，我們是用來判斷商店招牌，然後其實只要能夠判斷超商、全聯那些商店就好，所以我們就從 google map 上瘋狂截圖超商的門牌來 label，然後使用的 label 工具是 <a href="https://roboflow.com/" target="_blank" rel="noopener">Roboflow</a>
+</p>
+</li>
+</ol>
+<p>上面這四種模型會統一輸出 csv 格式的 metadata，他是毎幀有出現什麼物體的一個表，然後再把這個資料餵給 LLM 這樣。我們用的是 GPT-3.5 搭配 Langchain 的 csv agent 回答問題這樣。</p>
+<h3 id="遇到的問題">遇到的問題</h3>
+<ol>
+<li>
+<p><strong>範例影片很難提供:</strong> 因為這個任務輸入的影片都是和真正的刑案影片，所以機密性非常高，刑大需要往上簽陳，行政手續就必須花上不少時間，我們從 04/09 就開始問刑大能不能提供範例影片，結果到 05/30 才真正拿到。而由於在做這樣的系統一定要看到範例才能確定系統在往對的方向做，可能會有人想說開會不是都已經講的很清楚就是要這樣做了嗎? 怎麼還會有問題? 但如果兩方的專業領域差異很大的情況下，資訊差其實會很不對等，他們認為的常識對我們來說可能是從來沒有接觸過的，。</p>
+</li>
+<li>
+<p><strong>監視器日期格式不一:</strong> 由於監視器影片通常是由民間提供的，監視器廠商都不同，日期格式通常也都不太一樣，那我們當時就整理了一堆可能的日期格式，問刑大這樣我們要不要讓他們自己填寫每段影片的開始和結束日期時間。</p>
+ <p align="center">
+ <img src="images/img_1.png" alt="title" style="width: 500px; margin: 0;"/><br>
+ </p>
+</li>
+</ol>
+<h2 id="獲獎階段">獲獎階段</h2>
+<blockquote>
+<p>新聞稿: <a href="https://viewpoint.ikh.tw/index.php?pn=vw&amp;id=n2y6hg9147ts" target="_blank" rel="noopener">https://viewpoint.ikh.tw/index.php?pn=vw&id=n2y6hg9147ts</a>
+</p>
+</blockquote>
+<p>當下知道我們得獎後真的是快從椅子上跳起來，超級激動!!! 雖然只有銅獎而已，但獎金有 50 萬也算很不錯了，再來就是到台北參加頒獎典禮。</p>
+<p align="center">
+  <img src="images/img_4.jpg" alt="title" style="width: 500px; margin: 0;"/><br>
+</p>
+<h2 id="系統落地階段">系統落地階段</h2>
+<p>這裡就真的是在回憶我們後續做了哪些事，主要是警方有一些需要我們配合的活動。</p>
+<h3 id="至刑大資訊室安裝系統">至刑大、資訊室安裝系統</h3>
+<p>當時我們就是到高雄鳳山的刑事大隊幫他們安裝系統，然後再去資訊室裝，然後因為刑大好像會自己寫 Docker，所以他們的電腦上有很多服務在跑，變成環境很亂裝不起來，有點尷尬，不過幸好刑大把環境整理乾淨後就裝成功了。</p>
+<p align="center">
+  <img src="images/img_2.jpg" alt="title" style="width: 500px; margin: 0;"/><br>
+</p>
+<h3 id="參與-2025-高雄智慧程市展">參與 2025 高雄智慧程市展</h3>
+<p>這段不需要我們幫忙，就是展覽會把刑大和 AI 相關的系統展示出來，然後會有人在攤位解說這樣。其實我們有去看這個攤位，想說看看自己的系統被展示出來是甚麼感覺，看到還是蠻感動的🥹</p>
+<p align="center">
+  <img src="images/img_3.jpg" alt="title" style="width: 500px; margin: 0;"/><br>
+</p>
+<h2 id="真正的心得感想">真正的心得感想</h2>
+<p>現在想起來那段時間真的超痛苦，因為比賽的時程是四個月，以這樣的系統規模來說，四個月算是不太夠用，而且我們是真的必須提供系統給出題方，得到他們的反饋後才能算在我們的成績，所以壓力又更大，每天被截止日期追著跑，然後因為要交付系統嘛，所以還要包在 docker 裡，連 docker 在當時都是順便學的，然後模型練出來之外還要寫介面，還要寫執行檔讓他們不會這麼難用。那時候整天都泡在實驗室，幾乎都是晚上 10 點才走得了，然後每天都在想什麼時候才能做完，尤其遇到需要 Demo 的時候每次都在實驗室通霄 :)，真是謝了，工作都沒這麼痛苦。</p>
+<p>不夠最後有得到銅獎真的會覺得沒有白費我們這四個月這麼辛苦!</p>
+
+      </article>
+
+      
+
+
+
+
+    </div>
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+    <a href="https://github.com/bernice1357" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://www.linkedin.com/in/bernice-chaung/" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
+      <span class="hidden">LinkedIn</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+   <path d="M8 11l0 5"></path>
+   <path d="M8 8l0 .01"></path>
+   <path d="M12 16l0 -5"></path>
+   <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://medium.com/@juice6323" target="_blank" title="Medium" class="flex flex-row mr-2">
+      <span class="hidden">Medium</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-medium"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 9h1l3 3l3 -3h1" /><path d="M8 15l2 0" /><path d="M14 15l2 0" /><path d="M9 9l0 6" /><path d="M15 9l0 6" /></svg> </i>
+    </a>
+  
+  
+  
+    <a href="https://www.instagram.com/bernice1357689/" target="_blank" title="Instagram" class="flex flex-row mr-2">
+      <span class="hidden">Instagram</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M16.5 7.5l0 .01"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://ithelp.ithome.com.tw/users/20151135" target="_blank" title="iThome" class="flex flex-row mr-2">
+      <span class="hidden">iThome</span>
+      <i class="h-6 w-6 flex-none"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-letter-t-small"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8h4" /><path d="M12 8v8" /></svg> </i>
+    </a>
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2022 - 2026 BerniceChaung
+    
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.min.65ca5b0808abf278fcec5d424701ebf0b4bc46a737129cd5e57fdb739f463e79.js"></script>
+
+
+
+
+</body>
+</html>

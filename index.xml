@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>tw</language>
     <copyright>BerniceChaung</copyright>
-    <lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI 應用鬥智賽心路歷程</title>
+      <link>https://example.com/posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/</link>
+      <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://example.com/posts/ai%E6%87%89%E7%94%A8%E9%AC%A5%E6%99%BA%E8%B3%BD/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Haystack</title>
       <link>https://example.com/posts/haystack/</link>
